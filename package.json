@@ -1,0 +1,22 @@
+{
+  "name": "spms-bot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Manuel2u/Telegram-Bot.git",
+  "author": "Manuel2u <edodoo011@st.ug.edu.gh>",
+  "scripts": {
+    "start": "node ./dist/index.js",
+    "dev": "nodemon ./src/index.ts",
+    "build": "tsc -p ."
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^18.11.9",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.3"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "telegraf": "^4.11.2"
+  }
+}
