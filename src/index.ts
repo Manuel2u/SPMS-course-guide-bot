@@ -1,5 +1,8 @@
 require("dotenv").config();
 import { Telegraf } from "telegraf";
+import options from "./options";
+
+const { levelOptions, courseOptionsL100, programOption } = options;
 
 const bot = new Telegraf(process.env.BOT_TOKEN || "");
 
@@ -13,18 +16,18 @@ bot.start((ctx) => {
         keyboard: [
           [
             {
-              text: "Level 100",
+              text: levelOptions.firstYear,
             },
             {
-              text: "Level 200",
+              text: levelOptions.secondYear,
             },
           ],
           [
             {
-              text: "Level 300",
+              text: levelOptions.thirdYear,
             },
             {
-              text: "Level 400",
+              text: levelOptions.fourthYear,
             },
           ],
         ],
