@@ -14,8 +14,8 @@ const options = {
 
   programOption: {
     option1: "Single Major",
-    option2: "Major-Minor",
-    option3: "Combined-Major",
+    option3: "Major-Minor",
+    option2: "Combined-Major",
   },
 
   semesterOptions: {
