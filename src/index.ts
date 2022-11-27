@@ -5,8 +5,10 @@ import options from "./options";
 const {
   levelOptions,
   courseOptionsL100,
-  courseOptionsL200PhysicalSci,
   programOption,
+  continuingStudentsSingleMajorOptions,
+  continuingStudentsCombinedMajorOptions,
+  continuingStudentsMajorMinorOptions,
 } = options;
 
 const bot = new Telegraf(process.env.BOT_TOKEN || "");
@@ -133,332 +135,333 @@ bot.hears(courseOptionsL100.physicalScience, (ctx) => {
   console.log(usersOptions);
 });
 
-//Level 100 Physical Science Single Major
+// L100 Mathematical Science program option
+bot.hears(courseOptionsL100.mathematicalScience, (ctx) => {
+  bot.telegram.sendMessage(
+    ctx.chat?.id || "",
+    "Please select your program option",
+    {
+      reply_markup: {
+        keyboard: [
+          [
+            {
+              text: programOption.option1,
+            },
+            {
+              text: programOption.option2,
+            },
+          ],
+          [
+            {
+              text: programOption.option3,
+            },
+          ],
+        ],
+      },
+    }
+  );
+  usersOptions.push(ctx.message?.text);
+  console.log(usersOptions);
+});
+
+// L100 Earth Science program option
+bot.hears(courseOptionsL100.earthScience, (ctx) => {
+  bot.telegram.sendMessage(
+    ctx.chat?.id || "",
+    "Please select your program option",
+    {
+      reply_markup: {
+        keyboard: [
+          [
+            {
+              text: programOption.option1,
+            },
+            {
+              text: programOption.option2,
+            },
+          ],
+          [
+            {
+              text: programOption.option3,
+            },
+          ],
+        ],
+      },
+    }
+  );
+  usersOptions.push(ctx.message?.text);
+  console.log(usersOptions);
+});
+
+// Rendering different Courses for L100 program option
+// Single Major
 bot.hears(programOption.option1, (ctx) => {
-  bot.telegram.sendMessage(
-    ctx.chat?.id || "",
-    "Please select what you want in Level 200",
-    {
-      reply_markup: {
-        keyboard: [
-          [
-            {
-              text: courseOptionsL200PhysicalSci.singleMajor.option1,
-            },
-            {
-              text: courseOptionsL200PhysicalSci.singleMajor.option2,
-            },
+  //check if user options includes physical science
+  if (usersOptions.includes(courseOptionsL100.physicalScience)) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "Please select what you want in Level 200",
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: continuingStudentsSingleMajorOptions.option5,
+              },
+              {
+                text: continuingStudentsSingleMajorOptions.option6,
+              },
+            ],
+            [
+              {
+                text: continuingStudentsSingleMajorOptions.option8,
+              },
+            ],
           ],
-          [
-            {
-              text: courseOptionsL200PhysicalSci.singleMajor.option3,
-            },
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (usersOptions.includes(courseOptionsL100.mathematicalScience)) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "Please select what you want in Level 200",
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: continuingStudentsSingleMajorOptions.option1,
+              },
+              {
+                text: continuingStudentsSingleMajorOptions.option2,
+              },
+            ],
+            [
+              {
+                text: continuingStudentsSingleMajorOptions.option3,
+              },
+              {
+                text: continuingStudentsSingleMajorOptions.option4,
+              },
+            ],
+            [
+              {
+                text: continuingStudentsSingleMajorOptions.option10,
+              },
+            ],
           ],
-        ],
-      },
-    }
-  );
-  usersOptions.push(ctx.message?.text);
-  console.log(usersOptions);
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (usersOptions.includes(courseOptionsL100.earthScience)) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "Please select what you want in Level 200",
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: continuingStudentsSingleMajorOptions.option7,
+              },
+              {
+                text: continuingStudentsSingleMajorOptions.option9,
+              },
+            ],
+            [
+              {
+                text: continuingStudentsSingleMajorOptions.option12,
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  }
 });
 
-bot.hears(courseOptionsL200PhysicalSci.singleMajor.option1, (ctx) => {
-  bot.telegram.sendMessage(
-    ctx.chat?.id || "",
-    "Which semester do you want to register for?",
-    {
-      reply_markup: {
-        keyboard: [
-          [
-            {
-              text: "First Semester",
-            },
-            {
-              text: "Second Semester",
-            },
-          ],
-        ],
-      },
-    }
-  );
-  usersOptions.push(ctx.message?.text);
-  console.log(usersOptions);
-});
-
-bot.hears(courseOptionsL200PhysicalSci.singleMajor.option2, (ctx) => {
-  bot.telegram.sendMessage(
-    ctx.chat?.id || "",
-    "Which semester do you want to register for?",
-    {
-      reply_markup: {
-        keyboard: [
-          [
-            {
-              text: "First Semester",
-            },
-            {
-              text: "Second Semester",
-            },
-          ],
-        ],
-      },
-    }
-  );
-  usersOptions.push(ctx.message?.text);
-  console.log(usersOptions);
-});
-
-bot.hears(courseOptionsL200PhysicalSci.singleMajor.option3, (ctx) => {
-  bot.telegram.sendMessage(
-    ctx.chat?.id || "",
-    "Which semester do you want to register for?",
-    {
-      reply_markup: {
-        keyboard: [
-          [
-            {
-              text: "First Semester",
-            },
-            {
-              text: "Second Semester",
-            },
-          ],
-        ],
-      },
-    }
-  );
-  usersOptions.push(ctx.message?.text);
-  console.log(usersOptions);
-});
-
-//Level 100 Physical Science Combined Major
+// Combined Major
 bot.hears(programOption.option2, (ctx) => {
-  bot.telegram.sendMessage(
-    ctx.chat?.id || "",
-    "Please select what you want in Level 200",
-    {
-      reply_markup: {
-        keyboard: [
-          [
-            {
-              text: courseOptionsL200PhysicalSci.combinedMajor.option1,
-            },
-            {
-              text: courseOptionsL200PhysicalSci.combinedMajor.option2,
-            },
+  //check if user options includes physical science
+  if (usersOptions.includes(courseOptionsL100.physicalScience)) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "Please select what you want in Level 200",
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: continuingStudentsCombinedMajorOptions.option1,
+              },
+              {
+                text: continuingStudentsCombinedMajorOptions.option2,
+              },
+            ],
+            [
+              {
+                text: continuingStudentsCombinedMajorOptions.option6,
+              },
+              {
+                text: continuingStudentsCombinedMajorOptions.option8,
+              },
+            ],
           ],
-          [
-            {
-              text: courseOptionsL200PhysicalSci.combinedMajor.option2,
-            },
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (usersOptions.includes(courseOptionsL100.mathematicalScience)) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "Please select what you want in Level 200",
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: continuingStudentsSingleMajorOptions.option3,
+              },
+              {
+                text: continuingStudentsSingleMajorOptions.option4,
+              },
+            ],
+            [
+              {
+                text: continuingStudentsSingleMajorOptions.option5,
+              },
+              {
+                text: continuingStudentsSingleMajorOptions.option7,
+              },
+            ],
           ],
-        ],
-      },
-    }
-  );
-  usersOptions.push(ctx.message?.text);
-  console.log(usersOptions);
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (usersOptions.includes(courseOptionsL100.earthScience)) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "Please select what you want in Level 200",
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "No combined major option available for Earth Science",
+              },
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  }
 });
 
-bot.hears(courseOptionsL200PhysicalSci.combinedMajor.option1, (ctx) => {
-  bot.telegram.sendMessage(
-    ctx.chat?.id || "",
-    "Which semester do you want to register for?",
-    {
-      reply_markup: {
-        keyboard: [
-          [
-            {
-              text: "First Semester",
-            },
-            {
-              text: "Second Semester",
-            },
-          ],
-        ],
-      },
-    }
-  );
-  usersOptions.push(ctx.message?.text);
-  console.log(usersOptions);
-});
-
-bot.hears(courseOptionsL200PhysicalSci.combinedMajor.option2, (ctx) => {
-  bot.telegram.sendMessage(
-    ctx.chat?.id || "",
-    "Which semester do you want to register for?",
-    {
-      reply_markup: {
-        keyboard: [
-          [
-            {
-              text: "First Semester",
-            },
-            {
-              text: "Second Semester",
-            },
-          ],
-        ],
-      },
-    }
-  );
-  usersOptions.push(ctx.message?.text);
-  console.log(usersOptions);
-});
-
-//Level 100 Physical Science Major-Minor
+// Major Minor
 bot.hears(programOption.option3, (ctx) => {
-  bot.telegram.sendMessage(
-    ctx.chat?.id || "",
-    "Please select what you want in Level 200",
-    {
-      reply_markup: {
-        keyboard: [
-          [
-            {
-              text: courseOptionsL200PhysicalSci.majorMinor.option1,
-            },
-            {
-              text: courseOptionsL200PhysicalSci.majorMinor.option2,
-            },
+  //check if user options includes physical science
+  if (usersOptions.includes(courseOptionsL100.physicalScience)) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "Please select what you want in Level 200",
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: continuingStudentsMajorMinorOptions.option10,
+              },
+              {
+                text: continuingStudentsMajorMinorOptions.option12,
+              },
+            ],
+            [
+              {
+                text: continuingStudentsMajorMinorOptions.option15,
+              },
+            ],
           ],
-          [
-            {
-              text: courseOptionsL200PhysicalSci.majorMinor.option3,
-            },
-            {
-              text: courseOptionsL200PhysicalSci.majorMinor.option4,
-            },
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (usersOptions.includes(courseOptionsL100.mathematicalScience)) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "Please select what you want in Level 200",
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: continuingStudentsMajorMinorOptions.option1,
+              },
+              {
+                text: continuingStudentsMajorMinorOptions.option2,
+              },
+            ],
+            [
+              {
+                text: continuingStudentsMajorMinorOptions.option3,
+              },
+              {
+                text: continuingStudentsMajorMinorOptions.option4,
+              },
+            ],
+            [
+              {
+                text: continuingStudentsMajorMinorOptions.option5,
+              },
+            ],
           ],
-          [
-            {
-              text: courseOptionsL200PhysicalSci.majorMinor.option5,
-            },
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (usersOptions.includes(courseOptionsL100.earthScience)) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "Please select what you want in Level 200",
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: continuingStudentsMajorMinorOptions.option6,
+              },
+              {
+                text: continuingStudentsMajorMinorOptions.option7,
+              },
+            ],
+            [
+              {
+                text: continuingStudentsMajorMinorOptions.option8,
+              },
+            ],
           ],
-        ],
-      },
-    }
-  );
-  usersOptions.push(ctx.message?.text);
-  console.log(usersOptions);
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  }
 });
-
-bot.hears(courseOptionsL200PhysicalSci.majorMinor.option1, (ctx) => {
-  bot.telegram.sendMessage(
-    ctx.chat?.id || "",
-    "Which semester do you want to register for?",
-    {
-      reply_markup: {
-        keyboard: [
-          [
-            {
-              text: "First Semester",
-            },
-            {
-              text: "Second Semester",
-            },
-          ],
-        ],
-      },
-    }
-  );
-  usersOptions.push(ctx.message?.text);
-  console.log(usersOptions);
-});
-
-bot.hears(courseOptionsL200PhysicalSci.majorMinor.option2, (ctx) => {
-  bot.telegram.sendMessage(
-    ctx.chat?.id || "",
-    "Which semester do you want to register for?",
-    {
-      reply_markup: {
-        keyboard: [
-          [
-            {
-              text: "First Semester",
-            },
-            {
-              text: "Second Semester",
-            },
-          ],
-        ],
-      },
-    }
-  );
-  usersOptions.push(ctx.message?.text);
-  console.log(usersOptions);
-});
-
-bot.hears(courseOptionsL200PhysicalSci.majorMinor.option3, (ctx) => {
-  bot.telegram.sendMessage(
-    ctx.chat?.id || "",
-    "Which semester do you want to register for?",
-    {
-      reply_markup: {
-        keyboard: [
-          [
-            {
-              text: "First Semester",
-            },
-            {
-              text: "Second Semester",
-            },
-          ],
-        ],
-      },
-    }
-  );
-  usersOptions.push(ctx.message?.text);
-  console.log(usersOptions);
-});
-
-bot.hears(courseOptionsL200PhysicalSci.majorMinor.option4, (ctx) => {
-  bot.telegram.sendMessage(
-    ctx.chat?.id || "",
-    "Which semester do you want to register for?",
-    {
-      reply_markup: {
-        keyboard: [
-          [
-            {
-              text: "First Semester",
-            },
-            {
-              text: "Second Semester",
-            },
-          ],
-        ],
-      },
-    }
-  );
-  usersOptions.push(ctx.message?.text);
-  console.log(usersOptions);
-});
-
-bot.hears(courseOptionsL200PhysicalSci.majorMinor.option5, (ctx) => {
-  bot.telegram.sendMessage(
-    ctx.chat?.id || "",
-    "Which semester do you want to register for?",
-    {
-      reply_markup: {
-        keyboard: [
-          [
-            {
-              text: "First Semester",
-            },
-            {
-              text: "Second Semester",
-            },
-          ],
-        ],
-      },
-    }
-  );
-  usersOptions.push(ctx.message?.text);
-  console.log(usersOptions);
-});
-
-// L100 Mathematical Science
 
 // //check for Semester and Render the courses
 // bot.hears("First Semester", (ctx) => {
