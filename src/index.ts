@@ -1,5 +1,6 @@
 require("dotenv").config();
 import { Telegraf } from "telegraf";
+const session = require("telegraf/session");
 import options from "./options";
 
 const {
@@ -13,6 +14,7 @@ const {
 } = options;
 
 const bot = new Telegraf(process.env.BOT_TOKEN || "");
+bot.use(session());
 
 let usersOptions: (string | undefined)[] = [];
 
