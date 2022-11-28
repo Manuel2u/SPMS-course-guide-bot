@@ -9,14 +9,16 @@ const {
   continuingStudentsSingleMajorOptions,
   continuingStudentsCombinedMajorOptions,
   continuingStudentsMajorMinorOptions,
+  semesterOptions,
 } = options;
 
 const bot = new Telegraf(process.env.BOT_TOKEN || "");
 
-const usersOptions: (string | undefined)[] = [];
+let usersOptions: (string | undefined)[] = [];
 
 // start command with ReplyKeyboardMarkup telegram send message
 bot.start((ctx) => {
+  let usersOptions: (string | undefined)[] = [];
   bot.telegram.sendMessage(
     ctx.chat?.id || "",
     "Welcome to the SPMS Bot course Registration Guide , Please select your Level",
@@ -48,6 +50,7 @@ bot.start((ctx) => {
 });
 
 bot.hears("Start Over", (ctx) => {
+  let usersOptions: (string | undefined)[] = [];
   bot.telegram.sendMessage(
     ctx.chat?.id || "",
     "Welcome to the SPMS Bot course Registration Guide , Please select your Level",
@@ -283,6 +286,171 @@ bot.hears(programOption.option1, (ctx) => {
     );
     usersOptions.push(ctx.message?.text);
     console.log(usersOptions);
+  } else if (usersOptions.includes(levelOptions.secondYear)) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "which course are you offering",
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: continuingStudentsSingleMajorOptions.option1,
+              },
+              {
+                text: continuingStudentsSingleMajorOptions.option2,
+              },
+              {
+                text: continuingStudentsSingleMajorOptions.option3,
+              },
+              {
+                text: continuingStudentsSingleMajorOptions.option4,
+              },
+            ],
+            [
+              {
+                text: continuingStudentsSingleMajorOptions.option5,
+              },
+              {
+                text: continuingStudentsSingleMajorOptions.option6,
+              },
+              {
+                text: continuingStudentsSingleMajorOptions.option7,
+              },
+              {
+                text: continuingStudentsSingleMajorOptions.option8,
+              },
+            ],
+            [
+              {
+                text: continuingStudentsSingleMajorOptions.option9,
+              },
+              {
+                text: continuingStudentsSingleMajorOptions.option10,
+              },
+              {
+                text: continuingStudentsSingleMajorOptions.option11,
+              },
+              {
+                text: continuingStudentsSingleMajorOptions.option12,
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (usersOptions.includes(levelOptions.thirdYear)) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "which course are you offering",
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: continuingStudentsSingleMajorOptions.option1,
+              },
+              {
+                text: continuingStudentsSingleMajorOptions.option2,
+              },
+              {
+                text: continuingStudentsSingleMajorOptions.option3,
+              },
+              {
+                text: continuingStudentsSingleMajorOptions.option4,
+              },
+            ],
+            [
+              {
+                text: continuingStudentsSingleMajorOptions.option5,
+              },
+              {
+                text: continuingStudentsSingleMajorOptions.option6,
+              },
+              {
+                text: continuingStudentsSingleMajorOptions.option7,
+              },
+              {
+                text: continuingStudentsSingleMajorOptions.option8,
+              },
+            ],
+            [
+              {
+                text: continuingStudentsSingleMajorOptions.option9,
+              },
+              {
+                text: continuingStudentsSingleMajorOptions.option10,
+              },
+              {
+                text: continuingStudentsSingleMajorOptions.option11,
+              },
+              {
+                text: continuingStudentsSingleMajorOptions.option12,
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (usersOptions.includes(levelOptions.fourthYear)) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "which course are you offering",
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: continuingStudentsSingleMajorOptions.option1,
+              },
+              {
+                text: continuingStudentsSingleMajorOptions.option2,
+              },
+              {
+                text: continuingStudentsSingleMajorOptions.option3,
+              },
+              {
+                text: continuingStudentsSingleMajorOptions.option4,
+              },
+            ],
+            [
+              {
+                text: continuingStudentsSingleMajorOptions.option5,
+              },
+              {
+                text: continuingStudentsSingleMajorOptions.option6,
+              },
+              {
+                text: continuingStudentsSingleMajorOptions.option7,
+              },
+              {
+                text: continuingStudentsSingleMajorOptions.option8,
+              },
+            ],
+            [
+              {
+                text: continuingStudentsSingleMajorOptions.option9,
+              },
+              {
+                text: continuingStudentsSingleMajorOptions.option10,
+              },
+              {
+                text: continuingStudentsSingleMajorOptions.option11,
+              },
+              {
+                text: continuingStudentsSingleMajorOptions.option12,
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
   }
 });
 
@@ -360,6 +528,129 @@ bot.hears(programOption.option2, (ctx) => {
               },
               {
                 text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (usersOptions.includes(levelOptions.secondYear)) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "which course are you offering",
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: continuingStudentsCombinedMajorOptions.option1,
+              },
+              {
+                text: continuingStudentsCombinedMajorOptions.option2,
+              },
+              {
+                text: continuingStudentsCombinedMajorOptions.option3,
+              },
+              {
+                text: continuingStudentsCombinedMajorOptions.option4,
+              },
+            ],
+            [
+              {
+                text: continuingStudentsCombinedMajorOptions.option5,
+              },
+              {
+                text: continuingStudentsCombinedMajorOptions.option6,
+              },
+              {
+                text: continuingStudentsCombinedMajorOptions.option7,
+              },
+              {
+                text: continuingStudentsCombinedMajorOptions.option8,
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (usersOptions.includes(levelOptions.thirdYear)) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "which course are you offering",
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: continuingStudentsCombinedMajorOptions.option1,
+              },
+              {
+                text: continuingStudentsCombinedMajorOptions.option2,
+              },
+              {
+                text: continuingStudentsCombinedMajorOptions.option3,
+              },
+              {
+                text: continuingStudentsCombinedMajorOptions.option4,
+              },
+            ],
+            [
+              {
+                text: continuingStudentsCombinedMajorOptions.option5,
+              },
+              {
+                text: continuingStudentsCombinedMajorOptions.option6,
+              },
+              {
+                text: continuingStudentsCombinedMajorOptions.option7,
+              },
+              {
+                text: continuingStudentsCombinedMajorOptions.option8,
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (usersOptions.includes(levelOptions.fourthYear)) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "which course are you offering",
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: continuingStudentsCombinedMajorOptions.option1,
+              },
+              {
+                text: continuingStudentsCombinedMajorOptions.option2,
+              },
+              {
+                text: continuingStudentsCombinedMajorOptions.option3,
+              },
+              {
+                text: continuingStudentsCombinedMajorOptions.option4,
+              },
+            ],
+            [
+              {
+                text: continuingStudentsCombinedMajorOptions.option5,
+              },
+              {
+                text: continuingStudentsCombinedMajorOptions.option6,
+              },
+              {
+                text: continuingStudentsCombinedMajorOptions.option7,
+              },
+              {
+                text: continuingStudentsCombinedMajorOptions.option8,
               },
             ],
           ],
@@ -460,9 +751,1095 @@ bot.hears(programOption.option3, (ctx) => {
     );
     usersOptions.push(ctx.message?.text);
     console.log(usersOptions);
+  } else if (usersOptions.includes(levelOptions.secondYear)) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "which course are you offering",
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: continuingStudentsMajorMinorOptions.option1,
+              },
+              {
+                text: continuingStudentsMajorMinorOptions.option2,
+              },
+              {
+                text: continuingStudentsMajorMinorOptions.option3,
+              },
+              {
+                text: continuingStudentsMajorMinorOptions.option4,
+              },
+            ],
+            [
+              {
+                text: continuingStudentsMajorMinorOptions.option5,
+              },
+              {
+                text: continuingStudentsMajorMinorOptions.option6,
+              },
+              {
+                text: continuingStudentsMajorMinorOptions.option7,
+              },
+              {
+                text: continuingStudentsMajorMinorOptions.option8,
+              },
+            ],
+            [
+              {
+                text: continuingStudentsMajorMinorOptions.option9,
+              },
+              {
+                text: continuingStudentsMajorMinorOptions.option10,
+              },
+              {
+                text: continuingStudentsMajorMinorOptions.option11,
+              },
+              {
+                text: continuingStudentsMajorMinorOptions.option12,
+              },
+            ],
+            [
+              {
+                text: continuingStudentsMajorMinorOptions.option13,
+              },
+              {
+                text: continuingStudentsMajorMinorOptions.option14,
+              },
+              {
+                text: continuingStudentsMajorMinorOptions.option15,
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (usersOptions.includes(levelOptions.thirdYear)) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "which course are you offering",
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: continuingStudentsMajorMinorOptions.option1,
+              },
+              {
+                text: continuingStudentsMajorMinorOptions.option2,
+              },
+              {
+                text: continuingStudentsMajorMinorOptions.option3,
+              },
+              {
+                text: continuingStudentsMajorMinorOptions.option4,
+              },
+            ],
+            [
+              {
+                text: continuingStudentsMajorMinorOptions.option5,
+              },
+              {
+                text: continuingStudentsMajorMinorOptions.option6,
+              },
+              {
+                text: continuingStudentsMajorMinorOptions.option7,
+              },
+              {
+                text: continuingStudentsMajorMinorOptions.option8,
+              },
+            ],
+            [
+              {
+                text: continuingStudentsMajorMinorOptions.option9,
+              },
+              {
+                text: continuingStudentsMajorMinorOptions.option10,
+              },
+              {
+                text: continuingStudentsMajorMinorOptions.option11,
+              },
+              {
+                text: continuingStudentsMajorMinorOptions.option12,
+              },
+            ],
+            [
+              {
+                text: continuingStudentsMajorMinorOptions.option13,
+              },
+              {
+                text: continuingStudentsMajorMinorOptions.option14,
+              },
+              {
+                text: continuingStudentsMajorMinorOptions.option15,
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (usersOptions.includes(levelOptions.fourthYear)) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "which course are you offering",
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: continuingStudentsMajorMinorOptions.option1,
+              },
+              {
+                text: continuingStudentsMajorMinorOptions.option2,
+              },
+              {
+                text: continuingStudentsMajorMinorOptions.option3,
+              },
+              {
+                text: continuingStudentsMajorMinorOptions.option4,
+              },
+            ],
+            [
+              {
+                text: continuingStudentsMajorMinorOptions.option5,
+              },
+              {
+                text: continuingStudentsMajorMinorOptions.option6,
+              },
+              {
+                text: continuingStudentsMajorMinorOptions.option7,
+              },
+              {
+                text: continuingStudentsMajorMinorOptions.option8,
+              },
+            ],
+            [
+              {
+                text: continuingStudentsMajorMinorOptions.option9,
+              },
+              {
+                text: continuingStudentsMajorMinorOptions.option10,
+              },
+              {
+                text: continuingStudentsMajorMinorOptions.option11,
+              },
+              {
+                text: continuingStudentsMajorMinorOptions.option12,
+              },
+            ],
+            [
+              {
+                text: continuingStudentsMajorMinorOptions.option13,
+              },
+              {
+                text: continuingStudentsMajorMinorOptions.option14,
+              },
+              {
+                text: continuingStudentsMajorMinorOptions.option15,
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
   }
 });
 
+bot.hears(continuingStudentsSingleMajorOptions.option1, (ctx) => {
+  bot.telegram.sendMessage(
+    ctx.chat?.id || "",
+    "Please Select the semester you want to register for",
+    {
+      reply_markup: {
+        keyboard: [
+          [
+            {
+              text: semesterOptions.firstSemester,
+            },
+            {
+              text: semesterOptions.secondSemester,
+            },
+          ],
+        ],
+      },
+    }
+  );
+  usersOptions.push(ctx.message?.text);
+  console.log(usersOptions);
+});
+
+bot.hears(continuingStudentsSingleMajorOptions.option2, (ctx) => {
+  bot.telegram.sendMessage(
+    ctx.chat?.id || "",
+    "Please Select the semester you want to register for",
+    {
+      reply_markup: {
+        keyboard: [
+          [
+            {
+              text: semesterOptions.firstSemester,
+            },
+            {
+              text: semesterOptions.secondSemester,
+            },
+          ],
+        ],
+      },
+    }
+  );
+  usersOptions.push(ctx.message?.text);
+  console.log(usersOptions);
+});
+
+bot.hears(continuingStudentsSingleMajorOptions.option3, (ctx) => {
+  bot.telegram.sendMessage(
+    ctx.chat?.id || "",
+    "Please Select the semester you want to register for",
+    {
+      reply_markup: {
+        keyboard: [
+          [
+            {
+              text: semesterOptions.firstSemester,
+            },
+            {
+              text: semesterOptions.secondSemester,
+            },
+          ],
+        ],
+      },
+    }
+  );
+  usersOptions.push(ctx.message?.text);
+  console.log(usersOptions);
+});
+
+bot.hears(continuingStudentsSingleMajorOptions.option4, (ctx) => {
+  bot.telegram.sendMessage(
+    ctx.chat?.id || "",
+    "Please Select the semester you want to register for",
+    {
+      reply_markup: {
+        keyboard: [
+          [
+            {
+              text: semesterOptions.firstSemester,
+            },
+            {
+              text: semesterOptions.secondSemester,
+            },
+          ],
+        ],
+      },
+    }
+  );
+  usersOptions.push(ctx.message?.text);
+  console.log(usersOptions);
+});
+
+bot.hears(continuingStudentsSingleMajorOptions.option5, (ctx) => {
+  bot.telegram.sendMessage(
+    ctx.chat?.id || "",
+    "Please Select the semester you want to register for",
+    {
+      reply_markup: {
+        keyboard: [
+          [
+            {
+              text: semesterOptions.firstSemester,
+            },
+            {
+              text: semesterOptions.secondSemester,
+            },
+          ],
+        ],
+      },
+    }
+  );
+  usersOptions.push(ctx.message?.text);
+  console.log(usersOptions);
+});
+
+bot.hears(continuingStudentsSingleMajorOptions.option6, (ctx) => {
+  bot.telegram.sendMessage(
+    ctx.chat?.id || "",
+    "Please Select the semester you want to register for",
+    {
+      reply_markup: {
+        keyboard: [
+          [
+            {
+              text: semesterOptions.firstSemester,
+            },
+            {
+              text: semesterOptions.secondSemester,
+            },
+          ],
+        ],
+      },
+    }
+  );
+  usersOptions.push(ctx.message?.text);
+  console.log(usersOptions);
+});
+
+bot.hears(continuingStudentsSingleMajorOptions.option7, (ctx) => {
+  bot.telegram.sendMessage(
+    ctx.chat?.id || "",
+    "Please Select the semester you want to register for",
+    {
+      reply_markup: {
+        keyboard: [
+          [
+            {
+              text: semesterOptions.firstSemester,
+            },
+            {
+              text: semesterOptions.secondSemester,
+            },
+          ],
+        ],
+      },
+    }
+  );
+  usersOptions.push(ctx.message?.text);
+  console.log(usersOptions);
+});
+
+bot.hears(continuingStudentsSingleMajorOptions.option8, (ctx) => {
+  bot.telegram.sendMessage(
+    ctx.chat?.id || "",
+    "Please Select the semester you want to register for",
+    {
+      reply_markup: {
+        keyboard: [
+          [
+            {
+              text: semesterOptions.firstSemester,
+            },
+            {
+              text: semesterOptions.secondSemester,
+            },
+          ],
+        ],
+      },
+    }
+  );
+  usersOptions.push(ctx.message?.text);
+  console.log(usersOptions);
+});
+
+bot.hears(continuingStudentsSingleMajorOptions.option9, (ctx) => {
+  bot.telegram.sendMessage(
+    ctx.chat?.id || "",
+    "Please Select the semester you want to register for",
+    {
+      reply_markup: {
+        keyboard: [
+          [
+            {
+              text: semesterOptions.firstSemester,
+            },
+            {
+              text: semesterOptions.secondSemester,
+            },
+          ],
+        ],
+      },
+    }
+  );
+  usersOptions.push(ctx.message?.text);
+  console.log(usersOptions);
+});
+
+bot.hears(continuingStudentsSingleMajorOptions.option10, (ctx) => {
+  bot.telegram.sendMessage(
+    ctx.chat?.id || "",
+    "Please Select the semester you want to register for",
+    {
+      reply_markup: {
+        keyboard: [
+          [
+            {
+              text: semesterOptions.firstSemester,
+            },
+            {
+              text: semesterOptions.secondSemester,
+            },
+          ],
+        ],
+      },
+    }
+  );
+  usersOptions.push(ctx.message?.text);
+  console.log(usersOptions);
+});
+
+bot.hears(continuingStudentsSingleMajorOptions.option11, (ctx) => {
+  bot.telegram.sendMessage(
+    ctx.chat?.id || "",
+    "Please Select the semester you want to register for",
+    {
+      reply_markup: {
+        keyboard: [
+          [
+            {
+              text: semesterOptions.firstSemester,
+            },
+            {
+              text: semesterOptions.secondSemester,
+            },
+          ],
+        ],
+      },
+    }
+  );
+  usersOptions.push(ctx.message?.text);
+  console.log(usersOptions);
+});
+
+bot.hears(continuingStudentsSingleMajorOptions.option12, (ctx) => {
+  bot.telegram.sendMessage(
+    ctx.chat?.id || "",
+    "Please Select the semester you want to register for",
+    {
+      reply_markup: {
+        keyboard: [
+          [
+            {
+              text: semesterOptions.firstSemester,
+            },
+            {
+              text: semesterOptions.secondSemester,
+            },
+          ],
+        ],
+      },
+    }
+  );
+  usersOptions.push(ctx.message?.text);
+  console.log(usersOptions);
+});
+
+bot.hears(continuingStudentsCombinedMajorOptions.option1, (ctx) => {
+  bot.telegram.sendMessage(
+    ctx.chat?.id || "",
+    "Please Select the semester you want to register for",
+    {
+      reply_markup: {
+        keyboard: [
+          [
+            {
+              text: semesterOptions.firstSemester,
+            },
+            {
+              text: semesterOptions.secondSemester,
+            },
+          ],
+        ],
+      },
+    }
+  );
+  usersOptions.push(ctx.message?.text);
+  console.log(usersOptions);
+});
+
+bot.hears(continuingStudentsCombinedMajorOptions.option2, (ctx) => {
+  bot.telegram.sendMessage(
+    ctx.chat?.id || "",
+    "Please Select the semester you want to register for",
+    {
+      reply_markup: {
+        keyboard: [
+          [
+            {
+              text: semesterOptions.firstSemester,
+            },
+            {
+              text: semesterOptions.secondSemester,
+            },
+          ],
+        ],
+      },
+    }
+  );
+  usersOptions.push(ctx.message?.text);
+  console.log(usersOptions);
+});
+
+bot.hears(continuingStudentsCombinedMajorOptions.option3, (ctx) => {
+  bot.telegram.sendMessage(
+    ctx.chat?.id || "",
+    "Please Select the semester you want to register for",
+    {
+      reply_markup: {
+        keyboard: [
+          [
+            {
+              text: semesterOptions.firstSemester,
+            },
+            {
+              text: semesterOptions.secondSemester,
+            },
+          ],
+        ],
+      },
+    }
+  );
+  usersOptions.push(ctx.message?.text);
+  console.log(usersOptions);
+});
+
+bot.hears(continuingStudentsCombinedMajorOptions.option4, (ctx) => {
+  bot.telegram.sendMessage(
+    ctx.chat?.id || "",
+    "Please Select the semester you want to register for",
+    {
+      reply_markup: {
+        keyboard: [
+          [
+            {
+              text: semesterOptions.firstSemester,
+            },
+            {
+              text: semesterOptions.secondSemester,
+            },
+          ],
+        ],
+      },
+    }
+  );
+  usersOptions.push(ctx.message?.text);
+  console.log(usersOptions);
+});
+
+bot.hears(continuingStudentsCombinedMajorOptions.option5, (ctx) => {
+  bot.telegram.sendMessage(
+    ctx.chat?.id || "",
+    "Please Select the semester you want to register for",
+    {
+      reply_markup: {
+        keyboard: [
+          [
+            {
+              text: semesterOptions.firstSemester,
+            },
+            {
+              text: semesterOptions.secondSemester,
+            },
+          ],
+        ],
+      },
+    }
+  );
+  usersOptions.push(ctx.message?.text);
+  console.log(usersOptions);
+});
+
+bot.hears(continuingStudentsCombinedMajorOptions.option6, (ctx) => {
+  bot.telegram.sendMessage(
+    ctx.chat?.id || "",
+    "Please Select the semester you want to register for",
+    {
+      reply_markup: {
+        keyboard: [
+          [
+            {
+              text: semesterOptions.firstSemester,
+            },
+            {
+              text: semesterOptions.secondSemester,
+            },
+          ],
+        ],
+      },
+    }
+  );
+  usersOptions.push(ctx.message?.text);
+  console.log(usersOptions);
+});
+
+bot.hears(continuingStudentsCombinedMajorOptions.option7, (ctx) => {
+  bot.telegram.sendMessage(
+    ctx.chat?.id || "",
+    "Please Select the semester you want to register for",
+    {
+      reply_markup: {
+        keyboard: [
+          [
+            {
+              text: semesterOptions.firstSemester,
+            },
+            {
+              text: semesterOptions.secondSemester,
+            },
+          ],
+        ],
+      },
+    }
+  );
+  usersOptions.push(ctx.message?.text);
+  console.log(usersOptions);
+});
+
+bot.hears(continuingStudentsCombinedMajorOptions.option8, (ctx) => {
+  bot.telegram.sendMessage(
+    ctx.chat?.id || "",
+    "Please Select the semester you want to register for",
+    {
+      reply_markup: {
+        keyboard: [
+          [
+            {
+              text: semesterOptions.firstSemester,
+            },
+            {
+              text: semesterOptions.secondSemester,
+            },
+          ],
+        ],
+      },
+    }
+  );
+  usersOptions.push(ctx.message?.text);
+  console.log(usersOptions);
+});
+
+bot.hears(continuingStudentsMajorMinorOptions.option1, (ctx) => {
+  bot.telegram.sendMessage(
+    ctx.chat?.id || "",
+    "Please Select the semester you want to register for",
+    {
+      reply_markup: {
+        keyboard: [
+          [
+            {
+              text: semesterOptions.firstSemester,
+            },
+            {
+              text: semesterOptions.secondSemester,
+            },
+          ],
+        ],
+      },
+    }
+  );
+  usersOptions.push(ctx.message?.text);
+  console.log(usersOptions);
+});
+
+bot.hears(continuingStudentsMajorMinorOptions.option2, (ctx) => {
+  bot.telegram.sendMessage(
+    ctx.chat?.id || "",
+    "Please Select the semester you want to register for",
+    {
+      reply_markup: {
+        keyboard: [
+          [
+            {
+              text: semesterOptions.firstSemester,
+            },
+            {
+              text: semesterOptions.secondSemester,
+            },
+          ],
+        ],
+      },
+    }
+  );
+  usersOptions.push(ctx.message?.text);
+  console.log(usersOptions);
+});
+
+bot.hears(continuingStudentsMajorMinorOptions.option3, (ctx) => {
+  bot.telegram.sendMessage(
+    ctx.chat?.id || "",
+    "Please Select the semester you want to register for",
+    {
+      reply_markup: {
+        keyboard: [
+          [
+            {
+              text: semesterOptions.firstSemester,
+            },
+            {
+              text: semesterOptions.secondSemester,
+            },
+          ],
+        ],
+      },
+    }
+  );
+  usersOptions.push(ctx.message?.text);
+  console.log(usersOptions);
+});
+
+bot.hears(continuingStudentsMajorMinorOptions.option4, (ctx) => {
+  bot.telegram.sendMessage(
+    ctx.chat?.id || "",
+    "Please Select the semester you want to register for",
+    {
+      reply_markup: {
+        keyboard: [
+          [
+            {
+              text: semesterOptions.firstSemester,
+            },
+            {
+              text: semesterOptions.secondSemester,
+            },
+          ],
+        ],
+      },
+    }
+  );
+  usersOptions.push(ctx.message?.text);
+  console.log(usersOptions);
+});
+
+bot.hears(continuingStudentsMajorMinorOptions.option5, (ctx) => {
+  bot.telegram.sendMessage(
+    ctx.chat?.id || "",
+    "Please Select the semester you want to register for",
+    {
+      reply_markup: {
+        keyboard: [
+          [
+            {
+              text: semesterOptions.firstSemester,
+            },
+            {
+              text: semesterOptions.secondSemester,
+            },
+          ],
+        ],
+      },
+    }
+  );
+  usersOptions.push(ctx.message?.text);
+  console.log(usersOptions);
+});
+
+bot.hears(continuingStudentsMajorMinorOptions.option6, (ctx) => {
+  bot.telegram.sendMessage(
+    ctx.chat?.id || "",
+    "Please Select the semester you want to register for",
+    {
+      reply_markup: {
+        keyboard: [
+          [
+            {
+              text: semesterOptions.firstSemester,
+            },
+            {
+              text: semesterOptions.secondSemester,
+            },
+          ],
+        ],
+      },
+    }
+  );
+  usersOptions.push(ctx.message?.text);
+  console.log(usersOptions);
+});
+
+bot.hears(continuingStudentsMajorMinorOptions.option7, (ctx) => {
+  bot.telegram.sendMessage(
+    ctx.chat?.id || "",
+    "Please Select the semester you want to register for",
+    {
+      reply_markup: {
+        keyboard: [
+          [
+            {
+              text: semesterOptions.firstSemester,
+            },
+            {
+              text: semesterOptions.secondSemester,
+            },
+          ],
+        ],
+      },
+    }
+  );
+  usersOptions.push(ctx.message?.text);
+  console.log(usersOptions);
+});
+
+bot.hears(continuingStudentsMajorMinorOptions.option8, (ctx) => {
+  bot.telegram.sendMessage(
+    ctx.chat?.id || "",
+    "Please Select the semester you want to register for",
+    {
+      reply_markup: {
+        keyboard: [
+          [
+            {
+              text: semesterOptions.firstSemester,
+            },
+            {
+              text: semesterOptions.secondSemester,
+            },
+          ],
+        ],
+      },
+    }
+  );
+  usersOptions.push(ctx.message?.text);
+  console.log(usersOptions);
+});
+
+bot.hears(continuingStudentsMajorMinorOptions.option9, (ctx) => {
+  bot.telegram.sendMessage(
+    ctx.chat?.id || "",
+    "Please Select the semester you want to register for",
+    {
+      reply_markup: {
+        keyboard: [
+          [
+            {
+              text: semesterOptions.firstSemester,
+            },
+            {
+              text: semesterOptions.secondSemester,
+            },
+          ],
+        ],
+      },
+    }
+  );
+  usersOptions.push(ctx.message?.text);
+  console.log(usersOptions);
+});
+
+bot.hears(continuingStudentsMajorMinorOptions.option10, (ctx) => {
+  bot.telegram.sendMessage(
+    ctx.chat?.id || "",
+    "Please Select the semester you want to register for",
+    {
+      reply_markup: {
+        keyboard: [
+          [
+            {
+              text: semesterOptions.firstSemester,
+            },
+            {
+              text: semesterOptions.secondSemester,
+            },
+          ],
+        ],
+      },
+    }
+  );
+  usersOptions.push(ctx.message?.text);
+  console.log(usersOptions);
+});
+
+bot.hears(continuingStudentsMajorMinorOptions.option11, (ctx) => {
+  bot.telegram.sendMessage(
+    ctx.chat?.id || "",
+    "Please Select the semester you want to register for",
+    {
+      reply_markup: {
+        keyboard: [
+          [
+            {
+              text: semesterOptions.firstSemester,
+            },
+            {
+              text: semesterOptions.secondSemester,
+            },
+          ],
+        ],
+      },
+    }
+  );
+  usersOptions.push(ctx.message?.text);
+  console.log(usersOptions);
+});
+
+bot.hears(continuingStudentsMajorMinorOptions.option12, (ctx) => {
+  bot.telegram.sendMessage(
+    ctx.chat?.id || "",
+    "Please Select the semester you want to register for",
+    {
+      reply_markup: {
+        keyboard: [
+          [
+            {
+              text: semesterOptions.firstSemester,
+            },
+            {
+              text: semesterOptions.secondSemester,
+            },
+          ],
+        ],
+      },
+    }
+  );
+  usersOptions.push(ctx.message?.text);
+  console.log(usersOptions);
+});
+
+bot.hears(continuingStudentsMajorMinorOptions.option13, (ctx) => {
+  bot.telegram.sendMessage(
+    ctx.chat?.id || "",
+    "Please Select the semester you want to register for",
+    {
+      reply_markup: {
+        keyboard: [
+          [
+            {
+              text: semesterOptions.firstSemester,
+            },
+            {
+              text: semesterOptions.secondSemester,
+            },
+          ],
+        ],
+      },
+    }
+  );
+  usersOptions.push(ctx.message?.text);
+  console.log(usersOptions);
+});
+
+bot.hears(continuingStudentsMajorMinorOptions.option14, (ctx) => {
+  bot.telegram.sendMessage(
+    ctx.chat?.id || "",
+    "Please Select the semester you want to register for",
+    {
+      reply_markup: {
+        keyboard: [
+          [
+            {
+              text: semesterOptions.firstSemester,
+            },
+            {
+              text: semesterOptions.secondSemester,
+            },
+          ],
+        ],
+      },
+    }
+  );
+  usersOptions.push(ctx.message?.text);
+  console.log(usersOptions);
+});
+
+bot.hears(continuingStudentsMajorMinorOptions.option15, (ctx) => {
+  bot.telegram.sendMessage(
+    ctx.chat?.id || "",
+    "Please Select the semester you want to register for",
+    {
+      reply_markup: {
+        keyboard: [
+          [
+            {
+              text: semesterOptions.firstSemester,
+            },
+            {
+              text: semesterOptions.secondSemester,
+            },
+          ],
+        ],
+      },
+    }
+  );
+  usersOptions.push(ctx.message?.text);
+  console.log(usersOptions);
+});
+
+bot.hears(levelOptions.secondYear, (ctx) => {
+  bot.telegram.sendMessage(
+    ctx.chat?.id || "",
+    "Please select your program option",
+    {
+      reply_markup: {
+        keyboard: [
+          [
+            {
+              text: programOption.option1,
+            },
+            {
+              text: programOption.option2,
+            },
+          ],
+          [
+            {
+              text: programOption.option3,
+            },
+          ],
+        ],
+      },
+    }
+  );
+  usersOptions.push(ctx.message?.text);
+  console.log(usersOptions);
+});
+
+bot.hears(levelOptions.thirdYear, (ctx) => {
+  bot.telegram.sendMessage(
+    ctx.chat?.id || "",
+    "Please select your program option",
+    {
+      reply_markup: {
+        keyboard: [
+          [
+            {
+              text: programOption.option1,
+            },
+            {
+              text: programOption.option2,
+            },
+          ],
+          [
+            {
+              text: programOption.option3,
+            },
+          ],
+        ],
+      },
+    }
+  );
+  usersOptions.push(ctx.message?.text);
+  console.log(usersOptions);
+});
+
+bot.hears(levelOptions.fourthYear, (ctx) => {
+  bot.telegram.sendMessage(
+    ctx.chat?.id || "",
+    "Please select your program option",
+    {
+      reply_markup: {
+        keyboard: [
+          [
+            {
+              text: programOption.option1,
+            },
+            {
+              text: programOption.option2,
+            },
+          ],
+          [
+            {
+              text: programOption.option3,
+            },
+          ],
+        ],
+      },
+    }
+  );
+  usersOptions.push(ctx.message?.text);
+  console.log(usersOptions);
+});
 // //check for Semester and Render the courses
 // bot.hears("First Semester", (ctx) => {
 //   if (usersOptions[4] === courseOptionsL200PhysicalSci.singleMajor.option1) {
