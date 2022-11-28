@@ -20,7 +20,7 @@ let usersOptions: (string | undefined)[] = [];
 /******************start command with ReplyKeyboardMarkup telegram send message**********************************************/
 /****************************************************************************************************************************/
 bot.start((ctx) => {
-  let usersOptions: (string | undefined)[] = [];
+  usersOptions = [];
   bot.telegram.sendMessage(
     ctx.chat?.id || "",
     "Welcome to the SPMS Bot course Registration Guide , Please select your Level",
@@ -52,7 +52,7 @@ bot.start((ctx) => {
 });
 
 bot.hears("Start Over", (ctx) => {
-  let usersOptions: (string | undefined)[] = [];
+  usersOptions = [];
   bot.telegram.sendMessage(
     ctx.chat?.id || "",
     "Welcome to the SPMS Bot course Registration Guide , Please select your Level",
@@ -321,6 +321,8 @@ bot.hears(programOption.option1, (ctx) => {
               {
                 text: continuingStudentsSingleMajorOptions.option2,
               },
+            ],
+            [
               {
                 text: continuingStudentsSingleMajorOptions.option3,
               },
@@ -335,6 +337,8 @@ bot.hears(programOption.option1, (ctx) => {
               {
                 text: continuingStudentsSingleMajorOptions.option6,
               },
+            ],
+            [
               {
                 text: continuingStudentsSingleMajorOptions.option7,
               },
@@ -349,6 +353,8 @@ bot.hears(programOption.option1, (ctx) => {
               {
                 text: continuingStudentsSingleMajorOptions.option10,
               },
+            ],
+            [
               {
                 text: continuingStudentsSingleMajorOptions.option11,
               },
@@ -376,6 +382,8 @@ bot.hears(programOption.option1, (ctx) => {
               {
                 text: continuingStudentsSingleMajorOptions.option2,
               },
+            ],
+            [
               {
                 text: continuingStudentsSingleMajorOptions.option3,
               },
@@ -390,6 +398,8 @@ bot.hears(programOption.option1, (ctx) => {
               {
                 text: continuingStudentsSingleMajorOptions.option6,
               },
+            ],
+            [
               {
                 text: continuingStudentsSingleMajorOptions.option7,
               },
@@ -404,6 +414,8 @@ bot.hears(programOption.option1, (ctx) => {
               {
                 text: continuingStudentsSingleMajorOptions.option10,
               },
+            ],
+            [
               {
                 text: continuingStudentsSingleMajorOptions.option11,
               },
@@ -431,6 +443,8 @@ bot.hears(programOption.option1, (ctx) => {
               {
                 text: continuingStudentsSingleMajorOptions.option2,
               },
+            ],
+            [
               {
                 text: continuingStudentsSingleMajorOptions.option3,
               },
@@ -445,6 +459,8 @@ bot.hears(programOption.option1, (ctx) => {
               {
                 text: continuingStudentsSingleMajorOptions.option6,
               },
+            ],
+            [
               {
                 text: continuingStudentsSingleMajorOptions.option7,
               },
@@ -459,6 +475,8 @@ bot.hears(programOption.option1, (ctx) => {
               {
                 text: continuingStudentsSingleMajorOptions.option10,
               },
+            ],
+            [
               {
                 text: continuingStudentsSingleMajorOptions.option11,
               },
@@ -577,6 +595,8 @@ bot.hears(programOption.option2, (ctx) => {
               {
                 text: continuingStudentsCombinedMajorOptions.option2,
               },
+            ],
+            [
               {
                 text: continuingStudentsCombinedMajorOptions.option3,
               },
@@ -591,6 +611,8 @@ bot.hears(programOption.option2, (ctx) => {
               {
                 text: continuingStudentsCombinedMajorOptions.option6,
               },
+            ],
+            [
               {
                 text: continuingStudentsCombinedMajorOptions.option7,
               },
@@ -618,6 +640,8 @@ bot.hears(programOption.option2, (ctx) => {
               {
                 text: continuingStudentsCombinedMajorOptions.option2,
               },
+            ],
+            [
               {
                 text: continuingStudentsCombinedMajorOptions.option3,
               },
@@ -632,6 +656,8 @@ bot.hears(programOption.option2, (ctx) => {
               {
                 text: continuingStudentsCombinedMajorOptions.option6,
               },
+            ],
+            [
               {
                 text: continuingStudentsCombinedMajorOptions.option7,
               },
@@ -659,6 +685,8 @@ bot.hears(programOption.option2, (ctx) => {
               {
                 text: continuingStudentsCombinedMajorOptions.option2,
               },
+            ],
+            [
               {
                 text: continuingStudentsCombinedMajorOptions.option3,
               },
@@ -673,6 +701,8 @@ bot.hears(programOption.option2, (ctx) => {
               {
                 text: continuingStudentsCombinedMajorOptions.option6,
               },
+            ],
+            [
               {
                 text: continuingStudentsCombinedMajorOptions.option7,
               },
@@ -796,6 +826,8 @@ bot.hears(programOption.option3, (ctx) => {
               {
                 text: continuingStudentsMajorMinorOptions.option2,
               },
+            ],
+            [
               {
                 text: continuingStudentsMajorMinorOptions.option3,
               },
@@ -810,6 +842,8 @@ bot.hears(programOption.option3, (ctx) => {
               {
                 text: continuingStudentsMajorMinorOptions.option6,
               },
+            ],
+            [
               {
                 text: continuingStudentsMajorMinorOptions.option7,
               },
@@ -824,6 +858,8 @@ bot.hears(programOption.option3, (ctx) => {
               {
                 text: continuingStudentsMajorMinorOptions.option10,
               },
+            ],
+            [
               {
                 text: continuingStudentsMajorMinorOptions.option11,
               },
@@ -838,6 +874,8 @@ bot.hears(programOption.option3, (ctx) => {
               {
                 text: continuingStudentsMajorMinorOptions.option14,
               },
+            ],
+            [
               {
                 text: continuingStudentsMajorMinorOptions.option15,
               },
@@ -862,6 +900,8 @@ bot.hears(programOption.option3, (ctx) => {
               {
                 text: continuingStudentsMajorMinorOptions.option2,
               },
+            ],
+            [
               {
                 text: continuingStudentsMajorMinorOptions.option3,
               },
@@ -876,6 +916,8 @@ bot.hears(programOption.option3, (ctx) => {
               {
                 text: continuingStudentsMajorMinorOptions.option6,
               },
+            ],
+            [
               {
                 text: continuingStudentsMajorMinorOptions.option7,
               },
@@ -890,6 +932,8 @@ bot.hears(programOption.option3, (ctx) => {
               {
                 text: continuingStudentsMajorMinorOptions.option10,
               },
+            ],
+            [
               {
                 text: continuingStudentsMajorMinorOptions.option11,
               },
@@ -904,6 +948,8 @@ bot.hears(programOption.option3, (ctx) => {
               {
                 text: continuingStudentsMajorMinorOptions.option14,
               },
+            ],
+            [
               {
                 text: continuingStudentsMajorMinorOptions.option15,
               },
@@ -928,6 +974,8 @@ bot.hears(programOption.option3, (ctx) => {
               {
                 text: continuingStudentsMajorMinorOptions.option2,
               },
+            ],
+            [
               {
                 text: continuingStudentsMajorMinorOptions.option3,
               },
@@ -942,6 +990,8 @@ bot.hears(programOption.option3, (ctx) => {
               {
                 text: continuingStudentsMajorMinorOptions.option6,
               },
+            ],
+            [
               {
                 text: continuingStudentsMajorMinorOptions.option7,
               },
@@ -956,6 +1006,8 @@ bot.hears(programOption.option3, (ctx) => {
               {
                 text: continuingStudentsMajorMinorOptions.option10,
               },
+            ],
+            [
               {
                 text: continuingStudentsMajorMinorOptions.option11,
               },
@@ -970,6 +1022,8 @@ bot.hears(programOption.option3, (ctx) => {
               {
                 text: continuingStudentsMajorMinorOptions.option14,
               },
+            ],
+            [
               {
                 text: continuingStudentsMajorMinorOptions.option15,
               },
