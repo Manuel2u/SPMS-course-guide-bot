@@ -11,6 +11,8 @@ const {
   continuingStudentsCombinedMajorOptions,
   continuingStudentsMajorMinorOptions,
   semesterOptions,
+  physicalScienceForPhysicsAndCompSciFirstSemester,
+  physicalScienceForPhysicsAndCompSciSecondSemester,
 } = options;
 
 const bot = new Telegraf(process.env.BOT_TOKEN || "");

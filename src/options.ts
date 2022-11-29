@@ -65,6 +65,82 @@ const options = {
     firstSemester: "First Semester",
     secondSemester: "Second Semester",
   },
+
+  physicalScienceForPhysicsAndCompSciFirstSemester: {
+    subject1: "CHEM 113 : Foundation Chemistry I",
+    subject2: "CHEM 120 : General Chemistry Laboratory",
+    subject3: "DCIT 101 : Introduction to Computer Science",
+    subject4: "MATH 121 : Algebra and Trigonometry",
+    subject5: "PHYS 105 : Practical Physics I",
+    subject6: "PHYS 143 : Mechanics and Thermal Physics",
+    subject7: "UGRC 150 : Critical Thinking and Practical Reasoning",
+  },
+
+  physicalScienceForPhysicsAndCompSciSecondSemester: {
+    subject1: "CHEM 114 : Foundation Chemistry II",
+    subject2: "DCIT 104 : Programming Fundamentals",
+    subject3: "MATH 122 : Calculus I",
+    subject4: "PHYS 106 : Practical Physics II",
+    subject5: "PHYS 144 : Electricity and Magnetism",
+    subject6: "UGRC 110 : Academic Writing 1",
+  },
+
+  physicalScienceforChemsitryAndBioScienceFirstSemester: {
+    subject2: "CHEM 113 : Foundation Chemistry I",
+    subject3: "CHEM 120 : General Chemistry Laboratory",
+    subject1: "ABSC 101 : Introductory Animal Biology",
+    subject4: "MATH 121 : Algebra and Trigonometry",
+    subject5: "PHYS 105 : Practical Physics I",
+    subject6: "PHYS 143 : Mechanics and Thermal Physics",
+    subject7: "UGRC 150 : Critical Thinking and Practical Reasoning",
+  },
+
+  physicalScienceforChemsitryAndBioScienceSecondSemester: {
+    subject1: "BOTN 104 : Introductory Plant Biology",
+    subject2: "CHEM 114 : Foundation Chemistry II",
+    subject3: "MATH 122 : Calculus I",
+    subject4: "PHYS 106 : Practical Physics II",
+    subject5: "PHYS 144 : Electricity and Magnetism",
+    subject6: "UGRC 110 : Academic Writing 1",
+  },
+
+  physicalScienceforMathsAndPhysicsFirstSemester: {
+    subject1: "CHEM 113 : Foundation Chemistry I",
+    subject2: "CHEM 120 : General Chemistry Laboratory",
+    subject3: "MATH 121 : Algebra and Trigonometry",
+    subject4: "MATH 123 : Vectors and Geometry",
+    subject5: "PHYS 105 : Practical Physics I",
+    subject6: "PHYS 143 : Mechanics and Thermal Physics",
+    subject7: "UGRC 150 : Critical Thinking and Practical Reasoning",
+  },
+
+  physicalScienceforMathsAndPhysicsSecondSemester: {
+    subject1: "CHEM 114 : Foundation Chemistry II",
+    subject2: "MATH 122 : Calculus I",
+    subject3: "MATH 126 : Algebra and Geometry",
+    subject4: "PHYS 106 : Practical Physics II",
+    subject5: "PHYS 144 : Electricity and Magnetism",
+    subject6: "UGRC 110 : Academic Writing 1",
+  },
+
+  physicalScienceforPhysicsAndStatisticsFirstSemester: {
+    subject1: "CHEM 113 : Foundation Chemistry I",
+    subject2: "CHEM 120 : General Chemistry Laboratory",
+    subject3: "MATH 121 : Algebra and Trigonometry",
+    subject4: "STAT 101 : Introduction to Statistics",
+    subject5: "PHYS 105 : Practical Physics I",
+    subject6: "PHYS 143 : Mechanics and Thermal Physics",
+    subject7: "UGRC 150 : Critical Thinking and Practical Reasoning",
+  },
+
+  physicalScienceforPhysicsAndStatisticsSecondSemester: {
+    subject1: "CHEM 114 : Foundation Chemistry II",
+    subject2: "MATH 122 : Calculus I",
+    subject3: "PHYS 106 : Practical Physics II",
+    subject4: "PHYS 144 : Electricity and Magnetism",
+    subject5: "STAT 102 : Introduction to Probability",
+    subject6: "UGRC 110 : Academic Writing 1",
+  },
 };
 
 export default options;
