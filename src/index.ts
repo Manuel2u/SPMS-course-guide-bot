@@ -13,6 +13,20 @@ const {
   semesterOptions,
   physicalScienceForPhysicsAndCompSciFirstSemester,
   physicalScienceForPhysicsAndCompSciSecondSemester,
+  physicalScienceforChemsitryAndBioScienceFirstSemester,
+  physicalScienceforChemsitryAndBioScienceSecondSemester,
+  physicalScienceforGeophysicsFirstSem,
+  physicalScienceforGeophysicsSecondSem,
+  physicalScienceforMathsAndPhysicsFirstSemester,
+  physicalScienceforMathsAndPhysicsSecondSemester,
+  physicalScienceforPhysicsAndStatisticsFirstSemester,
+  physicalScienceforPhysicsAndStatisticsSecondSemester,
+  mathematicalScienceforActurialScienceFirstSem,
+  mathematicalScienceforActurialScienceSecondSem,
+  mathematicalScienceforBioMathFirstSem,
+  mathematicalScienceforBioMathSecondSem,
+  mathematicalScienceforComputerScienceFirstSem,
+  mathematicalScienceforComputerScienceSecondSem,
 } = options;
 
 const bot = new Telegraf(process.env.BOT_TOKEN || "");
@@ -27,7 +41,7 @@ bot.start((ctx) => {
   usersOptions = [];
   bot.telegram.sendMessage(
     ctx.chat?.id || "",
-    "Welcome to the SPMS Bot course Registration Guide , Please select your Level",
+    "Hello my name is Manuel Jnr,\n I am here to guide you select the right subjects\n for your course provided you belong to the \n School of Physical and Mathematical Sciences\n I may not have all the question to your answers,\n but you can contact my author @manuel_dev_1 for more enquiries\n to continue please select your level",
     {
       reply_markup: {
         keyboard: [
@@ -1938,62 +1952,163 @@ bot.hears(levelOptions.fourthYear, (ctx) => {
 /************************************* Rendering subjects for semester based on user options ********************************/
 /****************************************************************************************************************************/
 
-// bot.hears("First Semester", (ctx) => {
-//   if (usersOptions[4] === courseOptionsL200PhysicalSci.singleMajor.option1) {
-//     bot.telegram.sendMessage(
-//       ctx.chat?.id || "",
-//       "You courses for the first semester are: \n\n 1. PHY 201 \n 2. PHY 202 \n 3. PHY 203 \n 4. PHY 204 \n 5. PHY 205 \n 6. PHY 206 \n 7. PHY 207 ",
-//       {
-//         reply_markup: {
-//           keyboard: [
-//             [
-//               {
-//                 text: "Start Over",
-//               },
-//             ],
-//           ],
-//         },
-//       }
-//     );
-//   }
-// });
+bot.hears("First Semester", (ctx) => {
+  if (
+    usersOptions.includes(
+      courseOptionsL100.physicalScience &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option5
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceForPhysicsAndCompSciFirstSemester.subject1 +
+        "\n" +
+        physicalScienceForPhysicsAndCompSciFirstSemester.subject2 +
+        "\n" +
+        physicalScienceForPhysicsAndCompSciFirstSemester.subject3 +
+        "\n" +
+        physicalScienceForPhysicsAndCompSciFirstSemester.subject4 +
+        "\n" +
+        physicalScienceForPhysicsAndCompSciFirstSemester.subject5 +
+        "\n" +
+        physicalScienceForPhysicsAndCompSciFirstSemester.subject6 +
+        "\n" +
+        physicalScienceForPhysicsAndCompSciFirstSemester.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.physicalScience &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option6
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceForPhysicsAndCompSciFirstSemester.subject1 +
+        "\n" +
+        physicalScienceForPhysicsAndCompSciFirstSemester.subject2 +
+        "\n" +
+        physicalScienceForPhysicsAndCompSciFirstSemester.subject3 +
+        "\n" +
+        physicalScienceForPhysicsAndCompSciFirstSemester.subject4 +
+        "\n" +
+        physicalScienceForPhysicsAndCompSciFirstSemester.subject5 +
+        "\n" +
+        physicalScienceForPhysicsAndCompSciFirstSemester.subject6 +
+        "\n" +
+        physicalScienceForPhysicsAndCompSciFirstSemester.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.physicalScience &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option8
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  }
+});
 
-// bot.hears("Second Semester", (ctx) => {
-//   if (usersOptions[4] === courseOptionsL200PhysicalSci.singleMajor.option1) {
-//     bot.telegram.sendMessage(
-//       ctx.chat?.id || "",
-//       "You courses for the second semester are: \n\n 1. PHY 208 \n 2. PHY 209 \n 3. PHY 210 \n 4. PHY 211 \n 5. PHY 212 \n 6. PHY 213 \n 7. PHY 214 ",
-//       {
-//         reply_markup: {
-//           keyboard: [
-//             [
-//               {
-//                 text: "Start Over",
-//               },
-//             ],
-//           ],
-//         },
-//       }
-//     );
-//   } else if (
-//     usersOptions[4] === courseOptionsL200PhysicalSci.singleMajor.option2
-//   ) {
-//     bot.telegram.sendMessage(
-//       ctx.chat?.id || "",
-//       "You courses for the second semester are: \n\n 1. CHEM 208 \n 2. CHEM 209 \n 3. CHEM 210 \n 4. CHEM 211 \n 5. CHEM 212 \n 6. CHEM 213 \n 7. CHEM 214 ",
-//       {
-//         reply_markup: {
-//           keyboard: [
-//             [
-//               {
-//                 text: "Start Over",
-//               },
-//             ],
-//           ],
-//         },
-//       }
-//     );
-//   }
-// });
+bot.hears("Second Semester", (ctx) => {
+  if (
+    usersOptions.includes(
+      courseOptionsL100.physicalScience && programOption.option1
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "You courses for the second semester are: \n\n 1. PHY 208 \n 2. PHY 209 \n 3. PHY 210 \n 4. PHY 211 \n 5. PHY 212 \n 6. PHY 213 \n 7. PHY 214 ",
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.physicalScience && programOption.option1
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "You courses for the second semester are: \n\n 1. CHEM 208 \n 2. CHEM 209 \n 3. CHEM 210 \n 4. CHEM 211 \n 5. CHEM 212 \n 6. CHEM 213 \n 7. CHEM 214 ",
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+  }
+});
 
 bot.launch();

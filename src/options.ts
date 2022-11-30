@@ -141,6 +141,82 @@ const options = {
     subject5: "STAT 102 : Introduction to Probability",
     subject6: "UGRC 110 : Academic Writing 1",
   },
+
+  physicalScienceforGeophysicsFirstSem: {
+    subject1: "CHEM 113 : Foundation Chemistry I",
+    subject2: "CHEM 120 : General Chemistry Laboratory",
+    subject7: "EASC 101 : Introduction to Earth Science",
+    subject3: "MATH 121 : Algebra and Trigonometry",
+    subject4: "PHYS 105 : Practical Physics I",
+    subject5: "PHYS 143 : Mechanics and Thermal Physics",
+    subject6: "UGRC 150 : Critical Thinking and Practical Reasoning",
+  },
+
+  physicalScienceforGeophysicsSecondSem: {
+    subject1: "CHEM 114 : Foundation Chemistry II",
+    subject6: "EASC 102 : Historical Geology",
+    subject7: "EASC 106 : Geological Field Excursions",
+    subject2: "MATH 122 : Calculus I",
+    subject3: "PHYS 106 : Practical Physics II",
+    subject4: "PHYS 144 : Electricity and Magnetism",
+    subject5: "UGRC 110 : Academic Writing 1",
+  },
+
+  mathematicalScienceforComputerScienceFirstSem: {
+    subject1: "DCIT 101 : Introduction to Computer Science",
+    subject2: "DCIT 103 : Office Productivity Tools",
+    subject3: "MATH 121 : Alegbra and Trigonometry",
+    subject4: "Math 123 : Vectors and Geometry",
+    subject5: "STAT 111 : Introduction to Statistics and Probability I",
+    subject6: "UGRC 150 : Critical Thinking and Practical Reasoning",
+  },
+
+  mathematicalScienceforComputerScienceSecondSem: {
+    subject1: "DCIT 102 : Computer Hardware Fundamentals and Circuits",
+    subject2: "DCIT 104 : Programming Fundamentals",
+    subject3: "MATH 122 : Calculus 1",
+    subject4: "MATH 126 : Algebra and Geometry",
+    subject5: "STAT 112 : Introduction to Statistics and Probabilty II",
+    subject6: "UGRC 110 : Academic Writing I",
+  },
+
+  mathematicalScienceforActurialScienceFirstSem: {
+    subject1: "DCIT 101 : Introduction to Computer Science",
+    subject2: "ECON 101 : Introduction to Economics I",
+    subject3: "MATH 121 : Alegbra and Trigonometry",
+    subject4: "Math 123 : Vectors and Geometry",
+    subject5: "STAT 111 : Introduction to Statistics and Probability I",
+    subject6: "UGRC 150 : Critical Thinking and Practical Reasoning",
+  },
+
+  mathematicalScienceforActurialScienceSecondSem: {
+    subject1: "ECON 102 : Introduction to Economics II",
+    subject2: "DCIT 104 : Programming Fundamentals",
+    subject3: "MATH 122 : Calculus 1",
+    subject4: "MATH 126 : Algebra and Geometry",
+    subject5: "STAT 112 : Introduction to Statistics and Probabilty II",
+    subject6: "UGRC 110 : Academic Writing I",
+  },
+
+  mathematicalScienceforBioMathSecondSem: {
+    subject1: "ABCS 101 : Introduction to Animal Biology",
+    subject2: "DCIT 104 : Programming Fundamentals",
+    subject3: "MATH 122 : Calculus 1",
+    subject4: "MATH 126 : Algebra and Geometry",
+    subject5: "STAT 112 : Introduction to Statistics and Probabilty II",
+    subject6: "UGRC 110 : Academic Writing I",
+  },
+
+  mathematicalScienceforBioMathFirstSem: {
+    subject1: "DCIT 101 : Introduction to Computer Science",
+    subject2: "BOTN 104 : Growth of Flowering Plants",
+    subject3: "MATH 121 : Alegbra and Trigonometry",
+    subject4: "Math 123 : Vectors and Geometry",
+    subject5: "STAT 111 : Introduction to Statistics and Probability I",
+    subject6: "UGRC 150 : Critical Thinking and Practical Reasoning",
+  },
+
+  earthScienceFirstSem: {},
 };
 
 export default options;
