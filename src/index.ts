@@ -537,10 +537,10 @@ bot.hears(programOption.option2, (ctx) => {
             ],
             [
               {
-                text: continuingStudentsCombinedMajorOptions.option6,
+                text: continuingStudentsCombinedMajorOptions.option8,
               },
               {
-                text: continuingStudentsCombinedMajorOptions.option8,
+                text: continuingStudentsCombinedMajorOptions.option9,
               },
             ],
           ],
@@ -558,18 +558,18 @@ bot.hears(programOption.option2, (ctx) => {
           keyboard: [
             [
               {
-                text: continuingStudentsSingleMajorOptions.option3,
+                text: continuingStudentsCombinedMajorOptions.option3,
               },
               {
-                text: continuingStudentsSingleMajorOptions.option4,
+                text: continuingStudentsCombinedMajorOptions.option4,
               },
             ],
             [
               {
-                text: continuingStudentsSingleMajorOptions.option5,
+                text: continuingStudentsCombinedMajorOptions.option5,
               },
               {
-                text: continuingStudentsSingleMajorOptions.option7,
+                text: continuingStudentsCombinedMajorOptions.option7,
               },
             ],
           ],
@@ -638,6 +638,11 @@ bot.hears(programOption.option2, (ctx) => {
                 text: continuingStudentsCombinedMajorOptions.option8,
               },
             ],
+            [
+              {
+                text: continuingStudentsCombinedMajorOptions.option9,
+              },
+            ],
           ],
         },
       }
@@ -681,6 +686,11 @@ bot.hears(programOption.option2, (ctx) => {
               },
               {
                 text: continuingStudentsCombinedMajorOptions.option8,
+              },
+            ],
+            [
+              {
+                text: continuingStudentsCombinedMajorOptions.option9,
               },
             ],
           ],
@@ -728,6 +738,11 @@ bot.hears(programOption.option2, (ctx) => {
                 text: continuingStudentsCombinedMajorOptions.option8,
               },
             ],
+            [
+              {
+                text: continuingStudentsCombinedMajorOptions.option9,
+              },
+            ],
           ],
         },
       }
@@ -753,15 +768,18 @@ bot.hears(programOption.option3, (ctx) => {
           keyboard: [
             [
               {
-                text: continuingStudentsMajorMinorOptions.option10,
+                text: continuingStudentsMajorMinorOptions.option8,
               },
               {
-                text: continuingStudentsMajorMinorOptions.option12,
+                text: continuingStudentsMajorMinorOptions.option9,
               },
             ],
             [
               {
-                text: continuingStudentsMajorMinorOptions.option15,
+                text: continuingStudentsMajorMinorOptions.option13,
+              },
+              {
+                text: continuingStudentsMajorMinorOptions.option10,
               },
             ],
           ],
@@ -779,23 +797,26 @@ bot.hears(programOption.option3, (ctx) => {
           keyboard: [
             [
               {
-                text: continuingStudentsMajorMinorOptions.option1,
-              },
-              {
-                text: continuingStudentsMajorMinorOptions.option2,
-              },
-            ],
-            [
-              {
-                text: continuingStudentsMajorMinorOptions.option3,
-              },
-              {
                 text: continuingStudentsMajorMinorOptions.option4,
               },
+              {
+                text: continuingStudentsMajorMinorOptions.option5,
+              },
             ],
             [
               {
-                text: continuingStudentsMajorMinorOptions.option5,
+                text: continuingStudentsMajorMinorOptions.option6,
+              },
+              {
+                text: continuingStudentsMajorMinorOptions.option7,
+              },
+            ],
+            [
+              {
+                text: continuingStudentsMajorMinorOptions.option11,
+              },
+              {
+                text: continuingStudentsMajorMinorOptions.option12,
               },
             ],
           ],
@@ -813,15 +834,15 @@ bot.hears(programOption.option3, (ctx) => {
           keyboard: [
             [
               {
-                text: continuingStudentsMajorMinorOptions.option6,
+                text: continuingStudentsMajorMinorOptions.option1,
               },
               {
-                text: continuingStudentsMajorMinorOptions.option7,
+                text: continuingStudentsMajorMinorOptions.option2,
               },
             ],
             [
               {
-                text: continuingStudentsMajorMinorOptions.option8,
+                text: continuingStudentsMajorMinorOptions.option3,
               },
             ],
           ],
@@ -889,14 +910,6 @@ bot.hears(programOption.option3, (ctx) => {
               {
                 text: continuingStudentsMajorMinorOptions.option13,
               },
-              {
-                text: continuingStudentsMajorMinorOptions.option14,
-              },
-            ],
-            [
-              {
-                text: continuingStudentsMajorMinorOptions.option15,
-              },
             ],
           ],
         },
@@ -963,14 +976,6 @@ bot.hears(programOption.option3, (ctx) => {
               {
                 text: continuingStudentsMajorMinorOptions.option13,
               },
-              {
-                text: continuingStudentsMajorMinorOptions.option14,
-              },
-            ],
-            [
-              {
-                text: continuingStudentsMajorMinorOptions.option15,
-              },
             ],
           ],
         },
@@ -1036,14 +1041,6 @@ bot.hears(programOption.option3, (ctx) => {
             [
               {
                 text: continuingStudentsMajorMinorOptions.option13,
-              },
-              {
-                text: continuingStudentsMajorMinorOptions.option14,
-              },
-            ],
-            [
-              {
-                text: continuingStudentsMajorMinorOptions.option15,
               },
             ],
           ],
@@ -1519,6 +1516,29 @@ bot.hears(continuingStudentsCombinedMajorOptions.option8, (ctx) => {
   console.log(usersOptions);
 });
 
+bot.hears(continuingStudentsCombinedMajorOptions.option9, (ctx) => {
+  bot.telegram.sendMessage(
+    ctx.chat?.id || "",
+    "Please Select the semester you want to register for",
+    {
+      reply_markup: {
+        keyboard: [
+          [
+            {
+              text: semesterOptions.firstSemester,
+            },
+            {
+              text: semesterOptions.secondSemester,
+            },
+          ],
+        ],
+      },
+    }
+  );
+  usersOptions.push(ctx.message?.text);
+  console.log(usersOptions);
+});
+
 bot.hears(continuingStudentsMajorMinorOptions.option1, (ctx) => {
   bot.telegram.sendMessage(
     ctx.chat?.id || "",
@@ -1818,52 +1838,6 @@ bot.hears(continuingStudentsMajorMinorOptions.option13, (ctx) => {
   console.log(usersOptions);
 });
 
-bot.hears(continuingStudentsMajorMinorOptions.option14, (ctx) => {
-  bot.telegram.sendMessage(
-    ctx.chat?.id || "",
-    "Please Select the semester you want to register for",
-    {
-      reply_markup: {
-        keyboard: [
-          [
-            {
-              text: semesterOptions.firstSemester,
-            },
-            {
-              text: semesterOptions.secondSemester,
-            },
-          ],
-        ],
-      },
-    }
-  );
-  usersOptions.push(ctx.message?.text);
-  console.log(usersOptions);
-});
-
-bot.hears(continuingStudentsMajorMinorOptions.option15, (ctx) => {
-  bot.telegram.sendMessage(
-    ctx.chat?.id || "",
-    "Please Select the semester you want to register for",
-    {
-      reply_markup: {
-        keyboard: [
-          [
-            {
-              text: semesterOptions.firstSemester,
-            },
-            {
-              text: semesterOptions.secondSemester,
-            },
-          ],
-        ],
-      },
-    }
-  );
-  usersOptions.push(ctx.message?.text);
-  console.log(usersOptions);
-});
-
 bot.hears(levelOptions.secondYear, (ctx) => {
   bot.telegram.sendMessage(
     ctx.chat?.id || "",
@@ -2064,18 +2038,4884 @@ bot.hears("First Semester", (ctx) => {
     );
     usersOptions.push(ctx.message?.text);
     console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.physicalScience &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option1
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.physicalScience &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option2
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.physicalScience &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option9
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.physicalScience &&
+        programOption.option3 &&
+        continuingStudentsCombinedMajorOptions.option8
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.physicalScience &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option8
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.physicalScience &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option9
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.physicalScience &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option10
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.physicalScience &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option13
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.mathematicalScience &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option1
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.mathematicalScience &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option2
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.mathematicalScience &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option3
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.mathematicalScience &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option4
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.mathematicalScience &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option10
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.mathematicalScience &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option3
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.mathematicalScience &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option4
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.mathematicalScience &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option5
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.mathematicalScience &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option7
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.mathematicalScience &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option4
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.mathematicalScience &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option5
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.mathematicalScience &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option6
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.mathematicalScience &&
+        programOption.option1 &&
+        continuingStudentsMajorMinorOptions.option7
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.mathematicalScience &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option11
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.mathematicalScience &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option12
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.earthScience &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option1
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.earthScience &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option2
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.earthScience &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option3
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.earthScience &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option7
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.earthScience &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option9
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.earthScience &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option12
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option1
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option2
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option3
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option4
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option5
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option6
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option7
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option8
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option9
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option10
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option11
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option12
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option1
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option2
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option3
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option4
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option5
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option6
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option7
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option8
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option9
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option1
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option2
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option3
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option4
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option5
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option6
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option7
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option8
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option9
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option10
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option11
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option12
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option13
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  }
+  //L300
+  else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option1
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option2
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option3
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option4
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option5
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option6
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option7
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option8
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option9
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option10
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option11
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option12
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option1
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option2
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option3
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option4
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option5
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option6
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option7
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option8
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option9
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option1
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option2
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option3
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option4
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option5
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option6
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option7
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option8
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option9
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option10
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option11
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option12
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option13
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  }
+  //L400
+  else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option1
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option2
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option3
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option4
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option5
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option6
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option7
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option8
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option9
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option10
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option11
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option12
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option1
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option2
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option3
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option4
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option5
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option6
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option7
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option8
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option9
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option1
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option2
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option3
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option4
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option5
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option6
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option7
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option8
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option9
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option10
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option11
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option12
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option13
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
   }
 });
 
 bot.hears("Second Semester", (ctx) => {
   if (
     usersOptions.includes(
-      courseOptionsL100.physicalScience && programOption.option1
+      courseOptionsL100.physicalScience &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option5
     )
   ) {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
-      "You courses for the second semester are: \n\n 1. PHY 208 \n 2. PHY 209 \n 3. PHY 210 \n 4. PHY 211 \n 5. PHY 212 \n 6. PHY 213 \n 7. PHY 214 ",
+      "The subjects for first semester are: \n" +
+        physicalScienceForPhysicsAndCompSciFirstSemester.subject1 +
+        "\n" +
+        physicalScienceForPhysicsAndCompSciFirstSemester.subject2 +
+        "\n" +
+        physicalScienceForPhysicsAndCompSciFirstSemester.subject3 +
+        "\n" +
+        physicalScienceForPhysicsAndCompSciFirstSemester.subject4 +
+        "\n" +
+        physicalScienceForPhysicsAndCompSciFirstSemester.subject5 +
+        "\n" +
+        physicalScienceForPhysicsAndCompSciFirstSemester.subject6 +
+        "\n" +
+        physicalScienceForPhysicsAndCompSciFirstSemester.subject7,
       {
         reply_markup: {
           keyboard: [
@@ -2088,14 +6928,31 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
   } else if (
     usersOptions.includes(
-      courseOptionsL100.physicalScience && programOption.option1
+      courseOptionsL100.physicalScience &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option6
     )
   ) {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
-      "You courses for the second semester are: \n\n 1. CHEM 208 \n 2. CHEM 209 \n 3. CHEM 210 \n 4. CHEM 211 \n 5. CHEM 212 \n 6. CHEM 213 \n 7. CHEM 214 ",
+      "The subjects for first semester are: \n" +
+        physicalScienceForPhysicsAndCompSciFirstSemester.subject1 +
+        "\n" +
+        physicalScienceForPhysicsAndCompSciFirstSemester.subject2 +
+        "\n" +
+        physicalScienceForPhysicsAndCompSciFirstSemester.subject3 +
+        "\n" +
+        physicalScienceForPhysicsAndCompSciFirstSemester.subject4 +
+        "\n" +
+        physicalScienceForPhysicsAndCompSciFirstSemester.subject5 +
+        "\n" +
+        physicalScienceForPhysicsAndCompSciFirstSemester.subject6 +
+        "\n" +
+        physicalScienceForPhysicsAndCompSciFirstSemester.subject7,
       {
         reply_markup: {
           keyboard: [
@@ -2108,6 +6965,4896 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.physicalScience &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option8
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.physicalScience &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option1
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.physicalScience &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option2
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.physicalScience &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option9
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.physicalScience &&
+        programOption.option3 &&
+        continuingStudentsCombinedMajorOptions.option8
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.physicalScience &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option8
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.physicalScience &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option9
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.physicalScience &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option10
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.physicalScience &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option13
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.mathematicalScience &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option1
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.mathematicalScience &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option2
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.mathematicalScience &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option3
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.mathematicalScience &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option4
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.mathematicalScience &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option10
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.mathematicalScience &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option3
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.mathematicalScience &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option4
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.mathematicalScience &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option5
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.mathematicalScience &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option7
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.mathematicalScience &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option4
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.mathematicalScience &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option5
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.mathematicalScience &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option6
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.mathematicalScience &&
+        programOption.option1 &&
+        continuingStudentsMajorMinorOptions.option7
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.mathematicalScience &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option11
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.mathematicalScience &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option12
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.earthScience &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option1
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.earthScience &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option2
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.earthScience &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option3
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.earthScience &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option7
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.earthScience &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option9
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      courseOptionsL100.earthScience &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option12
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option1
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option2
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option3
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option4
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option5
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option6
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option7
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option8
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option9
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option10
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option11
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option12
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option1
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option2
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option3
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option4
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option5
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option6
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option7
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option8
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option9
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option1
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option2
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option3
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option4
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option5
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option6
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option7
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option8
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option9
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option10
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option11
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option12
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.secondYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option13
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  }
+  //L300
+  else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option1
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option2
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option3
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option4
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option5
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option6
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option7
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option8
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option9
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option10
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option11
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option12
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option1
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option2
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option3
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option4
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option5
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option6
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option7
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option8
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option9
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option1
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option2
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option3
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option4
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option5
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option6
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option7
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option8
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option9
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option10
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option11
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option12
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.thirdYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option13
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  }
+  //L400
+  else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option1
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option2
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option3
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option4
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option5
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option6
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option7
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option8
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option9
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option10
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option11
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option1 &&
+        continuingStudentsSingleMajorOptions.option12
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option1
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option2
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option3
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option4
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option5
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option6
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option7
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option8
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option2 &&
+        continuingStudentsCombinedMajorOptions.option9
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option1
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option2
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option3
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option4
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option5
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option6
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option7
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option8
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option9
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option10
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option11
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option12
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
+  } else if (
+    usersOptions.includes(
+      levelOptions.fourthYear &&
+        programOption.option3 &&
+        continuingStudentsMajorMinorOptions.option13
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforGeophysicsFirstSem.subject1 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject3 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject5 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        physicalScienceforGeophysicsFirstSem.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    usersOptions.push(ctx.message?.text);
+    console.log(usersOptions);
   }
 });
 
