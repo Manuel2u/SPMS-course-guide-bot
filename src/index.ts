@@ -1,6 +1,5 @@
 require("dotenv").config();
-import { Telegraf } from "telegraf";
-const session = require("telegraf/session");
+import { Context, Telegraf, session } from "telegraf";
 import options from "./options";
 
 const {
@@ -29,16 +28,31 @@ const {
   mathematicalScienceforComputerScienceSecondSem,
 } = options;
 
-const bot = new Telegraf(process.env.BOT_TOKEN || "");
+interface SessionData {
+  userOptions: string[];
+}
+
+interface BotContext extends Context {
+  session: SessionData;
+  userOptions?: any;
+}
+
+const bot = new Telegraf<BotContext>(process.env.BOT_TOKEN as string);
+
 bot.use(session());
 
-let usersOptions: (string | undefined)[] = [];
+//add session for each user using userOptions array
+bot.use((ctx, next) => {
+  const userOptions = ctx.session?.userOptions || [];
+  ctx.session.userOptions = userOptions;
+  return next();
+});
 
 /****************************************************************************************************************************/
 /******************start command with ReplyKeyboardMarkup telegram send message**********************************************/
 /****************************************************************************************************************************/
 bot.start((ctx) => {
-  usersOptions = [];
+  ctx.session.userOptions = [];
   bot.telegram.sendMessage(
     ctx.chat?.id || "",
     "Hello my name is Manuel Jnr,\n I am here to guide you select the right subjects\n for your course provided you belong to the \n School of Physical and Mathematical Sciences\n I may not have all the question to your answers,\n but you can contact my author @manuel_dev_1 for more enquiries\n to continue please select your level",
@@ -65,12 +79,12 @@ bot.start((ctx) => {
       },
     }
   );
-  usersOptions.push(ctx.message?.text);
-  console.log(usersOptions);
+  ctx.session.userOptions.push(ctx.message?.text as string as string);
+  console.log(ctx.session.userOptions);
 });
 
 bot.hears("Start Over", (ctx) => {
-  usersOptions = [];
+  ctx.session.userOptions = [];
   bot.telegram.sendMessage(
     ctx.chat?.id || "",
     "Welcome to the SPMS Bot course Registration Guide , Please select your Level",
@@ -97,8 +111,8 @@ bot.hears("Start Over", (ctx) => {
       },
     }
   );
-  usersOptions.push(ctx.message?.text);
-  console.log(usersOptions);
+  ctx.session.userOptions.push(ctx.message?.text as string);
+  console.log(ctx.session.userOptions);
 });
 
 /****************************************************************************************************************************/
@@ -127,8 +141,8 @@ bot.hears(levelOptions.firstYear, (ctx) => {
       ],
     },
   });
-  usersOptions.push(ctx.message?.text);
-  console.log(usersOptions);
+  ctx.session.userOptions.push(ctx.message?.text as string);
+  console.log(ctx.session.userOptions);
 });
 
 /****************************************************************************************************************************/
@@ -159,8 +173,8 @@ bot.hears(courseOptionsL100.physicalScience, (ctx) => {
       },
     }
   );
-  usersOptions.push(ctx.message?.text);
-  console.log(usersOptions);
+  ctx.session.userOptions.push(ctx.message?.text as string);
+  console.log(ctx.session.userOptions);
 });
 
 /****************************************************************************************************************************/
@@ -191,8 +205,8 @@ bot.hears(courseOptionsL100.mathematicalScience, (ctx) => {
       },
     }
   );
-  usersOptions.push(ctx.message?.text);
-  console.log(usersOptions);
+  ctx.session.userOptions.push(ctx.message?.text as string);
+  console.log(ctx.session.userOptions);
 });
 
 /****************************************************************************************************************************/
@@ -223,8 +237,8 @@ bot.hears(courseOptionsL100.earthScience, (ctx) => {
       },
     }
   );
-  usersOptions.push(ctx.message?.text);
-  console.log(usersOptions);
+  ctx.session.userOptions.push(ctx.message?.text as string);
+  console.log(ctx.session.userOptions);
 });
 
 /****************************************************************************************************************************/
@@ -239,7 +253,7 @@ bot.hears(programOption.option1, (ctx) => {
   /****************************************************************************************************************************/
   /******************************** check if user options includes physical science *******************************************/
   /****************************************************************************************************************************/
-  if (usersOptions.includes(courseOptionsL100.physicalScience)) {
+  if (ctx.session.userOptions.includes(courseOptionsL100.physicalScience)) {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "Please select what you want in Level 200",
@@ -263,9 +277,11 @@ bot.hears(programOption.option1, (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
-  } else if (usersOptions.includes(courseOptionsL100.mathematicalScience)) {
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
+  } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.mathematicalScience)
+  ) {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "Please select what you want in Level 200",
@@ -297,9 +313,9 @@ bot.hears(programOption.option1, (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
-  } else if (usersOptions.includes(courseOptionsL100.earthScience)) {
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
+  } else if (ctx.session.userOptions.includes(courseOptionsL100.earthScience)) {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "Please select what you want in Level 200",
@@ -323,9 +339,9 @@ bot.hears(programOption.option1, (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
-  } else if (usersOptions.includes(levelOptions.secondYear)) {
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
+  } else if (ctx.session.userOptions.includes(levelOptions.secondYear)) {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "which course are you offering",
@@ -384,9 +400,9 @@ bot.hears(programOption.option1, (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
-  } else if (usersOptions.includes(levelOptions.thirdYear)) {
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
+  } else if (ctx.session.userOptions.includes(levelOptions.thirdYear)) {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "which course are you offering",
@@ -445,9 +461,9 @@ bot.hears(programOption.option1, (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
-  } else if (usersOptions.includes(levelOptions.fourthYear)) {
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
+  } else if (ctx.session.userOptions.includes(levelOptions.fourthYear)) {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "which course are you offering",
@@ -506,8 +522,8 @@ bot.hears(programOption.option1, (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   }
 });
 
@@ -520,7 +536,7 @@ bot.hears(programOption.option2, (ctx) => {
   /**************************************** check if user options includes physical science ***********************************/
   /****************************************************************************************************************************/
 
-  if (usersOptions.includes(courseOptionsL100.physicalScience)) {
+  if (ctx.session.userOptions.includes(courseOptionsL100.physicalScience)) {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "Please select what you want in Level 200",
@@ -547,9 +563,11 @@ bot.hears(programOption.option2, (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
-  } else if (usersOptions.includes(courseOptionsL100.mathematicalScience)) {
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
+  } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.mathematicalScience)
+  ) {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "Please select what you want in Level 200",
@@ -576,9 +594,9 @@ bot.hears(programOption.option2, (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
-  } else if (usersOptions.includes(courseOptionsL100.earthScience)) {
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
+  } else if (ctx.session.userOptions.includes(courseOptionsL100.earthScience)) {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "Please select what you want in Level 200",
@@ -597,9 +615,9 @@ bot.hears(programOption.option2, (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
-  } else if (usersOptions.includes(levelOptions.secondYear)) {
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
+  } else if (ctx.session.userOptions.includes(levelOptions.secondYear)) {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "which course are you offering",
@@ -647,9 +665,9 @@ bot.hears(programOption.option2, (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
-  } else if (usersOptions.includes(levelOptions.thirdYear)) {
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
+  } else if (ctx.session.userOptions.includes(levelOptions.thirdYear)) {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "which course are you offering",
@@ -697,9 +715,9 @@ bot.hears(programOption.option2, (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
-  } else if (usersOptions.includes(levelOptions.fourthYear)) {
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
+  } else if (ctx.session.userOptions.includes(levelOptions.fourthYear)) {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "which course are you offering",
@@ -747,8 +765,8 @@ bot.hears(programOption.option2, (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   }
 });
 
@@ -759,7 +777,7 @@ bot.hears(programOption.option3, (ctx) => {
   /****************************************************************************************************************************/
   /**************************************** check if user options includes physical science ***********************************/
   /****************************************************************************************************************************/
-  if (usersOptions.includes(courseOptionsL100.physicalScience)) {
+  if (ctx.session.userOptions.includes(courseOptionsL100.physicalScience)) {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "Please select what you want in Level 200",
@@ -786,9 +804,11 @@ bot.hears(programOption.option3, (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
-  } else if (usersOptions.includes(courseOptionsL100.mathematicalScience)) {
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
+  } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.mathematicalScience)
+  ) {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "Please select what you want in Level 200",
@@ -823,9 +843,9 @@ bot.hears(programOption.option3, (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
-  } else if (usersOptions.includes(courseOptionsL100.earthScience)) {
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
+  } else if (ctx.session.userOptions.includes(courseOptionsL100.earthScience)) {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "Please select what you want in Level 200",
@@ -849,9 +869,9 @@ bot.hears(programOption.option3, (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
-  } else if (usersOptions.includes(levelOptions.secondYear)) {
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
+  } else if (ctx.session.userOptions.includes(levelOptions.secondYear)) {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "which course are you offering",
@@ -915,9 +935,9 @@ bot.hears(programOption.option3, (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
-  } else if (usersOptions.includes(levelOptions.thirdYear)) {
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
+  } else if (ctx.session.userOptions.includes(levelOptions.thirdYear)) {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "which course are you offering",
@@ -981,9 +1001,9 @@ bot.hears(programOption.option3, (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
-  } else if (usersOptions.includes(levelOptions.fourthYear)) {
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
+  } else if (ctx.session.userOptions.includes(levelOptions.fourthYear)) {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "which course are you offering",
@@ -1047,8 +1067,8 @@ bot.hears(programOption.option3, (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   }
 });
 
@@ -1075,8 +1095,8 @@ bot.hears(continuingStudentsSingleMajorOptions.option1, (ctx) => {
       },
     }
   );
-  usersOptions.push(ctx.message?.text);
-  console.log(usersOptions);
+  ctx.session.userOptions.push(ctx.message?.text as string);
+  console.log(ctx.session.userOptions);
 });
 
 bot.hears(continuingStudentsSingleMajorOptions.option2, (ctx) => {
@@ -1098,8 +1118,8 @@ bot.hears(continuingStudentsSingleMajorOptions.option2, (ctx) => {
       },
     }
   );
-  usersOptions.push(ctx.message?.text);
-  console.log(usersOptions);
+  ctx.session.userOptions.push(ctx.message?.text as string);
+  console.log(ctx.session.userOptions);
 });
 
 bot.hears(continuingStudentsSingleMajorOptions.option3, (ctx) => {
@@ -1121,8 +1141,8 @@ bot.hears(continuingStudentsSingleMajorOptions.option3, (ctx) => {
       },
     }
   );
-  usersOptions.push(ctx.message?.text);
-  console.log(usersOptions);
+  ctx.session.userOptions.push(ctx.message?.text as string);
+  console.log(ctx.session.userOptions);
 });
 
 bot.hears(continuingStudentsSingleMajorOptions.option4, (ctx) => {
@@ -1144,8 +1164,8 @@ bot.hears(continuingStudentsSingleMajorOptions.option4, (ctx) => {
       },
     }
   );
-  usersOptions.push(ctx.message?.text);
-  console.log(usersOptions);
+  ctx.session.userOptions.push(ctx.message?.text as string);
+  console.log(ctx.session.userOptions);
 });
 
 bot.hears(continuingStudentsSingleMajorOptions.option5, (ctx) => {
@@ -1167,8 +1187,8 @@ bot.hears(continuingStudentsSingleMajorOptions.option5, (ctx) => {
       },
     }
   );
-  usersOptions.push(ctx.message?.text);
-  console.log(usersOptions);
+  ctx.session.userOptions.push(ctx.message?.text as string);
+  console.log(ctx.session.userOptions);
 });
 
 bot.hears(continuingStudentsSingleMajorOptions.option6, (ctx) => {
@@ -1190,8 +1210,8 @@ bot.hears(continuingStudentsSingleMajorOptions.option6, (ctx) => {
       },
     }
   );
-  usersOptions.push(ctx.message?.text);
-  console.log(usersOptions);
+  ctx.session.userOptions.push(ctx.message?.text as string);
+  console.log(ctx.session.userOptions);
 });
 
 bot.hears(continuingStudentsSingleMajorOptions.option7, (ctx) => {
@@ -1213,8 +1233,8 @@ bot.hears(continuingStudentsSingleMajorOptions.option7, (ctx) => {
       },
     }
   );
-  usersOptions.push(ctx.message?.text);
-  console.log(usersOptions);
+  ctx.session.userOptions.push(ctx.message?.text as string);
+  console.log(ctx.session.userOptions);
 });
 
 bot.hears(continuingStudentsSingleMajorOptions.option8, (ctx) => {
@@ -1236,8 +1256,8 @@ bot.hears(continuingStudentsSingleMajorOptions.option8, (ctx) => {
       },
     }
   );
-  usersOptions.push(ctx.message?.text);
-  console.log(usersOptions);
+  ctx.session.userOptions.push(ctx.message?.text as string);
+  console.log(ctx.session.userOptions);
 });
 
 bot.hears(continuingStudentsSingleMajorOptions.option9, (ctx) => {
@@ -1259,8 +1279,8 @@ bot.hears(continuingStudentsSingleMajorOptions.option9, (ctx) => {
       },
     }
   );
-  usersOptions.push(ctx.message?.text);
-  console.log(usersOptions);
+  ctx.session.userOptions.push(ctx.message?.text as string);
+  console.log(ctx.session.userOptions);
 });
 
 bot.hears(continuingStudentsSingleMajorOptions.option10, (ctx) => {
@@ -1282,8 +1302,8 @@ bot.hears(continuingStudentsSingleMajorOptions.option10, (ctx) => {
       },
     }
   );
-  usersOptions.push(ctx.message?.text);
-  console.log(usersOptions);
+  ctx.session.userOptions.push(ctx.message?.text as string);
+  console.log(ctx.session.userOptions);
 });
 
 bot.hears(continuingStudentsSingleMajorOptions.option11, (ctx) => {
@@ -1305,8 +1325,8 @@ bot.hears(continuingStudentsSingleMajorOptions.option11, (ctx) => {
       },
     }
   );
-  usersOptions.push(ctx.message?.text);
-  console.log(usersOptions);
+  ctx.session.userOptions.push(ctx.message?.text as string);
+  console.log(ctx.session.userOptions);
 });
 
 bot.hears(continuingStudentsSingleMajorOptions.option12, (ctx) => {
@@ -1328,8 +1348,8 @@ bot.hears(continuingStudentsSingleMajorOptions.option12, (ctx) => {
       },
     }
   );
-  usersOptions.push(ctx.message?.text);
-  console.log(usersOptions);
+  ctx.session.userOptions.push(ctx.message?.text as string);
+  console.log(ctx.session.userOptions);
 });
 
 bot.hears(continuingStudentsCombinedMajorOptions.option1, (ctx) => {
@@ -1351,8 +1371,8 @@ bot.hears(continuingStudentsCombinedMajorOptions.option1, (ctx) => {
       },
     }
   );
-  usersOptions.push(ctx.message?.text);
-  console.log(usersOptions);
+  ctx.session.userOptions.push(ctx.message?.text as string);
+  console.log(ctx.session.userOptions);
 });
 
 bot.hears(continuingStudentsCombinedMajorOptions.option2, (ctx) => {
@@ -1374,8 +1394,8 @@ bot.hears(continuingStudentsCombinedMajorOptions.option2, (ctx) => {
       },
     }
   );
-  usersOptions.push(ctx.message?.text);
-  console.log(usersOptions);
+  ctx.session.userOptions.push(ctx.message?.text as string);
+  console.log(ctx.session.userOptions);
 });
 
 bot.hears(continuingStudentsCombinedMajorOptions.option3, (ctx) => {
@@ -1397,8 +1417,8 @@ bot.hears(continuingStudentsCombinedMajorOptions.option3, (ctx) => {
       },
     }
   );
-  usersOptions.push(ctx.message?.text);
-  console.log(usersOptions);
+  ctx.session.userOptions.push(ctx.message?.text as string);
+  console.log(ctx.session.userOptions);
 });
 
 bot.hears(continuingStudentsCombinedMajorOptions.option4, (ctx) => {
@@ -1420,8 +1440,8 @@ bot.hears(continuingStudentsCombinedMajorOptions.option4, (ctx) => {
       },
     }
   );
-  usersOptions.push(ctx.message?.text);
-  console.log(usersOptions);
+  ctx.session.userOptions.push(ctx.message?.text as string);
+  console.log(ctx.session.userOptions);
 });
 
 bot.hears(continuingStudentsCombinedMajorOptions.option5, (ctx) => {
@@ -1443,8 +1463,8 @@ bot.hears(continuingStudentsCombinedMajorOptions.option5, (ctx) => {
       },
     }
   );
-  usersOptions.push(ctx.message?.text);
-  console.log(usersOptions);
+  ctx.session.userOptions.push(ctx.message?.text as string);
+  console.log(ctx.session.userOptions);
 });
 
 bot.hears(continuingStudentsCombinedMajorOptions.option6, (ctx) => {
@@ -1466,8 +1486,8 @@ bot.hears(continuingStudentsCombinedMajorOptions.option6, (ctx) => {
       },
     }
   );
-  usersOptions.push(ctx.message?.text);
-  console.log(usersOptions);
+  ctx.session.userOptions.push(ctx.message?.text as string);
+  console.log(ctx.session.userOptions);
 });
 
 bot.hears(continuingStudentsCombinedMajorOptions.option7, (ctx) => {
@@ -1489,8 +1509,8 @@ bot.hears(continuingStudentsCombinedMajorOptions.option7, (ctx) => {
       },
     }
   );
-  usersOptions.push(ctx.message?.text);
-  console.log(usersOptions);
+  ctx.session.userOptions.push(ctx.message?.text as string);
+  console.log(ctx.session.userOptions);
 });
 
 bot.hears(continuingStudentsCombinedMajorOptions.option8, (ctx) => {
@@ -1512,8 +1532,8 @@ bot.hears(continuingStudentsCombinedMajorOptions.option8, (ctx) => {
       },
     }
   );
-  usersOptions.push(ctx.message?.text);
-  console.log(usersOptions);
+  ctx.session.userOptions.push(ctx.message?.text as string);
+  console.log(ctx.session.userOptions);
 });
 
 bot.hears(continuingStudentsCombinedMajorOptions.option9, (ctx) => {
@@ -1535,8 +1555,8 @@ bot.hears(continuingStudentsCombinedMajorOptions.option9, (ctx) => {
       },
     }
   );
-  usersOptions.push(ctx.message?.text);
-  console.log(usersOptions);
+  ctx.session.userOptions.push(ctx.message?.text as string);
+  console.log(ctx.session.userOptions);
 });
 
 bot.hears(continuingStudentsMajorMinorOptions.option1, (ctx) => {
@@ -1558,8 +1578,8 @@ bot.hears(continuingStudentsMajorMinorOptions.option1, (ctx) => {
       },
     }
   );
-  usersOptions.push(ctx.message?.text);
-  console.log(usersOptions);
+  ctx.session.userOptions.push(ctx.message?.text as string);
+  console.log(ctx.session.userOptions);
 });
 
 bot.hears(continuingStudentsMajorMinorOptions.option2, (ctx) => {
@@ -1581,8 +1601,8 @@ bot.hears(continuingStudentsMajorMinorOptions.option2, (ctx) => {
       },
     }
   );
-  usersOptions.push(ctx.message?.text);
-  console.log(usersOptions);
+  ctx.session.userOptions.push(ctx.message?.text as string);
+  console.log(ctx.session.userOptions);
 });
 
 bot.hears(continuingStudentsMajorMinorOptions.option3, (ctx) => {
@@ -1604,8 +1624,8 @@ bot.hears(continuingStudentsMajorMinorOptions.option3, (ctx) => {
       },
     }
   );
-  usersOptions.push(ctx.message?.text);
-  console.log(usersOptions);
+  ctx.session.userOptions.push(ctx.message?.text as string);
+  console.log(ctx.session.userOptions);
 });
 
 bot.hears(continuingStudentsMajorMinorOptions.option4, (ctx) => {
@@ -1627,8 +1647,8 @@ bot.hears(continuingStudentsMajorMinorOptions.option4, (ctx) => {
       },
     }
   );
-  usersOptions.push(ctx.message?.text);
-  console.log(usersOptions);
+  ctx.session.userOptions.push(ctx.message?.text as string);
+  console.log(ctx.session.userOptions);
 });
 
 bot.hears(continuingStudentsMajorMinorOptions.option5, (ctx) => {
@@ -1650,8 +1670,8 @@ bot.hears(continuingStudentsMajorMinorOptions.option5, (ctx) => {
       },
     }
   );
-  usersOptions.push(ctx.message?.text);
-  console.log(usersOptions);
+  ctx.session.userOptions.push(ctx.message?.text as string);
+  console.log(ctx.session.userOptions);
 });
 
 bot.hears(continuingStudentsMajorMinorOptions.option6, (ctx) => {
@@ -1673,8 +1693,8 @@ bot.hears(continuingStudentsMajorMinorOptions.option6, (ctx) => {
       },
     }
   );
-  usersOptions.push(ctx.message?.text);
-  console.log(usersOptions);
+  ctx.session.userOptions.push(ctx.message?.text as string);
+  console.log(ctx.session.userOptions);
 });
 
 bot.hears(continuingStudentsMajorMinorOptions.option7, (ctx) => {
@@ -1696,8 +1716,8 @@ bot.hears(continuingStudentsMajorMinorOptions.option7, (ctx) => {
       },
     }
   );
-  usersOptions.push(ctx.message?.text);
-  console.log(usersOptions);
+  ctx.session.userOptions.push(ctx.message?.text as string);
+  console.log(ctx.session.userOptions);
 });
 
 bot.hears(continuingStudentsMajorMinorOptions.option8, (ctx) => {
@@ -1719,8 +1739,8 @@ bot.hears(continuingStudentsMajorMinorOptions.option8, (ctx) => {
       },
     }
   );
-  usersOptions.push(ctx.message?.text);
-  console.log(usersOptions);
+  ctx.session.userOptions.push(ctx.message?.text as string);
+  console.log(ctx.session.userOptions);
 });
 
 bot.hears(continuingStudentsMajorMinorOptions.option9, (ctx) => {
@@ -1742,8 +1762,8 @@ bot.hears(continuingStudentsMajorMinorOptions.option9, (ctx) => {
       },
     }
   );
-  usersOptions.push(ctx.message?.text);
-  console.log(usersOptions);
+  ctx.session.userOptions.push(ctx.message?.text as string);
+  console.log(ctx.session.userOptions);
 });
 
 bot.hears(continuingStudentsMajorMinorOptions.option10, (ctx) => {
@@ -1765,8 +1785,8 @@ bot.hears(continuingStudentsMajorMinorOptions.option10, (ctx) => {
       },
     }
   );
-  usersOptions.push(ctx.message?.text);
-  console.log(usersOptions);
+  ctx.session.userOptions.push(ctx.message?.text as string);
+  console.log(ctx.session.userOptions);
 });
 
 bot.hears(continuingStudentsMajorMinorOptions.option11, (ctx) => {
@@ -1788,8 +1808,8 @@ bot.hears(continuingStudentsMajorMinorOptions.option11, (ctx) => {
       },
     }
   );
-  usersOptions.push(ctx.message?.text);
-  console.log(usersOptions);
+  ctx.session.userOptions.push(ctx.message?.text as string);
+  console.log(ctx.session.userOptions);
 });
 
 bot.hears(continuingStudentsMajorMinorOptions.option12, (ctx) => {
@@ -1811,8 +1831,8 @@ bot.hears(continuingStudentsMajorMinorOptions.option12, (ctx) => {
       },
     }
   );
-  usersOptions.push(ctx.message?.text);
-  console.log(usersOptions);
+  ctx.session.userOptions.push(ctx.message?.text as string);
+  console.log(ctx.session.userOptions);
 });
 
 bot.hears(continuingStudentsMajorMinorOptions.option13, (ctx) => {
@@ -1834,8 +1854,8 @@ bot.hears(continuingStudentsMajorMinorOptions.option13, (ctx) => {
       },
     }
   );
-  usersOptions.push(ctx.message?.text);
-  console.log(usersOptions);
+  ctx.session.userOptions.push(ctx.message?.text as string);
+  console.log(ctx.session.userOptions);
 });
 
 bot.hears(levelOptions.secondYear, (ctx) => {
@@ -1862,8 +1882,8 @@ bot.hears(levelOptions.secondYear, (ctx) => {
       },
     }
   );
-  usersOptions.push(ctx.message?.text);
-  console.log(usersOptions);
+  ctx.session.userOptions.push(ctx.message?.text as string);
+  console.log(ctx.session.userOptions);
 });
 
 bot.hears(levelOptions.thirdYear, (ctx) => {
@@ -1890,8 +1910,8 @@ bot.hears(levelOptions.thirdYear, (ctx) => {
       },
     }
   );
-  usersOptions.push(ctx.message?.text);
-  console.log(usersOptions);
+  ctx.session.userOptions.push(ctx.message?.text as string);
+  console.log(ctx.session.userOptions);
 });
 
 bot.hears(levelOptions.fourthYear, (ctx) => {
@@ -1918,8 +1938,8 @@ bot.hears(levelOptions.fourthYear, (ctx) => {
       },
     }
   );
-  usersOptions.push(ctx.message?.text);
-  console.log(usersOptions);
+  ctx.session.userOptions.push(ctx.message?.text as string);
+  console.log(ctx.session.userOptions);
 });
 
 /****************************************************************************************************************************/
@@ -1928,7 +1948,7 @@ bot.hears(levelOptions.fourthYear, (ctx) => {
 
 bot.hears("First Semester", (ctx) => {
   if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.physicalScience &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option5
@@ -1962,10 +1982,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.physicalScience &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option6
@@ -1999,10 +2019,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.physicalScience &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option8
@@ -2036,10 +2056,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.physicalScience &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option1
@@ -2073,10 +2093,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.physicalScience &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option2
@@ -2110,10 +2130,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.physicalScience &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option9
@@ -2147,10 +2167,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.physicalScience &&
         programOption.option3 &&
         continuingStudentsCombinedMajorOptions.option8
@@ -2184,10 +2204,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.physicalScience &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option8
@@ -2221,10 +2241,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.physicalScience &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option9
@@ -2258,10 +2278,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.physicalScience &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option10
@@ -2295,10 +2315,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.physicalScience &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option13
@@ -2332,10 +2352,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.mathematicalScience &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option1
@@ -2369,10 +2389,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.mathematicalScience &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option2
@@ -2406,10 +2426,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.mathematicalScience &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option3
@@ -2443,10 +2463,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.mathematicalScience &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option4
@@ -2480,10 +2500,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.mathematicalScience &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option10
@@ -2517,10 +2537,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.mathematicalScience &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option3
@@ -2554,10 +2574,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.mathematicalScience &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option4
@@ -2591,10 +2611,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.mathematicalScience &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option5
@@ -2628,10 +2648,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.mathematicalScience &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option7
@@ -2665,10 +2685,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.mathematicalScience &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option4
@@ -2702,10 +2722,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.mathematicalScience &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option5
@@ -2739,10 +2759,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.mathematicalScience &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option6
@@ -2776,10 +2796,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.mathematicalScience &&
         programOption.option1 &&
         continuingStudentsMajorMinorOptions.option7
@@ -2813,10 +2833,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.mathematicalScience &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option11
@@ -2850,10 +2870,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.mathematicalScience &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option12
@@ -2887,10 +2907,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.earthScience &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option1
@@ -2924,10 +2944,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.earthScience &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option2
@@ -2961,10 +2981,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.earthScience &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option3
@@ -2998,10 +3018,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.earthScience &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option7
@@ -3035,10 +3055,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.earthScience &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option9
@@ -3072,10 +3092,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.earthScience &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option12
@@ -3109,10 +3129,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option1
@@ -3146,10 +3166,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option2
@@ -3183,10 +3203,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option3
@@ -3220,10 +3240,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option4
@@ -3257,10 +3277,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option5
@@ -3294,10 +3314,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option6
@@ -3331,10 +3351,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option7
@@ -3368,10 +3388,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option8
@@ -3405,10 +3425,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option9
@@ -3442,10 +3462,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option10
@@ -3479,10 +3499,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option11
@@ -3516,10 +3536,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option12
@@ -3553,10 +3573,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option1
@@ -3590,10 +3610,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option2
@@ -3627,10 +3647,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option3
@@ -3664,10 +3684,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option4
@@ -3701,10 +3721,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option5
@@ -3738,10 +3758,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option6
@@ -3775,10 +3795,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option7
@@ -3812,10 +3832,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option8
@@ -3849,10 +3869,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option9
@@ -3886,10 +3906,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option1
@@ -3923,10 +3943,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option2
@@ -3960,10 +3980,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option3
@@ -3997,10 +4017,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option4
@@ -4034,10 +4054,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option5
@@ -4071,10 +4091,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option6
@@ -4108,10 +4128,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option7
@@ -4145,10 +4165,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option8
@@ -4182,10 +4202,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option9
@@ -4219,10 +4239,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option10
@@ -4256,10 +4276,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option11
@@ -4293,10 +4313,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option12
@@ -4330,10 +4350,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option13
@@ -4367,12 +4387,12 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   }
   //L300
   else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option1
@@ -4406,10 +4426,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option2
@@ -4443,10 +4463,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option3
@@ -4480,10 +4500,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option4
@@ -4517,10 +4537,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option5
@@ -4554,10 +4574,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option6
@@ -4591,10 +4611,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option7
@@ -4628,10 +4648,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option8
@@ -4665,10 +4685,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option9
@@ -4702,10 +4722,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option10
@@ -4739,10 +4759,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option11
@@ -4776,10 +4796,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option12
@@ -4813,10 +4833,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option1
@@ -4850,10 +4870,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option2
@@ -4887,10 +4907,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option3
@@ -4924,10 +4944,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option4
@@ -4961,10 +4981,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option5
@@ -4998,10 +5018,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option6
@@ -5035,10 +5055,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option7
@@ -5072,10 +5092,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option8
@@ -5109,10 +5129,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option9
@@ -5146,10 +5166,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option1
@@ -5183,10 +5203,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option2
@@ -5220,10 +5240,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option3
@@ -5257,10 +5277,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option4
@@ -5294,10 +5314,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option5
@@ -5331,10 +5351,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option6
@@ -5368,10 +5388,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option7
@@ -5405,10 +5425,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option8
@@ -5442,10 +5462,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option9
@@ -5479,10 +5499,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option10
@@ -5516,10 +5536,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option11
@@ -5553,10 +5573,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option12
@@ -5590,10 +5610,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option13
@@ -5627,12 +5647,12 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   }
   //L400
   else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option1
@@ -5666,10 +5686,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option2
@@ -5703,10 +5723,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option3
@@ -5740,10 +5760,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option4
@@ -5777,10 +5797,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option5
@@ -5814,10 +5834,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option6
@@ -5851,10 +5871,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option7
@@ -5888,10 +5908,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option8
@@ -5925,10 +5945,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option9
@@ -5962,10 +5982,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option10
@@ -5999,10 +6019,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option11
@@ -6036,10 +6056,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option12
@@ -6073,10 +6093,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option1
@@ -6110,10 +6130,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option2
@@ -6147,10 +6167,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option3
@@ -6184,10 +6204,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option4
@@ -6221,10 +6241,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option5
@@ -6258,10 +6278,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option6
@@ -6295,10 +6315,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option7
@@ -6332,10 +6352,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option8
@@ -6369,10 +6389,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option9
@@ -6406,10 +6426,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option1
@@ -6443,10 +6463,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option2
@@ -6480,10 +6500,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option3
@@ -6517,10 +6537,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option4
@@ -6554,10 +6574,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option5
@@ -6591,10 +6611,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option6
@@ -6628,10 +6648,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option7
@@ -6665,10 +6685,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option8
@@ -6702,10 +6722,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option9
@@ -6739,10 +6759,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option10
@@ -6776,10 +6796,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option11
@@ -6813,10 +6833,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option12
@@ -6850,10 +6870,10 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option13
@@ -6887,14 +6907,14 @@ bot.hears("First Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   }
 });
 
 bot.hears("Second Semester", (ctx) => {
   if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.physicalScience &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option5
@@ -6928,10 +6948,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.physicalScience &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option6
@@ -6965,10 +6985,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.physicalScience &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option8
@@ -7002,10 +7022,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.physicalScience &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option1
@@ -7039,10 +7059,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.physicalScience &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option2
@@ -7076,10 +7096,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.physicalScience &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option9
@@ -7113,10 +7133,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.physicalScience &&
         programOption.option3 &&
         continuingStudentsCombinedMajorOptions.option8
@@ -7150,10 +7170,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.physicalScience &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option8
@@ -7187,10 +7207,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.physicalScience &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option9
@@ -7224,10 +7244,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.physicalScience &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option10
@@ -7261,10 +7281,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.physicalScience &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option13
@@ -7298,10 +7318,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.mathematicalScience &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option1
@@ -7335,10 +7355,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.mathematicalScience &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option2
@@ -7372,10 +7392,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.mathematicalScience &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option3
@@ -7409,10 +7429,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.mathematicalScience &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option4
@@ -7446,10 +7466,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.mathematicalScience &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option10
@@ -7483,10 +7503,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.mathematicalScience &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option3
@@ -7520,10 +7540,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.mathematicalScience &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option4
@@ -7557,10 +7577,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.mathematicalScience &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option5
@@ -7594,10 +7614,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.mathematicalScience &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option7
@@ -7631,10 +7651,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.mathematicalScience &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option4
@@ -7668,10 +7688,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.mathematicalScience &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option5
@@ -7705,10 +7725,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.mathematicalScience &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option6
@@ -7742,10 +7762,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.mathematicalScience &&
         programOption.option1 &&
         continuingStudentsMajorMinorOptions.option7
@@ -7779,10 +7799,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.mathematicalScience &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option11
@@ -7816,10 +7836,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.mathematicalScience &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option12
@@ -7853,10 +7873,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.earthScience &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option1
@@ -7890,10 +7910,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.earthScience &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option2
@@ -7927,10 +7947,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.earthScience &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option3
@@ -7964,10 +7984,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.earthScience &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option7
@@ -8001,10 +8021,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.earthScience &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option9
@@ -8038,10 +8058,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       courseOptionsL100.earthScience &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option12
@@ -8075,10 +8095,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option1
@@ -8112,10 +8132,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option2
@@ -8149,10 +8169,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option3
@@ -8186,10 +8206,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option4
@@ -8223,10 +8243,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option5
@@ -8260,10 +8280,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option6
@@ -8297,10 +8317,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option7
@@ -8334,10 +8354,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option8
@@ -8371,10 +8391,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option9
@@ -8408,10 +8428,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option10
@@ -8445,10 +8465,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option11
@@ -8482,10 +8502,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option12
@@ -8519,10 +8539,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option1
@@ -8556,10 +8576,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option2
@@ -8593,10 +8613,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option3
@@ -8630,10 +8650,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option4
@@ -8667,10 +8687,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option5
@@ -8704,10 +8724,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option6
@@ -8741,10 +8761,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option7
@@ -8778,10 +8798,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option8
@@ -8815,10 +8835,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option9
@@ -8852,10 +8872,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option1
@@ -8889,10 +8909,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option2
@@ -8926,10 +8946,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option3
@@ -8963,10 +8983,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option4
@@ -9000,10 +9020,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option5
@@ -9037,10 +9057,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option6
@@ -9074,10 +9094,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option7
@@ -9111,10 +9131,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option8
@@ -9148,10 +9168,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option9
@@ -9185,10 +9205,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option10
@@ -9222,10 +9242,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option11
@@ -9259,10 +9279,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option12
@@ -9296,10 +9316,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.secondYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option13
@@ -9333,12 +9353,12 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   }
   //L300
   else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option1
@@ -9372,10 +9392,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option2
@@ -9409,10 +9429,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option3
@@ -9446,10 +9466,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option4
@@ -9483,10 +9503,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option5
@@ -9520,10 +9540,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option6
@@ -9557,10 +9577,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option7
@@ -9594,10 +9614,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option8
@@ -9631,10 +9651,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option9
@@ -9668,10 +9688,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option10
@@ -9705,10 +9725,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option11
@@ -9742,10 +9762,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option12
@@ -9779,10 +9799,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option1
@@ -9816,10 +9836,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option2
@@ -9853,10 +9873,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option3
@@ -9890,10 +9910,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option4
@@ -9927,10 +9947,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option5
@@ -9964,10 +9984,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option6
@@ -10001,10 +10021,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option7
@@ -10038,10 +10058,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option8
@@ -10075,10 +10095,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option9
@@ -10112,10 +10132,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option1
@@ -10149,10 +10169,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option2
@@ -10186,10 +10206,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option3
@@ -10223,10 +10243,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option4
@@ -10260,10 +10280,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option5
@@ -10297,10 +10317,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option6
@@ -10334,10 +10354,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option7
@@ -10371,10 +10391,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option8
@@ -10408,10 +10428,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option9
@@ -10445,10 +10465,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option10
@@ -10482,10 +10502,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option11
@@ -10519,10 +10539,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option12
@@ -10556,10 +10576,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.thirdYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option13
@@ -10593,12 +10613,12 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   }
   //L400
   else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option1
@@ -10632,10 +10652,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option2
@@ -10669,10 +10689,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option3
@@ -10706,10 +10726,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option4
@@ -10743,10 +10763,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option5
@@ -10780,10 +10800,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option6
@@ -10817,10 +10837,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option7
@@ -10854,10 +10874,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option8
@@ -10891,10 +10911,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option9
@@ -10928,10 +10948,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option10
@@ -10965,10 +10985,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option11
@@ -11002,10 +11022,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option1 &&
         continuingStudentsSingleMajorOptions.option12
@@ -11039,10 +11059,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option1
@@ -11076,10 +11096,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option2
@@ -11113,10 +11133,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option3
@@ -11150,10 +11170,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option4
@@ -11187,10 +11207,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option5
@@ -11224,10 +11244,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option6
@@ -11261,10 +11281,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option7
@@ -11298,10 +11318,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option8
@@ -11335,10 +11355,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option2 &&
         continuingStudentsCombinedMajorOptions.option9
@@ -11372,10 +11392,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option1
@@ -11409,10 +11429,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option2
@@ -11446,10 +11466,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option3
@@ -11483,10 +11503,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option4
@@ -11520,10 +11540,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option5
@@ -11557,10 +11577,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option6
@@ -11594,10 +11614,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option7
@@ -11631,10 +11651,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option8
@@ -11668,10 +11688,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option9
@@ -11705,10 +11725,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option10
@@ -11742,10 +11762,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option11
@@ -11779,10 +11799,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option12
@@ -11816,10 +11836,10 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   } else if (
-    usersOptions.includes(
+    ctx.session.userOptions.includes(
       levelOptions.fourthYear &&
         programOption.option3 &&
         continuingStudentsMajorMinorOptions.option13
@@ -11853,8 +11873,8 @@ bot.hears("Second Semester", (ctx) => {
         },
       }
     );
-    usersOptions.push(ctx.message?.text);
-    console.log(usersOptions);
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
   }
 });
 
