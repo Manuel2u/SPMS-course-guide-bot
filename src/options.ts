@@ -216,6 +216,9 @@ const options = {
   },
 
   earthScienceFirstSem: {},
+  l200ActurialSciFirstSem: {
+    subject1: "ECON 201 : Introduction to Economics I",
+  },
 };
 
 export default options;
