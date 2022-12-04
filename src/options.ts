@@ -217,7 +217,14 @@ const options = {
 
   earthScienceFirstSem: {},
   l200ActurialSciFirstSem: {
-    subject1: "ECON 201 : Introduction to Economics I",
+    subject1: "ECON 201 : Element of Economics I",
+    subject2: "STAT 240 : Introduction Statistical Computing",
+    subject3: "STAT 220 : Introduction to Acturial Sciences",
+    subject4: "UGRC 210 : Academic Writing II",
+    subject5: "STAT 201 : Introductory Probability I",
+    subject6: "ACTU 203 : Introduction to Financial Mathematics I",
+    subject7: "MATH 223 : Calculus II",
+    subject8: "STAT 223 : Elementary Statistical Methods",
   },
 };
 

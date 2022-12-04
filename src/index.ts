@@ -119,28 +119,32 @@ bot.hears("Start Over", (ctx) => {
 /***************************************************** Level 100 admitted course ************************************************************/
 /****************************************************************************************************************************/
 bot.hears(levelOptions.firstYear, (ctx) => {
-  bot.telegram.sendMessage(ctx.chat?.id || "", "Please select your course", {
-    reply_markup: {
-      keyboard: [
-        [
-          {
-            text: courseOptionsL100.physicalScience,
-          },
-          {
-            text: courseOptionsL100.mathematicalScience,
-          },
+  bot.telegram.sendMessage(
+    ctx.chat?.id || "",
+    "The School of Physical and Mathematical sciences\nconsists of the following courses :\ni) Physical Science\nii) Mathematical Science\niii) Earth Science\niv) Information Technology.\nPlease select the course you were admitted into.",
+    {
+      reply_markup: {
+        keyboard: [
+          [
+            {
+              text: courseOptionsL100.physicalScience,
+            },
+            {
+              text: courseOptionsL100.mathematicalScience,
+            },
+          ],
+          [
+            {
+              text: courseOptionsL100.earthScience,
+            },
+            {
+              text: courseOptionsL100.informationTechnology,
+            },
+          ],
         ],
-        [
-          {
-            text: courseOptionsL100.earthScience,
-          },
-          {
-            text: courseOptionsL100.informationTechnology,
-          },
-        ],
-      ],
-    },
-  });
+      },
+    }
+  );
   ctx.session.userOptions.push(ctx.message?.text as string);
   console.log(ctx.session.userOptions);
 });
@@ -152,7 +156,7 @@ bot.hears(levelOptions.firstYear, (ctx) => {
 bot.hears(courseOptionsL100.physicalScience, (ctx) => {
   bot.telegram.sendMessage(
     ctx.chat?.id || "",
-    "Please select your program option",
+    "As you were told on your admission letter, In Level 200 you will be able\nto select one of the three courses :\ni) Physics\nii) Chemistry\niii) Geophysics.\nAll these are single Major courses, however\nyou can combine courses in 2 ways, either\nby Combined Major or Major-Minor.\nPlease select what you would like to do in L200.",
     {
       reply_markup: {
         keyboard: [
@@ -184,7 +188,7 @@ bot.hears(courseOptionsL100.physicalScience, (ctx) => {
 bot.hears(courseOptionsL100.mathematicalScience, (ctx) => {
   bot.telegram.sendMessage(
     ctx.chat?.id || "",
-    "Please select your program option",
+    "As you were told on your admission letter, In Level 200 you will be able\nto select one of the three courses :\ni) Mathematics\nii) Computer Science\niii) Statistics\niv) Biomathematics\nv) Acturial Science.\nAll these are single Major courses, however\nyou can combine courses in 2 ways, either\nby Combined Major or Major-Minor.\nPlease select what you would like to do in L200.",
     {
       reply_markup: {
         keyboard: [
@@ -216,7 +220,7 @@ bot.hears(courseOptionsL100.mathematicalScience, (ctx) => {
 bot.hears(courseOptionsL100.earthScience, (ctx) => {
   bot.telegram.sendMessage(
     ctx.chat?.id || "",
-    "Please select your program option",
+    "As you were told on your admission letter, In Level 200 you will be able\nto select one of the three courses :\ni) Geology\nii) Applied Geology\niii) Applied Geophysics.\nAll these are single Major courses, however\nyou can combine courses in 2 ways, either\nby Combined Major or Major-Minor.\nPlease select what you would like to do in L200.",
     {
       reply_markup: {
         keyboard: [
@@ -256,7 +260,7 @@ bot.hears(programOption.option1, (ctx) => {
   if (ctx.session.userOptions.includes(courseOptionsL100.physicalScience)) {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
-      "Please select what you want in Level 200",
+      "Please select the course you want in Level 200",
       {
         reply_markup: {
           keyboard: [
@@ -284,7 +288,7 @@ bot.hears(programOption.option1, (ctx) => {
   ) {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
-      "Please select what you want in Level 200",
+      "Please select the course you want in Level 200",
       {
         reply_markup: {
           keyboard: [
@@ -318,7 +322,7 @@ bot.hears(programOption.option1, (ctx) => {
   } else if (ctx.session.userOptions.includes(courseOptionsL100.earthScience)) {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
-      "Please select what you want in Level 200",
+      "Please select the course you want in Level 200",
       {
         reply_markup: {
           keyboard: [
@@ -1957,11 +1961,10 @@ bot.hears("First Semester", (ctx) => {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "The subjects for first semester are: \n" +
+        "\n" +
         physicalScienceForPhysicsAndCompSciFirstSemester.subject1 +
         "\n" +
         physicalScienceForPhysicsAndCompSciFirstSemester.subject2 +
-        "\n" +
-        physicalScienceForPhysicsAndCompSciFirstSemester.subject3 +
         "\n" +
         physicalScienceForPhysicsAndCompSciFirstSemester.subject4 +
         "\n" +
@@ -1969,7 +1972,12 @@ bot.hears("First Semester", (ctx) => {
         "\n" +
         physicalScienceForPhysicsAndCompSciFirstSemester.subject6 +
         "\n" +
-        physicalScienceForPhysicsAndCompSciFirstSemester.subject7,
+        physicalScienceForPhysicsAndCompSciFirstSemester.subject7 +
+        "\n" +
+        "For your electives choose one of the following or do both\nif you can handle the pressure 💀, " +
+        physicalScienceForPhysicsAndCompSciFirstSemester.subject7 +
+        "\n" +
+        mathematicalScienceforActurialScienceFirstSem.subject4,
       {
         reply_markup: {
           keyboard: [
@@ -1994,11 +2002,10 @@ bot.hears("First Semester", (ctx) => {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "The subjects for first semester are: \n" +
+        "\n" +
         physicalScienceForPhysicsAndCompSciFirstSemester.subject1 +
         "\n" +
         physicalScienceForPhysicsAndCompSciFirstSemester.subject2 +
-        "\n" +
-        physicalScienceForPhysicsAndCompSciFirstSemester.subject3 +
         "\n" +
         physicalScienceForPhysicsAndCompSciFirstSemester.subject4 +
         "\n" +
@@ -2006,7 +2013,12 @@ bot.hears("First Semester", (ctx) => {
         "\n" +
         physicalScienceForPhysicsAndCompSciFirstSemester.subject6 +
         "\n" +
-        physicalScienceForPhysicsAndCompSciFirstSemester.subject7,
+        physicalScienceForPhysicsAndCompSciFirstSemester.subject7 +
+        "\n" +
+        "For your electives choose one of the following or do both\nif you can handle the pressure 💀, " +
+        physicalScienceForPhysicsAndCompSciFirstSemester.subject7 +
+        "\n" +
+        mathematicalScienceforActurialScienceFirstSem.subject4,
       {
         reply_markup: {
           keyboard: [
