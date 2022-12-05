@@ -1964,20 +1964,27 @@ bot.hears("First Semester", (ctx) => {
         "\n" +
         physicalScienceForPhysicsAndCompSciFirstSemester.subject1 +
         "\n" +
+        "\n" +
         physicalScienceForPhysicsAndCompSciFirstSemester.subject2 +
+        "\n" +
         "\n" +
         physicalScienceForPhysicsAndCompSciFirstSemester.subject4 +
         "\n" +
+        "\n" +
         physicalScienceForPhysicsAndCompSciFirstSemester.subject5 +
+        "\n" +
         "\n" +
         physicalScienceForPhysicsAndCompSciFirstSemester.subject6 +
         "\n" +
+        "\n" +
         physicalScienceForPhysicsAndCompSciFirstSemester.subject7 +
+        "\n" +
         "\n" +
         "For your electives choose one of the following or do both\nif you can handle the pressure 💀, " +
-        physicalScienceForPhysicsAndCompSciFirstSemester.subject7 +
+        "\n" +
         "\n" +
         mathematicalScienceforActurialScienceFirstSem.subject4 +
+        "\n" +
         "\n" +
         physicalScienceforChemsitryAndBioScienceFirstSemester.subject1,
       {
@@ -2007,20 +2014,27 @@ bot.hears("First Semester", (ctx) => {
         "\n" +
         physicalScienceForPhysicsAndCompSciFirstSemester.subject1 +
         "\n" +
+        "\n" +
         physicalScienceForPhysicsAndCompSciFirstSemester.subject2 +
+        "\n" +
         "\n" +
         physicalScienceForPhysicsAndCompSciFirstSemester.subject4 +
         "\n" +
+        "\n" +
         physicalScienceForPhysicsAndCompSciFirstSemester.subject5 +
+        "\n" +
         "\n" +
         physicalScienceForPhysicsAndCompSciFirstSemester.subject6 +
         "\n" +
+        "\n" +
         physicalScienceForPhysicsAndCompSciFirstSemester.subject7 +
         "\n" +
-        "For your electives choose one of the following or do two\nif you can handle the pressure 💀, " +
-        physicalScienceForPhysicsAndCompSciFirstSemester.subject7 +
+        "\n" +
+        "For your electives choose one of the following or do both\nif you can handle the pressure 💀, " +
+        "\n" +
         "\n" +
         mathematicalScienceforActurialScienceFirstSem.subject4 +
+        "\n" +
         "\n" +
         physicalScienceforChemsitryAndBioScienceFirstSemester.subject1,
       {
@@ -2050,15 +2064,21 @@ bot.hears("First Semester", (ctx) => {
         "\n" +
         physicalScienceforGeophysicsFirstSem.subject1 +
         "\n" +
+        "\n" +
         physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
         "\n" +
         physicalScienceforGeophysicsFirstSem.subject3 +
         "\n" +
+        "\n" +
         physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
         "\n" +
         physicalScienceforGeophysicsFirstSem.subject5 +
         "\n" +
+        "\n" +
         physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
         "\n" +
         physicalScienceforGeophysicsFirstSem.subject7,
       {
@@ -2088,15 +2108,21 @@ bot.hears("First Semester", (ctx) => {
         "\n" +
         physicalScienceforChemsitryAndBioScienceFirstSemester.subject1 +
         "\n" +
+        "\n" +
         physicalScienceforChemsitryAndBioScienceFirstSemester.subject2 +
+        "\n" +
         "\n" +
         physicalScienceforChemsitryAndBioScienceFirstSemester.subject3 +
         "\n" +
+        "\n" +
         physicalScienceforChemsitryAndBioScienceFirstSemester.subject4 +
+        "\n" +
         "\n" +
         physicalScienceforChemsitryAndBioScienceFirstSemester.subject5 +
         "\n" +
+        "\n" +
         physicalScienceforChemsitryAndBioScienceFirstSemester.subject6 +
+        "\n" +
         "\n" +
         physicalScienceforChemsitryAndBioScienceFirstSemester.subject7,
       {
@@ -2126,20 +2152,27 @@ bot.hears("First Semester", (ctx) => {
         "\n" +
         physicalScienceForPhysicsAndCompSciFirstSemester.subject1 +
         "\n" +
+        "\n" +
         physicalScienceForPhysicsAndCompSciFirstSemester.subject2 +
+        "\n" +
         "\n" +
         physicalScienceForPhysicsAndCompSciFirstSemester.subject4 +
         "\n" +
+        "\n" +
         physicalScienceForPhysicsAndCompSciFirstSemester.subject5 +
+        "\n" +
         "\n" +
         physicalScienceForPhysicsAndCompSciFirstSemester.subject6 +
         "\n" +
+        "\n" +
         physicalScienceForPhysicsAndCompSciFirstSemester.subject7 +
         "\n" +
-        "For your electives choose one of the following or do two\nif you can handle the pressure 💀, " +
-        physicalScienceForPhysicsAndCompSciFirstSemester.subject7 +
+        "\n" +
+        "For your electives choose one of the following or do both\nif you can handle the pressure 💀, " +
+        "\n" +
         "\n" +
         mathematicalScienceforActurialScienceFirstSem.subject4 +
+        "\n" +
         "\n" +
         physicalScienceforChemsitryAndBioScienceFirstSemester.subject1,
       {
@@ -2168,15 +2201,21 @@ bot.hears("First Semester", (ctx) => {
       "The subjects for first semester are: \n" +
         physicalScienceforMathsAndPhysicsFirstSemester.subject1 +
         "\n" +
+        "\n" +
         physicalScienceforMathsAndPhysicsFirstSemester.subject2 +
+        "\n" +
         "\n" +
         physicalScienceforMathsAndPhysicsFirstSemester.subject3 +
         "\n" +
+        "\n" +
         physicalScienceforMathsAndPhysicsFirstSemester.subject4 +
+        "\n" +
         "\n" +
         physicalScienceforMathsAndPhysicsFirstSemester.subject5 +
         "\n" +
+        "\n" +
         physicalScienceforMathsAndPhysicsFirstSemester.subject6 +
+        "\n" +
         "\n" +
         physicalScienceforMathsAndPhysicsFirstSemester.subject7,
       {
@@ -2205,15 +2244,21 @@ bot.hears("First Semester", (ctx) => {
       "The subjects for first semester are: \n" +
         physicalScienceforPhysicsAndStatisticsFirstSemester.subject1 +
         "\n" +
+        "\n" +
         physicalScienceforPhysicsAndStatisticsFirstSemester.subject2 +
+        "\n" +
         "\n" +
         physicalScienceforPhysicsAndStatisticsFirstSemester.subject3 +
         "\n" +
+        "\n" +
         physicalScienceforPhysicsAndStatisticsFirstSemester.subject4 +
+        "\n" +
         "\n" +
         physicalScienceforPhysicsAndStatisticsFirstSemester.subject5 +
         "\n" +
+        "\n" +
         physicalScienceforPhysicsAndStatisticsFirstSemester.subject6 +
+        "\n" +
         "\n" +
         physicalScienceforPhysicsAndStatisticsFirstSemester.subject7,
       {
@@ -2242,15 +2287,21 @@ bot.hears("First Semester", (ctx) => {
       "The subjects for first semester are: \n" +
         physicalScienceForPhysicsAndCompSciFirstSemester.subject1 +
         "\n" +
+        "\n" +
         physicalScienceForPhysicsAndCompSciFirstSemester.subject2 +
+        "\n" +
         "\n" +
         physicalScienceForPhysicsAndCompSciFirstSemester.subject3 +
         "\n" +
+        "\n" +
         physicalScienceForPhysicsAndCompSciFirstSemester.subject4 +
+        "\n" +
         "\n" +
         physicalScienceForPhysicsAndCompSciFirstSemester.subject5 +
         "\n" +
+        "\n" +
         physicalScienceForPhysicsAndCompSciFirstSemester.subject6 +
+        "\n" +
         "\n" +
         physicalScienceForPhysicsAndCompSciFirstSemester.subject7,
       {
@@ -2279,15 +2330,21 @@ bot.hears("First Semester", (ctx) => {
       "The subjects for first semester are: \n" +
         physicalScienceforGeophysicsFirstSem.subject1 +
         "\n" +
+        "\n" +
         physicalScienceforGeophysicsFirstSem.subject2 +
+        "\n" +
         "\n" +
         physicalScienceforGeophysicsFirstSem.subject3 +
         "\n" +
+        "\n" +
         physicalScienceforGeophysicsFirstSem.subject4 +
+        "\n" +
         "\n" +
         physicalScienceforGeophysicsFirstSem.subject5 +
         "\n" +
+        "\n" +
         physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
         "\n" +
         physicalScienceforGeophysicsFirstSem.subject7,
       {
@@ -2316,15 +2373,21 @@ bot.hears("First Semester", (ctx) => {
       "The subjects for first semester are: \n" +
         physicalScienceforMathsAndPhysicsFirstSemester.subject1 +
         "\n" +
+        "\n" +
         physicalScienceforMathsAndPhysicsFirstSemester.subject2 +
+        "\n" +
         "\n" +
         physicalScienceforMathsAndPhysicsFirstSemester.subject3 +
         "\n" +
+        "\n" +
         physicalScienceforMathsAndPhysicsFirstSemester.subject4 +
+        "\n" +
         "\n" +
         physicalScienceforMathsAndPhysicsFirstSemester.subject5 +
         "\n" +
+        "\n" +
         physicalScienceforMathsAndPhysicsFirstSemester.subject6 +
+        "\n" +
         "\n" +
         physicalScienceforMathsAndPhysicsFirstSemester.subject7,
       {
@@ -2353,15 +2416,21 @@ bot.hears("First Semester", (ctx) => {
       "The subjects for first semester are: \n" +
         physicalScienceforPhysicsAndStatisticsFirstSemester.subject1 +
         "\n" +
+        "\n" +
         physicalScienceforPhysicsAndStatisticsFirstSemester.subject2 +
+        "\n" +
         "\n" +
         physicalScienceforPhysicsAndStatisticsFirstSemester.subject3 +
         "\n" +
+        "\n" +
         physicalScienceforPhysicsAndStatisticsFirstSemester.subject4 +
+        "\n" +
         "\n" +
         physicalScienceforPhysicsAndStatisticsFirstSemester.subject5 +
         "\n" +
+        "\n" +
         physicalScienceforPhysicsAndStatisticsFirstSemester.subject6 +
+        "\n" +
         "\n" +
         physicalScienceforPhysicsAndStatisticsFirstSemester.subject7,
       {
@@ -2388,19 +2457,22 @@ bot.hears("First Semester", (ctx) => {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "The subjects for first semester are: \n" +
-        physicalScienceforGeophysicsFirstSem.subject1 +
+        mathematicalScienceforActurialScienceFirstSem.subject1 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject2 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject3 +
+        mathematicalScienceforActurialScienceFirstSem.subject2 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject4 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject5 +
+        mathematicalScienceforActurialScienceFirstSem.subject3 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject6 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject7,
+        mathematicalScienceforActurialScienceFirstSem.subject4 +
+        "\n" +
+        "\n" +
+        mathematicalScienceforActurialScienceFirstSem.subject5 +
+        "\n" +
+        "\n" +
+        mathematicalScienceforActurialScienceFirstSem.subject6,
       {
         reply_markup: {
           keyboard: [
@@ -2425,19 +2497,22 @@ bot.hears("First Semester", (ctx) => {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "The subjects for first semester are: \n" +
-        physicalScienceforGeophysicsFirstSem.subject1 +
+        mathematicalScienceforComputerScienceFirstSem.subject1 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject2 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject3 +
+        mathematicalScienceforComputerScienceFirstSem.subject2 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject4 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject5 +
+        mathematicalScienceforComputerScienceFirstSem.subject3 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject6 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject7,
+        mathematicalScienceforComputerScienceFirstSem.subject4 +
+        "\n" +
+        "\n" +
+        mathematicalScienceforComputerScienceFirstSem.subject5 +
+        "\n" +
+        "\n" +
+        mathematicalScienceforComputerScienceFirstSem.subject6,
       {
         reply_markup: {
           keyboard: [
@@ -2462,19 +2537,28 @@ bot.hears("First Semester", (ctx) => {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "The subjects for first semester are: \n" +
-        physicalScienceforGeophysicsFirstSem.subject1 +
+        mathematicalScienceforComputerScienceFirstSem.subject1 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject2 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject3 +
+        mathematicalScienceforComputerScienceFirstSem.subject2 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject4 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject5 +
+        mathematicalScienceforComputerScienceFirstSem.subject3 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject6 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject7,
+        mathematicalScienceforComputerScienceFirstSem.subject4 +
+        "\n" +
+        "\n" +
+        mathematicalScienceforComputerScienceFirstSem.subject5 +
+        "\n" +
+        "\n" +
+        "For your electives choose one of the following or do both\nif you can handle the pressure 💀, " +
+        "\n" +
+        "\n" +
+        mathematicalScienceforComputerScienceFirstSem.subject2 +
+        "\n" +
+        "\n" +
+        mathematicalScienceforActurialScienceFirstSem.subject2,
       {
         reply_markup: {
           keyboard: [
@@ -2499,19 +2583,28 @@ bot.hears("First Semester", (ctx) => {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "The subjects for first semester are: \n" +
-        physicalScienceforGeophysicsFirstSem.subject1 +
+        mathematicalScienceforComputerScienceFirstSem.subject1 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject2 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject3 +
+        mathematicalScienceforComputerScienceFirstSem.subject2 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject4 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject5 +
+        mathematicalScienceforComputerScienceFirstSem.subject3 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject6 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject7,
+        mathematicalScienceforComputerScienceFirstSem.subject4 +
+        "\n" +
+        "\n" +
+        mathematicalScienceforComputerScienceFirstSem.subject5 +
+        "\n" +
+        "\n" +
+        "For your electives choose one of the following or do both\nif you can handle the pressure 💀, " +
+        "\n" +
+        "\n" +
+        mathematicalScienceforComputerScienceFirstSem.subject2 +
+        "\n" +
+        "\n" +
+        mathematicalScienceforActurialScienceFirstSem.subject2,
       {
         reply_markup: {
           keyboard: [
@@ -2536,19 +2629,17 @@ bot.hears("First Semester", (ctx) => {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "The subjects for first semester are: \n" +
-        physicalScienceforGeophysicsFirstSem.subject1 +
+        mathematicalScienceforBioMathFirstSem.subject1 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject2 +
+        mathematicalScienceforBioMathFirstSem.subject2 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject3 +
+        mathematicalScienceforBioMathFirstSem.subject3 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject4 +
+        mathematicalScienceforBioMathFirstSem.subject4 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject5 +
+        mathematicalScienceforBioMathFirstSem.subject5 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject6 +
-        "\n" +
-        physicalScienceforGeophysicsFirstSem.subject7,
+        mathematicalScienceforBioMathFirstSem.subject6,
       {
         reply_markup: {
           keyboard: [
@@ -2573,19 +2664,22 @@ bot.hears("First Semester", (ctx) => {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "The subjects for first semester are: \n" +
-        physicalScienceforGeophysicsFirstSem.subject1 +
+        mathematicalScienceforComputerScienceFirstSem.subject1 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject2 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject3 +
+        mathematicalScienceforComputerScienceFirstSem.subject2 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject4 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject5 +
+        mathematicalScienceforComputerScienceFirstSem.subject3 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject6 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject7,
+        mathematicalScienceforComputerScienceFirstSem.subject4 +
+        "\n" +
+        "\n" +
+        mathematicalScienceforComputerScienceFirstSem.subject5 +
+        "\n" +
+        "\n" +
+        mathematicalScienceforComputerScienceFirstSem.subject6,
       {
         reply_markup: {
           keyboard: [
@@ -2610,19 +2704,25 @@ bot.hears("First Semester", (ctx) => {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "The subjects for first semester are: \n" +
-        physicalScienceforGeophysicsFirstSem.subject1 +
+        mathematicalScienceforComputerScienceFirstSem.subject1 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject2 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject3 +
+        mathematicalScienceforComputerScienceFirstSem.subject2 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject4 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject5 +
+        mathematicalScienceforComputerScienceFirstSem.subject3 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject6 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject7,
+        physicalScienceForPhysicsAndCompSciFirstSemester.subject6 +
+        "\n" +
+        "\n" +
+        physicalScienceForPhysicsAndCompSciFirstSemester.subject5 +
+        "\n" +
+        "\n" +
+        mathematicalScienceforComputerScienceFirstSem.subject5 +
+        "\n" +
+        "\n" +
+        mathematicalScienceforComputerScienceFirstSem.subject6,
       {
         reply_markup: {
           keyboard: [
@@ -2647,19 +2747,28 @@ bot.hears("First Semester", (ctx) => {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "The subjects for first semester are: \n" +
-        physicalScienceforGeophysicsFirstSem.subject1 +
+        mathematicalScienceforComputerScienceFirstSem.subject1 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject2 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject3 +
+        mathematicalScienceforComputerScienceFirstSem.subject2 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject4 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject5 +
+        mathematicalScienceforComputerScienceFirstSem.subject3 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject6 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject7,
+        mathematicalScienceforComputerScienceFirstSem.subject4 +
+        "\n" +
+        "\n" +
+        mathematicalScienceforComputerScienceFirstSem.subject5 +
+        "\n" +
+        "\n" +
+        "For your electives choose one of the following or do both\nif you can handle the pressure 💀, " +
+        "\n" +
+        "\n" +
+        mathematicalScienceforComputerScienceFirstSem.subject2 +
+        "\n" +
+        "\n" +
+        mathematicalScienceforActurialScienceFirstSem.subject2,
       {
         reply_markup: {
           keyboard: [
@@ -2684,19 +2793,28 @@ bot.hears("First Semester", (ctx) => {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "The subjects for first semester are: \n" +
-        physicalScienceforGeophysicsFirstSem.subject1 +
+        mathematicalScienceforComputerScienceFirstSem.subject1 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject2 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject3 +
+        mathematicalScienceforComputerScienceFirstSem.subject2 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject4 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject5 +
+        mathematicalScienceforComputerScienceFirstSem.subject3 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject6 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject7,
+        mathematicalScienceforComputerScienceFirstSem.subject4 +
+        "\n" +
+        "\n" +
+        mathematicalScienceforComputerScienceFirstSem.subject5 +
+        "\n" +
+        "\n" +
+        "For your electives choose one of the following or do both\nif you can handle the pressure 💀, " +
+        "\n" +
+        "\n" +
+        mathematicalScienceforComputerScienceFirstSem.subject2 +
+        "\n" +
+        "\n" +
+        mathematicalScienceforActurialScienceFirstSem.subject2,
       {
         reply_markup: {
           keyboard: [
@@ -2721,19 +2839,25 @@ bot.hears("First Semester", (ctx) => {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "The subjects for first semester are: \n" +
-        physicalScienceforGeophysicsFirstSem.subject1 +
+        mathematicalScienceforComputerScienceFirstSem.subject1 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject2 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject3 +
+        mathematicalScienceforComputerScienceFirstSem.subject2 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject4 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject5 +
+        mathematicalScienceforComputerScienceFirstSem.subject3 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject6 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject7,
+        physicalScienceForPhysicsAndCompSciFirstSemester.subject6 +
+        "\n" +
+        "\n" +
+        physicalScienceForPhysicsAndCompSciFirstSemester.subject5 +
+        "\n" +
+        "\n" +
+        mathematicalScienceforComputerScienceFirstSem.subject5 +
+        "\n" +
+        "\n" +
+        mathematicalScienceforComputerScienceFirstSem.subject6,
       {
         reply_markup: {
           keyboard: [
@@ -2758,19 +2882,22 @@ bot.hears("First Semester", (ctx) => {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "The subjects for first semester are: \n" +
-        physicalScienceforGeophysicsFirstSem.subject1 +
+        mathematicalScienceforComputerScienceFirstSem.subject1 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject2 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject3 +
+        mathematicalScienceforComputerScienceFirstSem.subject2 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject4 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject5 +
+        mathematicalScienceforComputerScienceFirstSem.subject3 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject6 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject7,
+        mathematicalScienceforComputerScienceFirstSem.subject4 +
+        "\n" +
+        "\n" +
+        mathematicalScienceforComputerScienceFirstSem.subject5 +
+        "\n" +
+        "\n" +
+        mathematicalScienceforComputerScienceFirstSem.subject6,
       {
         reply_markup: {
           keyboard: [
@@ -2795,19 +2922,28 @@ bot.hears("First Semester", (ctx) => {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "The subjects for first semester are: \n" +
-        physicalScienceforGeophysicsFirstSem.subject1 +
+        mathematicalScienceforComputerScienceFirstSem.subject1 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject2 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject3 +
+        mathematicalScienceforComputerScienceFirstSem.subject2 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject4 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject5 +
+        mathematicalScienceforComputerScienceFirstSem.subject3 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject6 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject7,
+        mathematicalScienceforComputerScienceFirstSem.subject4 +
+        "\n" +
+        "\n" +
+        mathematicalScienceforComputerScienceFirstSem.subject5 +
+        "\n" +
+        "\n" +
+        "For your electives choose one of the following or do both\nif you can handle the pressure 💀, " +
+        "\n" +
+        "\n" +
+        mathematicalScienceforComputerScienceFirstSem.subject2 +
+        "\n" +
+        "\n" +
+        mathematicalScienceforActurialScienceFirstSem.subject2,
       {
         reply_markup: {
           keyboard: [
@@ -2832,17 +2968,21 @@ bot.hears("First Semester", (ctx) => {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "The subjects for first semester are: \n" +
-        physicalScienceforGeophysicsFirstSem.subject1 +
+        "The subjects for first semester are: \n" +
+        mathematicalScienceforComputerScienceFirstSem.subject1 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject2 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject3 +
+        mathematicalScienceforComputerScienceFirstSem.subject2 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject4 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject5 +
+        mathematicalScienceforComputerScienceFirstSem.subject3 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject6 +
+        "\n" +
+        mathematicalScienceforComputerScienceFirstSem.subject4 +
+        "\n" +
+        "\n" +
+        mathematicalScienceforComputerScienceFirstSem.subject5 +
+        "\n" +
         "\n" +
         physicalScienceforGeophysicsFirstSem.subject7,
       {
@@ -2869,19 +3009,28 @@ bot.hears("First Semester", (ctx) => {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "The subjects for first semester are: \n" +
-        physicalScienceforGeophysicsFirstSem.subject1 +
+        mathematicalScienceforComputerScienceFirstSem.subject1 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject2 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject3 +
+        mathematicalScienceforComputerScienceFirstSem.subject2 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject4 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject5 +
+        mathematicalScienceforComputerScienceFirstSem.subject3 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject6 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject7,
+        mathematicalScienceforComputerScienceFirstSem.subject4 +
+        "\n" +
+        "\n" +
+        mathematicalScienceforComputerScienceFirstSem.subject5 +
+        "\n" +
+        "\n" +
+        "For your electives choose one of the following or do both\nif you can handle the pressure 💀, " +
+        "\n" +
+        "\n" +
+        mathematicalScienceforComputerScienceFirstSem.subject2 +
+        "\n" +
+        "\n" +
+        mathematicalScienceforActurialScienceFirstSem.subject2,
       {
         reply_markup: {
           keyboard: [
@@ -2906,19 +3055,28 @@ bot.hears("First Semester", (ctx) => {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "The subjects for first semester are: \n" +
-        physicalScienceforGeophysicsFirstSem.subject1 +
+        mathematicalScienceforComputerScienceFirstSem.subject1 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject2 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject3 +
+        mathematicalScienceforComputerScienceFirstSem.subject2 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject4 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject5 +
+        mathematicalScienceforComputerScienceFirstSem.subject3 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject6 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject7,
+        mathematicalScienceforComputerScienceFirstSem.subject4 +
+        "\n" +
+        "\n" +
+        mathematicalScienceforComputerScienceFirstSem.subject5 +
+        "\n" +
+        "\n" +
+        "For your electives choose one of the following or do both\nif you can handle the pressure 💀, " +
+        "\n" +
+        "\n" +
+        mathematicalScienceforComputerScienceFirstSem.subject2 +
+        "\n" +
+        "\n" +
+        mathematicalScienceforActurialScienceFirstSem.subject2,
       {
         reply_markup: {
           keyboard: [
@@ -3155,6 +3313,7 @@ bot.hears("First Semester", (ctx) => {
     );
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
+    //L200 L200 L200 L200 L200 L200
   } else if (
     ctx.session.userOptions.includes(
       levelOptions.secondYear &&
