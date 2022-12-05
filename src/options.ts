@@ -144,7 +144,7 @@ const options = {
   physicalScienceforGeophysicsFirstSem: {
     subject1: "CHEM 113 : Foundation Chemistry I",
     subject2: "CHEM 120 : General Chemistry Laboratory",
-    subject7: "EASC 101 : Introduction to Earth Science",
+    subject7: "EASC 101 : Physical Geology",
     subject3: "MATH 121 : Algebra and Trigonometry",
     subject4: "PHYS 105 : Practical Physics I",
     subject5: "PHYS 143 : Mechanics and Thermal Physics",
