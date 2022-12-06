@@ -26,6 +26,7 @@ const {
   mathematicalScienceforBioMathSecondSem,
   mathematicalScienceforComputerScienceFirstSem,
   mathematicalScienceforComputerScienceSecondSem,
+  l200ActurialSciFirstSem,
 } = options;
 
 interface SessionData {
@@ -1952,10 +1953,10 @@ bot.hears(levelOptions.fourthYear, (ctx) => {
 
 bot.hears("First Semester", (ctx) => {
   if (
+    ctx.session.userOptions.includes(courseOptionsL100.physicalScience) &&
+    ctx.session.userOptions.includes(programOption.option1) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.physicalScience &&
-        programOption.option1 &&
-        continuingStudentsSingleMajorOptions.option5
+      continuingStudentsSingleMajorOptions.option5
     )
   ) {
     bot.telegram.sendMessage(
@@ -2002,10 +2003,10 @@ bot.hears("First Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.physicalScience) &&
+    ctx.session.userOptions.includes(programOption.option1) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.physicalScience &&
-        programOption.option1 &&
-        continuingStudentsSingleMajorOptions.option6
+      continuingStudentsSingleMajorOptions.option6
     )
   ) {
     bot.telegram.sendMessage(
@@ -2052,10 +2053,10 @@ bot.hears("First Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.physicalScience) &&
+    ctx.session.userOptions.includes(programOption.option1) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.physicalScience &&
-        programOption.option1 &&
-        continuingStudentsSingleMajorOptions.option8
+      continuingStudentsSingleMajorOptions.option8
     )
   ) {
     bot.telegram.sendMessage(
@@ -2096,10 +2097,10 @@ bot.hears("First Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.physicalScience) &&
+    ctx.session.userOptions.includes(programOption.option2) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.physicalScience &&
-        programOption.option2 &&
-        continuingStudentsCombinedMajorOptions.option1
+      continuingStudentsCombinedMajorOptions.option1
     )
   ) {
     bot.telegram.sendMessage(
@@ -2140,10 +2141,10 @@ bot.hears("First Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.physicalScience) &&
+    ctx.session.userOptions.includes(programOption.option2) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.physicalScience &&
-        programOption.option2 &&
-        continuingStudentsCombinedMajorOptions.option2
+      continuingStudentsCombinedMajorOptions.option2
     )
   ) {
     bot.telegram.sendMessage(
@@ -2190,10 +2191,10 @@ bot.hears("First Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.physicalScience) &&
+    ctx.session.userOptions.includes(programOption.option2) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.physicalScience &&
-        programOption.option2 &&
-        continuingStudentsCombinedMajorOptions.option9
+      continuingStudentsCombinedMajorOptions.option9
     )
   ) {
     bot.telegram.sendMessage(
@@ -2233,10 +2234,10 @@ bot.hears("First Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.physicalScience) &&
+    ctx.session.userOptions.includes(programOption.option3) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.physicalScience &&
-        programOption.option3 &&
-        continuingStudentsCombinedMajorOptions.option8
+      continuingStudentsCombinedMajorOptions.option8
     )
   ) {
     bot.telegram.sendMessage(
@@ -2276,10 +2277,10 @@ bot.hears("First Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.physicalScience) &&
+    ctx.session.userOptions.includes(programOption.option3) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.physicalScience &&
-        programOption.option3 &&
-        continuingStudentsMajorMinorOptions.option8
+      continuingStudentsMajorMinorOptions.option8
     )
   ) {
     bot.telegram.sendMessage(
@@ -2319,10 +2320,10 @@ bot.hears("First Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.physicalScience) &&
+    ctx.session.userOptions.includes(programOption.option3) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.physicalScience &&
-        programOption.option3 &&
-        continuingStudentsMajorMinorOptions.option9
+      continuingStudentsMajorMinorOptions.option9
     )
   ) {
     bot.telegram.sendMessage(
@@ -2362,10 +2363,10 @@ bot.hears("First Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.physicalScience) &&
+    ctx.session.userOptions.includes(programOption.option3) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.physicalScience &&
-        programOption.option3 &&
-        continuingStudentsMajorMinorOptions.option10
+      continuingStudentsMajorMinorOptions.option10
     )
   ) {
     bot.telegram.sendMessage(
@@ -2405,10 +2406,10 @@ bot.hears("First Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.physicalScience) &&
+    ctx.session.userOptions.includes(programOption.option3) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.physicalScience &&
-        programOption.option3 &&
-        continuingStudentsMajorMinorOptions.option13
+      continuingStudentsMajorMinorOptions.option13
     )
   ) {
     bot.telegram.sendMessage(
@@ -2448,10 +2449,10 @@ bot.hears("First Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.mathematicalScience) &&
+    ctx.session.userOptions.includes(programOption.option1) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.mathematicalScience &&
-        programOption.option1 &&
-        continuingStudentsSingleMajorOptions.option1
+      continuingStudentsSingleMajorOptions.option1
     )
   ) {
     bot.telegram.sendMessage(
@@ -2488,10 +2489,10 @@ bot.hears("First Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.mathematicalScience) &&
+    ctx.session.userOptions.includes(programOption.option1) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.mathematicalScience &&
-        programOption.option1 &&
-        continuingStudentsSingleMajorOptions.option2
+      continuingStudentsSingleMajorOptions.option2
     )
   ) {
     bot.telegram.sendMessage(
@@ -2528,10 +2529,10 @@ bot.hears("First Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.mathematicalScience) &&
+    ctx.session.userOptions.includes(programOption.option1) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.mathematicalScience &&
-        programOption.option1 &&
-        continuingStudentsSingleMajorOptions.option3
+      continuingStudentsSingleMajorOptions.option3
     )
   ) {
     bot.telegram.sendMessage(
@@ -2574,10 +2575,10 @@ bot.hears("First Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.mathematicalScience) &&
+    ctx.session.userOptions.includes(programOption.option1) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.mathematicalScience &&
-        programOption.option1 &&
-        continuingStudentsSingleMajorOptions.option4
+      continuingStudentsSingleMajorOptions.option4
     )
   ) {
     bot.telegram.sendMessage(
@@ -2620,10 +2621,10 @@ bot.hears("First Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.mathematicalScience) &&
+    ctx.session.userOptions.includes(programOption.option1) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.mathematicalScience &&
-        programOption.option1 &&
-        continuingStudentsSingleMajorOptions.option10
+      continuingStudentsSingleMajorOptions.option10
     )
   ) {
     bot.telegram.sendMessage(
@@ -2655,10 +2656,10 @@ bot.hears("First Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.mathematicalScience) &&
+    ctx.session.userOptions.includes(programOption.option2) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.mathematicalScience &&
-        programOption.option2 &&
-        continuingStudentsCombinedMajorOptions.option3
+      continuingStudentsCombinedMajorOptions.option3
     )
   ) {
     bot.telegram.sendMessage(
@@ -2695,10 +2696,10 @@ bot.hears("First Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.mathematicalScience) &&
+    ctx.session.userOptions.includes(programOption.option2) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.mathematicalScience &&
-        programOption.option2 &&
-        continuingStudentsCombinedMajorOptions.option4
+      continuingStudentsCombinedMajorOptions.option4
     )
   ) {
     bot.telegram.sendMessage(
@@ -2738,10 +2739,10 @@ bot.hears("First Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.mathematicalScience) &&
+    ctx.session.userOptions.includes(programOption.option2) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.mathematicalScience &&
-        programOption.option2 &&
-        continuingStudentsCombinedMajorOptions.option5
+      continuingStudentsCombinedMajorOptions.option5
     )
   ) {
     bot.telegram.sendMessage(
@@ -2784,10 +2785,10 @@ bot.hears("First Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.mathematicalScience) &&
+    ctx.session.userOptions.includes(programOption.option2) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.mathematicalScience &&
-        programOption.option2 &&
-        continuingStudentsCombinedMajorOptions.option7
+      continuingStudentsCombinedMajorOptions.option7
     )
   ) {
     bot.telegram.sendMessage(
@@ -2830,10 +2831,10 @@ bot.hears("First Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.mathematicalScience) &&
+    ctx.session.userOptions.includes(programOption.option3) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.mathematicalScience &&
-        programOption.option3 &&
-        continuingStudentsMajorMinorOptions.option4
+      continuingStudentsMajorMinorOptions.option4
     )
   ) {
     bot.telegram.sendMessage(
@@ -2873,10 +2874,10 @@ bot.hears("First Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.mathematicalScience) &&
+    ctx.session.userOptions.includes(programOption.option3) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.mathematicalScience &&
-        programOption.option3 &&
-        continuingStudentsMajorMinorOptions.option5
+      continuingStudentsMajorMinorOptions.option5
     )
   ) {
     bot.telegram.sendMessage(
@@ -2913,10 +2914,10 @@ bot.hears("First Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.mathematicalScience) &&
+    ctx.session.userOptions.includes(programOption.option3) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.mathematicalScience &&
-        programOption.option3 &&
-        continuingStudentsMajorMinorOptions.option6
+      continuingStudentsMajorMinorOptions.option6
     )
   ) {
     bot.telegram.sendMessage(
@@ -2959,10 +2960,10 @@ bot.hears("First Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.mathematicalScience) &&
+    ctx.session.userOptions.includes(programOption.option1) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.mathematicalScience &&
-        programOption.option1 &&
-        continuingStudentsMajorMinorOptions.option7
+      continuingStudentsMajorMinorOptions.option7
     )
   ) {
     bot.telegram.sendMessage(
@@ -3000,10 +3001,10 @@ bot.hears("First Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.mathematicalScience) &&
+    ctx.session.userOptions.includes(programOption.option3) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.mathematicalScience &&
-        programOption.option3 &&
-        continuingStudentsMajorMinorOptions.option11
+      continuingStudentsMajorMinorOptions.option11
     )
   ) {
     bot.telegram.sendMessage(
@@ -3046,10 +3047,10 @@ bot.hears("First Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.mathematicalScience) &&
+    ctx.session.userOptions.includes(programOption.option3) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.mathematicalScience &&
-        programOption.option3 &&
-        continuingStudentsMajorMinorOptions.option12
+      continuingStudentsMajorMinorOptions.option12
     )
   ) {
     bot.telegram.sendMessage(
@@ -3092,10 +3093,10 @@ bot.hears("First Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.earthScience) &&
+    ctx.session.userOptions.includes(programOption.option3) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.earthScience &&
-        programOption.option3 &&
-        continuingStudentsMajorMinorOptions.option1
+      continuingStudentsMajorMinorOptions.option1
     )
   ) {
     bot.telegram.sendMessage(
@@ -3129,10 +3130,10 @@ bot.hears("First Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.earthScience) &&
+    ctx.session.userOptions.includes(programOption.option3) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.earthScience &&
-        programOption.option3 &&
-        continuingStudentsMajorMinorOptions.option2
+      continuingStudentsMajorMinorOptions.option2
     )
   ) {
     bot.telegram.sendMessage(
@@ -3166,10 +3167,10 @@ bot.hears("First Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.earthScience) &&
+    ctx.session.userOptions.includes(programOption.option3) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.earthScience &&
-        programOption.option3 &&
-        continuingStudentsMajorMinorOptions.option3
+      continuingStudentsMajorMinorOptions.option3
     )
   ) {
     bot.telegram.sendMessage(
@@ -3203,10 +3204,10 @@ bot.hears("First Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.earthScience) &&
+    ctx.session.userOptions.includes(programOption.option1) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.earthScience &&
-        programOption.option1 &&
-        continuingStudentsSingleMajorOptions.option7
+      continuingStudentsSingleMajorOptions.option7
     )
   ) {
     bot.telegram.sendMessage(
@@ -3240,10 +3241,10 @@ bot.hears("First Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.earthScience) &&
+    ctx.session.userOptions.includes(programOption.option1) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.earthScience &&
-        programOption.option1 &&
-        continuingStudentsSingleMajorOptions.option9
+      continuingStudentsSingleMajorOptions.option9
     )
   ) {
     bot.telegram.sendMessage(
@@ -3277,10 +3278,10 @@ bot.hears("First Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.earthScience) &&
+    ctx.session.userOptions.includes(programOption.option1) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.earthScience &&
-        programOption.option1 &&
-        continuingStudentsSingleMajorOptions.option12
+      continuingStudentsSingleMajorOptions.option12
     )
   ) {
     bot.telegram.sendMessage(
@@ -3315,28 +3316,34 @@ bot.hears("First Semester", (ctx) => {
     console.log(ctx.session.userOptions);
     //L200 L200 L200 L200 L200 L200
   } else if (
+    ctx.session.userOptions.includes(levelOptions.secondYear) &&
+    ctx.session.userOptions.includes(programOption.option1) &&
     ctx.session.userOptions.includes(
-      levelOptions.secondYear &&
-        programOption.option1 &&
-        continuingStudentsSingleMajorOptions.option1
+      continuingStudentsSingleMajorOptions.option1
     )
   ) {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "The subjects for first semester are: \n" +
-        physicalScienceforGeophysicsFirstSem.subject1 +
+        l200ActurialSciFirstSem.subject1 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject2 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject3 +
+        l200ActurialSciFirstSem.subject2 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject4 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject5 +
+        l200ActurialSciFirstSem.subject3 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject6 +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject7,
+        l200ActurialSciFirstSem.subject4 +
+        "\n" +
+        "\n" +
+        l200ActurialSciFirstSem.subject5 +
+        "\n" +
+        "\n" +
+        l200ActurialSciFirstSem.subject6 +
+        "\n" +
+        "\n" +
+        l200ActurialSciFirstSem.subject7,
       {
         reply_markup: {
           keyboard: [
