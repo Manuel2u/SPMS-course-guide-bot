@@ -290,41 +290,37 @@ const options = {
   },
   l200ChemistryFirstSem: {},
 
-  l300ChemistrySingleMajorFirstSem: {
-    subject1: " CHEM 301 : Mathematics for Chemists ",
-    subject2: " CHEM 341 : Spectroscopy and Structure Elucidation  ",
-    subject3: " CHEM 343 : Chemistry of Aromatic Compounds  ",
-    subject4: " CHEM 355 : Inorganic Chemistry II  ",
-    subject5: " CHEM 311 : Physical Chemistry Laboratory  ",
-    subject6: " CHEM 351 : Inorganic Chemistry Laboratory  ",
 
+  l300ActurialScienceSingleMajorFirstSem: {
+    subject1: "STAT 331: Probability Distributions",
+    subject2: "MATH 351/STAT 339 :Linear Algebra/Methods of Linear Algebra",
+    subject3: "ACTU 301: Life Contingencies I ",
+    subject4: " FINC 301 : Introduction to Business Finance",
+    subject5: "MATH 355 : Calculus of Several Variables",
+    subject6: "STAT 333: Statistical Inference I",
+    subject7: " MATH 359: Discrete Mathematics ",
+    subject8: "STAT 335 : Sample Survey Methods ",
+    subject9: "MATH 353 : Analysis I",
+    subject10: "MATH 358 : Computational Mathematics I ",
+    subject11: "ACTU 320: Internship in Actuarial Science (either 1st or 2nd Semester) *",
+    subject12: "ACTU 335 : Microeconomic Theory for Actuaries I ",
+    subject13: "ACTU 359 : Risk Management and Insurance  ",
+  
   },
-  l300ChemistrySingleMajorSecondSem: {
-    subject1: " CHEM 312 : Thermodynamics I  ",
-    subject2: " CHEM 344 : Carbanions and their Reactions ",
-    subject3: " CHEM 346 : Molecular Rearrangement Reactions ",
-    subject4: " CHEM 352 : Coordination Chemistry  ",
-    subject5: " CHEM 374 : Analytical Chemistry II ",
-    subject6: " CHEM 332 : Organic Chemistry Laboratory II ",
-    subject7: " CHEM 372 : Analytical Chemistry Laboratory II  ",
-  },
 
-  l300ChemistryCombineMajorFirstSem: {
-    subject1: "CHEM 343 : Chemistry of Aromatic Compounds ",
-    subject2: "CHEM 355 :  Inorganic Chemistry II ",
-    subject3: "CHEM 311 :  Physical Chemistry Laboratory ",
-    subject4: "CHEM 351 : Inorganic Chemistry Laboratory",
-
-
-  },
-  l300ChemistryCombineMajorSecondSem: {
-    subject1: "CHEM 312 : Thermodynamics I ",
-    subject2: "CHEM 374 : Analytical Chemistry II ",
-    subject3: "CHEM 344 : Carbanions and their Reactions",
-    subject4: "CHEM 346 : Molecular Rearrangement Reactions ",
-    subject5: "CHEM 352 : Coordination Chemistry",
-    subject6: "CHEM 332 : Organic Chemistry Laboratory II",
-    subject7: "CHEM 372 : Analytical Chemistry Laboratory II",
+  l300ActurialScienceSingleMajorSecondSem: {
+    subject1: "STAT 332 : Multivariate Distributions",
+    subject2: "ACTU 304 : Life Contingencies II  ",
+    subject3: "MATH 350 : Differential Equations I*",
+    subject4: " ACTU 302 : Introduction to Actuarial Computing",
+    subject5: "MATH 356 : Analysis II",
+    subject6: "CSCD 314 : Operations Research ",
+    subject7: "MATH 354 :Abstract Algebra I** ",
+    subject8: "STAT 334 : Statistical Inference II  ",
+    subject9: "ACTU 334 :  Microeconomic Theory for Actuaries II  ",
+    subject10: "FINC 352 : Principle and Practice of Insurance  ",
+    subject11: "STAT 338 : Decision Theory ",
+    subject12: " STAT 356 : Life Insurance and Retirement Security  ",
   },
 
   l300ComputerScienceSingleMajorFirstSem: {
@@ -348,21 +344,181 @@ const options = {
     subject7: "DCIT 316 : Computational models for Social Media Mining",
 
   },
-  l300ComputerScienceCombineMajorFirstSem: {
-    subject1: "DCIT 301 : Operating Systems ",
+
+ l300MathematicsSingleMajorFirstSem: {
+   subject1: "MATH 351 : Linear Algebra  ",
+   subject2: "MATH 353 : Analysis I  ",
+   subject3: "MATH 355 : Calculus of Several Variables ",
+   subject4: "iMATH 350: Differential Equations I ",
+   subject5: "MATH 359 : Discrete Mathematics  ",
+   subject6: "MATH 361 : Classical Mechanics  ",
+   subject7: "MATH 363 : Introductory concepts of financial mathematics ",
+   subject8: "STAT 331 : Probability distributions  ",
+  },
+
+  l300MathematicsSingleMajorSecondSem: {
+    subject1: "MATH 354 : Abstract Algebra I  ",
+    subject2: "MATH 356 : Analysis II ",
+    subject3: "MATH 372 : Topology  ",
+    subject4: "iMATH 350: Differential Equations I  ",
+    subject5: "MATH 366 : Electromagnetic Theory I  ",
+    subject6: "MATH 362 : Analytical Mechanics  ",
+    subject7: "MATH 358 : Computational Mathematics I ",
+    subject8: "MATH 368 : Introductory number theory  ",
+    subject9: " STAT 332 : Multivariate distributions  ",
+  },
+
+
+  l300StatisticsSingleMajorFirstSem: {
+    subject1: "STAT 331 : Probability Distributions",
+    subject2: "STAT 333 : Statistical Inference I ",
+    subject3: "STAT 335 : Sampling Survey Methods",
+    subject4: "MATH351/STAT: Linear Algebra/Methods of Linear ",
+    subject5: "ACTU 301  : Life Contingency I ",
+    subject6: " STAT 337 : Introduction to Operations Research",
+    subject7: " MATH 353 : Analysis I ",
+    subject8: "MATH 355  : Calculus of Several Variables",
+    subject9: "MATH 359 : Discrete Mathematics ",
+   
+  },
+  l300StatisticsSingleMajorSecondSem: {
+    subject1: "STAT 332 : Multivariate Distributions ",
+    subject2: "STAT 334 : Statistical Inference II  ",
+    subject3: "STAT 336 : Design of Experiments  ",
+    subject4: "MATH 350 : Differential Equations I ",
+    subject5: "DCIT 308 : Data Structures and Algorithms  ",
+    subject6: "ACTU 332 : Life Contingency II  ",
+    subject7: "STAT 338 Decision Theory  ",
+    subject8: "MATH 356 Analysis II",
+  
+  }, 
+
+
+  l300PhysicsSingleMajorFirstSem: {
+    subject1: "PHYS 305 : Practical Physics V  ",
+    subject2: "PHYS 343 : Thermodynamics ",
+    subject3: "PHYS 345 : Electromagnetism II  ",
+    subject4: "PHYS 359 : Solid State Physics I ",
+    subject5: "PHYS 351 : Optics  ",
+    subject7: "PHYS 361 : Physics of the Atmosphere ",
+    subject8: "PHYS 347 : Electronics I  ",
+    subject9: "PHYS 365 : Physics of the Ocean  ",
+    subject10: "EASC 339 : Principles of Applied Geophysics ",
+   
+
+  },
+  l300PhysicsSingleMajorSecondSem: {
+    subject1: "PHYS 306 : Practical Physics VI ",
+    subject2: "PHYS 342 : Classical Mechanics  ",
+    subject3: "PHYS 344 : Mathematical Methods II  ",
+    subject4: "PHYS 352 : Quantum Mechanics I ",
+    subject5: "PHYS 354 Special Relativity  ",
+    subject6: "PHYS 356 : Computational Methods in Physics II ",
+    subject8: "PHYS 364 : Principles and Applications of Neutron Activation Analysis ",
+    subject9: "STAT 336 : Design of Experiments ",
+    
+  },
+
+  l300ChemistrySingleMajorFirstSem: {
+    subject1: " CHEM 301 : Mathematics for Chemists ",
+    subject2: " CHEM 341 : Spectroscopy and Structure Elucidation  ",
+    subject3: " CHEM 343 : Chemistry of Aromatic Compounds  ",
+    subject4: " CHEM 355 : Inorganic Chemistry II  ",
+    subject5: " CHEM 311 : Physical Chemistry Laboratory  ",
+    subject6: " CHEM 351 : Inorganic Chemistry Laboratory  ",
+
+  },
+  l300ChemistrySingleMajorSecondSem: {
+    subject1: " CHEM 312 : Thermodynamics I  ",
+    subject2: " CHEM 344 : Carbanions and their Reactions ",
+    subject3: " CHEM 346 : Molecular Rearrangement Reactions ",
+    subject4: " CHEM 352 : Coordination Chemistry  ",
+    subject5: " CHEM 374 : Analytical Chemistry II ",
+    subject6: " CHEM 332 : Organic Chemistry Laboratory II ",
+    subject7: " CHEM 372 : Analytical Chemistry Laboratory II  ",
+  },
+
+  l300GeologySingleMajorFirstSem: {
+    subject1: " ",
+  },
+
+  l300GeologySingleMajorSecondSem: {
+    subject1: " ",
+  },
+
+
+
+  l300GeophysicsSingleMajorFirstSem: {
+    subject1: " ",
+  },
+
+  l300GeophysicsSingleMajorSecondSem: {
+    subject1: " ",
+  },
+
+
+
+
+  l300AppliedGeophysicsSingleMajorFirstSem: {
+    subject1: " ",
+  },
+
+  l300AppliedGeophysicsSingleMajorSecondSem: {
+    subject1: " ",
+  },
+
+
+
+  l300BiomathematicsSingleMajorFirstSem: {
+    subject1: " ",
+  },
+
+  l300BiomathematicsSingleMajorSecondSem: {
+    subject1: " ",
+  },
+
+
+
+  l300InformationTechnologySingleMajorFirstSem: {
+    subject1: "DCIT 301 : Operating Systems  ",
     subject2: "DCIT 303 : Computer Networks  ",
     subject3: "DCIT 305 : Database Fundamentals ",
-    subject4: "DCIT 309 : Embedded Systems and IoT ",
-    subject5: "DCIT 313 : Introduction to Artificial Intelligence  ",
-
+    subject4: " DCIT 313 : Introduction to Artificial Intelligence",
+    subject5: "DCIT 317 : IT Project Management  ",
+    subject6: "DCIT 307 : Mini-Project  ",
+    subject7: "DCIT 315 : Principles of 3D Environment   ",
+    subject8: "DCIT 321 Software Evolution   ",
+   
   },
-  l300ComputerScienceCombineMajorSecondSem: {
-    subject1: "DCIT 302 : Human Computer Interaction ",
-    subject2: "DCIT 308 : Data Structures and Algorithms II ",
-    subject3: "DCIT 304 : Research Methods",
-    subject4: "DCIT 318 : Programming II",
-
+  l300InformationTechnologySingleMajorSecondSem: {
+    subject1: "DCIT 302 : Human Computer Interaction  ",
+    subject2: "DCIT 304 : Research Methods ",
+    subject3: " DCIT 308 : Data Structures and Algorithms II  ",
+    subject4: "DCIT 312 : Information Security Management ",
+    subject5: "DCIT 318 : Programming II  ",
+    subject6: "DCIT 314 Game Engine Architecture ",
+    subject7: "DCIT 322 Database Management Administration ",
+    
   },
+
+
+
+
+
+
+  l300AppliedGeologySingleMajorFirstSem: {
+    subject1: " ",
+  },
+
+  l300AppliedGeologySingleMajorSecondSem: {
+    subject1: " ",
+  },
+
+
+
+
+ 
+
 
 
 
