@@ -215,7 +215,30 @@ const options = {
     subject6: "UGRC 150 : Critical Thinking and Practical Reasoning",
   },
 
-  earthScienceFirstSem: {},
+  earthScienceFirstSem: {
+    subject1: "PHYS 105 : Pratical Physics I",
+    subject2: "PHYS 143 : Mechanics and Thermal Physics",
+    subject3: "CHEM 113 : Foundation Chemistry I",
+    subject4: "CHEM 120 : General Chemistry Laboratory I",
+    subject5: "EASC 101 : Physical Geology",
+    subject6: "MATH 121 : Algebra and Trigonometry",
+    subject7: "MATH 123 : Vectors and Geometry",
+    subject8: "DCIT 101 : Introduction to Computer Science" ,
+    subject9: "STAT 111 : Introduction to Statistics and Probability I"
+  },
+
+  earthScienceSecondSem: {
+    subject1: "PHYS 106 : Pratical Physics II",
+    subject2: "PHYS 144 : Electricity and Magnetism",
+    subject3: "CHEM 114 : Foundation Chemistry II",
+    subject4: "EASC 104 : Historical Geology",
+    subject5: "EASC 106 Geological Field Excursions",
+    subject6: "MATH 122 : Calculus I",
+    subject7: "MATH 126 : Algebra and Geometry",
+    subject8: "DCIT 104 : Programming Fundamentals" ,
+    subject9: "STAT 112 : Introduction to Statistics and Probability II"
+  },
+
   l200ActurialSciFirstSem: {
     subject1: "ECON 201 : Element of Economics I",
     subject2: "STAT 240 : Introduction Statistical Computing",
@@ -253,12 +276,14 @@ const options = {
     subject6: "DCIT 212 : Numerical and Computational Methods",
     subject7: "UGRC 234 : Intro to African Stud: Philosophy of African",
   },
+  
   l200MathematicsFirstSem: {
     subject2: "Math 223 : Calculus II",
     subject1: "CBAS 210 : Academic Writing II",
     subject3: "MATH 225 : Vector and Mechanics",
     subject4: "MATH 224 : Introductory Probability I",
   },
+  
   l200MathematicsSecondSem: {
     subject1: "STAT 224 : Introductory Probability II",
     subject2: "MATH 220 : Introduction to Computational Mathematics",
@@ -266,10 +291,30 @@ const options = {
     subject4: "MATH 222: Vector Mechanics",
     subject5: "UGRC 234 : Intro to African Stud: Philosophy of African",
   },
+  
   l200StatisticsFirstSem: {
     subject1: "STAT 240 : Introduction Statistical Computing",
+    subject2: "UGRC 210 / UGRC 220 : Academic Writing II/ Introduction to African Studies",
+    subject3: "STAT 221 : Introductory Probability I", 
+    subject4: "STAT 223 : Elementary Statistical Methods",
+    subject5: "MATH 223 : Calculus II",
+    subject6: "ACTU 203 Introduction to Financial Mathematics I", 
+    subject7: "STAT 220 Introduction to Actuarial Science", 
+    subject8: "STAT 230 Data Mining",
   },
-  l200StatisticsSecondSem: {},
+  
+  l200StatisticsSecondSem: {
+    subject1: "UGRC 210/UGRC 220 : Academic Writing II/ Introduction to African Studies",
+    subject2: "STAT 222 : Introduction to Regression and Time Series Analysis",
+    subject3: "STAT 224 : Introductory Probability II",
+    subject4: "STAT 226 : Official Statistics",
+    subject5: "ACTU 204 : Introduction to Financial Mathematics II",
+    subject6: "STAT 220: Introduction to Actuarial Sciences",
+    subject7: "MATH 224 Introduction to Abstract Algebra 3 MATH 126",
+    subject8: "STAT 228 Introduction to Non-Parametric Statistics 3 STAT 223",
+    subject9: "STAT 230 Data Mining",
+  },
+  
   l200PhysicsFirstSem: {
     subject1: "CBAS 210 : Academic Writing II",
     subject2: "MATH 223 : Calculus II",
@@ -279,16 +324,124 @@ const options = {
     subject6: "STAT 223 : Elementary Statistical Methods",
     subject7: "MATH 225 : Vector and Mechanics",
   },
+
   l200PhysicsSecondSem: {
-    subject2: "PHYS 246 : Nuclear Physics I",
-    subject1: "UGRC 234 : Intro to African Stud: Philosophy of African",
+    subject1: "PHYS 246 : Nuclear Physics I",
+    subject2: "UGRC 234 : Intro to African Stud: Philosophy of African",
     subject3: "PHYS 206 : Practical Physics IV",
     subject4: "PHYS 242 : Oscillations and Waves",
     subject5: "PHYS 244 : Mathematical Methods I",
     subject6: "PHYS 248 : Introduction to Physics of Materials",
-    subject7: "PHYS256  : Computational Methods in Physics I",
+    subject7: "PHYS256 : Computational Methods in Physics I",
   },
-  l200ChemistryFirstSem: {},
+
+  l200ChemistryFirstSem: {
+    subject1: "CHEM 217 : Physical Chemistry I",
+    subject2: "CHEM 233 : Organic Chemistry I",
+    subject3: "CHEM 271 : Foundation Chemistry III",
+    subject4: "CHEM 215 : Structure and Bonding",
+    subject5: "CHEM 203 : Analytical Chemistry Laboratory",
+    subject6: "UGRC"
+  },
+
+  l200ChemistrySecondSem: {
+    subject1: "CHEM 234 : Organic Chemistry II",
+    subject2: "CHEM 252 : Inorganic Chemistry I", 
+    subject3: "CHEM 272 : Analytical Chemistry I",
+    subject4: "CHEM 216 : Chemistry of Materials",
+    subject5: "CHEM 204 : Organic Chemistry Laboratory I",
+    subject6: "UGRC"
+  },
+
+  l200GeophysicsFirstSem: {
+    subject1: "UGRC 210 : Writing Academic II",
+    subject2: "PHYS 205 : Practical Physics III", 
+    subject3: "PHYS 245 : Electromagnetism I",
+    subject4: "MATH 223 : Calculus II",
+    subject5: "PHYS 241 : Atomic Physics and Quantum Phenomena", 
+    subject6: "EASC 227 : Geological Structures and Maps", 
+    subject7: "EASC 220 : Geological Field Exercises I", 
+    subject8: "EASC 225 : Quantitative Geology",
+    subject9: "MATH 225 : Vectors and Mechanics",
+    subject10: "STAT 223 : Elementary Statistical Methods"
+  },
+
+  l200GeophysicsSecondSem: {
+    subject1: "UGRC 220/238 : Introduction to African Studies",
+    subject2: "PHYS 206 : Practical Physics IV",
+    subject3: "PHYS 242 : Oscillations and Waves",
+    subject4: "MATH 223 : Calculus II", 
+    subject5: "PHYS 244 : Mathematical Methods I", 
+    subject6: "PHYS 246 : Nuclear Physics I",
+    subject7: "PHYS 248 : Introduction to Physics of Materials", 
+    subject8: "PHYS 256 : Computational Methods in Physics I",
+    subject9: "EASC 216 : Fundamentals of Geophysics",
+  },
+
+  l200ITFirstSem: {
+    subject1: "UGRC 210 : Academic Writing II",
+    subject2: "DCIT 201 : Programming I" ,
+    subject3: "DCIT 203 : Digital and Logic Systems Design",
+    subject4: "DCIT 205 : Multi Media and Web Design" ,
+    subject5: "DCIT 207 : Computer Organization and Architecture", 
+    subject6: "DCIT 209 : E-Business Architectures" ,
+  },
+
+  l200ITSecondSem: {
+    subject1: "UGRC 220/238 : Introduction to African Studies",
+    subject2: "DCIT 202 : Mobile Application Development" ,
+    subject3: "DCIT 204 : Data Structures & Algorithm I",
+    subject4: "DCIT 206 : Systems Administration" ,
+    subject5: "DCIT 208 : Software Engineering" ,
+    subject6: "DCIT 200 : Internships" ,
+    subject7: "DCIT 212 : Numerical and Computational Methods", 
+    subject8: "DCIT 214 : Information Modeling and Specification" ,
+  },
+
+  l200ChemistryAndPhysicsFirstSem: {
+    subject1: "UGRC 210: Academic Writing II",
+    subject2: "CHEM 233: Organic Chemistry I",
+    subject3: "CHEM 271: Foundation Chemistry III",
+    subject4: "CHEM 215: Structure and Bonding",
+    subject5: "CHEM 203: Analytical Chemistry Laboratory I",
+    subject6: "CHEM 217: Physical Chemistry I",
+    subject7: "PHYS 205 Practical Physics III",
+    subject8: "PHYS 241: Atomic Physics and Quantum Phenomena",
+    subject9: "PHYS 245: Electromagnetism I",
+    subject10: "MATH 223: Calculus II",
+  },
+
+  l200ChemistryAndPhysicsSecondSem: {
+    subject1: "UGRC220/238: Introduction to African Studies",
+    subject2: "CHEM 234: Organic Chemistry II",
+    subject3: "CHEM 252: Inorganic Chemistry I",
+    subject4: "CHEM 272: Analytical Chemistry I",
+    subject5: "CHEM 204: Organic Chemistry Laboratory I",
+    subject6: "CHEM 216: Chemistry of Materials",
+    subject7: "PHYS 206 Practical Physics IV",
+    subject8: "PHYS 242: Oscillations and Waves",
+    subject9: "PHYS 244: Mathematical Methods I",
+  },
+
+  l200ComputerScienceandPhysicsFirstSem: {
+    subject1: "UGRC 210: Academic Writing II",
+    subject2: "DCIT 201: Programming I",
+    subject3: "DCIT 203: Digital and Logic Systems Design",
+    subject4: "PHYS 205: Practical Physics III",
+    subject5: "PHYS 241: Atomic Physics and Quantum Phenomena",
+    subject6: "PHYS 245: Electromagnetism I",
+    subject7: "MATH 223: Calculus II",
+  },
+  
+  l200ComputerScienceandPhysicsSecondSem: {
+    subject1: "UGRC 220: Introduction to African Studies",
+    subject2: "DCIT 202: Mobile Application Development",
+    subject3: "DCIT 204: Data Structures and Algorithms",
+    subject4: "DCIT 208 Software Engineering",
+    subject5: "PHYS 206: Practical Physics IV",
+    subject6: "PHYS 242: Oscillations and Waves",
+    subject7: "PHYS 244: Mathematical Methods I",
+  },
 
 
   l300ActurialScienceSingleMajorFirstSem: {
@@ -305,7 +458,7 @@ const options = {
     subject11: "ACTU 320: Internship in Actuarial Science (either 1st or 2nd Semester) *",
     subject12: "ACTU 335 : Microeconomic Theory for Actuaries I ",
     subject13: "ACTU 359 : Risk Management and Insurance  ",
-  
+
   },
 
   l300ActurialScienceSingleMajorSecondSem: {
@@ -379,7 +532,7 @@ const options = {
     subject7: " MATH 353 : Analysis I ",
     subject8: "MATH 355  : Calculus of Several Variables",
     subject9: "MATH 359 : Discrete Mathematics ",
-   
+
   },
   l300StatisticsSingleMajorSecondSem: {
     subject1: "STAT 332 : Multivariate Distributions ",
@@ -390,7 +543,7 @@ const options = {
     subject6: "ACTU 332 : Life Contingency II  ",
     subject7: "STAT 338 Decision Theory  ",
     subject8: "MATH 356 Analysis II",
-  
+
   }, 
 
 
@@ -404,7 +557,7 @@ const options = {
     subject8: "PHYS 347 : Electronics I  ",
     subject9: "PHYS 365 : Physics of the Ocean  ",
     subject10: "EASC 339 : Principles of Applied Geophysics ",
-   
+
 
   },
   l300PhysicsSingleMajorSecondSem: {
@@ -416,7 +569,7 @@ const options = {
     subject6: "PHYS 356 : Computational Methods in Physics II ",
     subject8: "PHYS 364 : Principles and Applications of Neutron Activation Analysis ",
     subject9: "STAT 336 : Design of Experiments ",
-    
+
   },
 
   l300ChemistrySingleMajorFirstSem: {
@@ -488,7 +641,7 @@ const options = {
     subject6: "DCIT 307 : Mini-Project  ",
     subject7: "DCIT 315 : Principles of 3D Environment   ",
     subject8: "DCIT 321 Software Evolution   ",
-   
+
   },
   l300InformationTechnologySingleMajorSecondSem: {
     subject1: "DCIT 302 : Human Computer Interaction  ",
@@ -498,7 +651,7 @@ const options = {
     subject5: "DCIT 318 : Programming II  ",
     subject6: "DCIT 314 Game Engine Architecture ",
     subject7: "DCIT 322 Database Management Administration ",
-    
+
   },
 
 
@@ -517,7 +670,7 @@ const options = {
 
 
 
- 
+
 
 
 
