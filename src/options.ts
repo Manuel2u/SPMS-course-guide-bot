@@ -42,7 +42,6 @@ const options = {
     option6: "Mathematics and Physics",
     option7: "Mathematics and Statistics",
     option8: "Physics and Statistics",
-    option9: "Physics and Mathematics",
   },
   continuingStudentsMajorMinorOptions: {
     option1: "Geology with Physics",
@@ -438,6 +437,26 @@ const options = {
     subject2: "DCIT 202: Mobile Application Development",
     subject3: "DCIT 204: Data Structures and Algorithms",
     subject4: "DCIT 208 Software Engineering",
+    subject5: "PHYS 206: Practical Physics IV",
+    subject6: "PHYS 242: Oscillations and Waves",
+    subject7: "PHYS 244: Mathematical Methods I",
+  },
+
+  l200MathematicsandPhysicsFirstSem:{
+    subject1: "UGRC 210: Academic Writing II",
+    subject2: "MATH 225: Vectors and Mechanics",
+    subject3: "MATH 223: Calculus II",
+    subject4: "PHYS 205: Practical Physics III",
+    subject5: "PHYS 241: Atomic Physics and Quantum Phenomena",
+    subject6: "PHYS 245: Electromagnetism I",
+  },
+
+  
+  l200MathematicsandPhysicsSecondSem:{
+    subject1: "UGRC 210: Academic Writing II",
+    subject2: "MATH 224: Introductory Abstract Algebra",
+    subject3: "MATH 222: Vector Mechanics",
+    subject4: "MATH 220: Introductory Computational Mathematics",
     subject5: "PHYS 206: Practical Physics IV",
     subject6: "PHYS 242: Oscillations and Waves",
     subject7: "PHYS 244: Mathematical Methods I",
