@@ -462,7 +462,7 @@ const options = {
     subject7: "PHYS 244: Mathematical Methods I",
   },
 
-  l200MathemaicsandStatisticsFirstSem:{
+  l200MathematicsandStatisticsFirstSem:{
     subject1: "UGRC 210: Academic Writing II",
     subject2: "MATH 225: Vectors and Mechanics",
     subject3: "MATH 223: Calculus II",
@@ -471,7 +471,7 @@ const options = {
     subject6: "STAT 230: Data Mining",
   },
 
-  l200MathemaicsandStatisticsSecondSem:{
+  l200MathematicsandStatisticsSecondSem:{
     subject1: "UGRC 220: Introduction to African Studies",
     subject2: "MATH 224: Introductory Abstract Algebra",
     subject3: "MATH 222: Vector Mechanics",
