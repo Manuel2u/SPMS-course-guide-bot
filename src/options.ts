@@ -42,7 +42,6 @@ const options = {
     option6: "Mathematics and Physics",
     option7: "Mathematics and Statistics",
     option8: "Physics and Statistics",
-    option9: "Physics and Mathematics",
   },
   continuingStudentsMajorMinorOptions: {
     option1: "Geology with Physics",
@@ -443,15 +442,119 @@ const options = {
     subject7: "PHYS 244: Mathematical Methods I",
   },
 
+  l200MathematicsandPhysicsFirstSem:{
+    subject1: "UGRC 210: Academic Writing II",
+    subject2: "MATH 225: Vectors and Mechanics",
+    subject3: "MATH 223: Calculus II",
+    subject4: "PHYS 205: Practical Physics III",
+    subject5: "PHYS 241: Atomic Physics and Quantum Phenomena",
+    subject6: "PHYS 245: Electromagnetism I",
+  },
+
+  
+  l200MathematicsandPhysicsSecondSem:{
+    subject1: "UGRC 220: Introduction to African Studies",
+    subject2: "MATH 224: Introductory Abstract Algebra",
+    subject3: "MATH 222: Vector Mechanics",
+    subject4: "MATH 220: Introductory Computational Mathematics",
+    subject5: "PHYS 206: Practical Physics IV",
+    subject6: "PHYS 242: Oscillations and Waves",
+    subject7: "PHYS 244: Mathematical Methods I",
+  },
+
+  l200MathematicsandStatisticsFirstSem:{
+    subject1: "UGRC 210: Academic Writing II",
+    subject2: "MATH 225: Vectors and Mechanics",
+    subject3: "MATH 223: Calculus II",
+    subject4: "STAT 221 Introductory Probability I", 
+    subject5: "STAT 223: Elementary Statistical Methods", 
+    subject6: "STAT 230: Data Mining",
+  },
+
+  l200MathematicsandStatisticsSecondSem:{
+    subject1: "UGRC 220: Introduction to African Studies",
+    subject2: "MATH 224: Introductory Abstract Algebra",
+    subject3: "MATH 222: Vector Mechanics",
+    subject4: "MATH 220: Introductory Computational Mathematics",
+    subject5: "STAT 224 Introductory Probability II", 
+    subject6: "STAT 226: Official Statistics", 
+    subject7: "STAT 222: Introduction to Regression and Time Series",
+  },
+
+  l200PhysicsandStatisticsFirstSem:{
+    subject1: "UGRC 210: Academic Writing II",
+    subject2: "PHYS 205: Practical Physics III",
+    subject3: "PHYS 241: Atomic Physics and Quantum Phenomena",
+    subject4: "PHYS 245: Electromagnetism I",
+    subject5: "STAT 221 Introductory Probability I", 
+    subject6: "STAT 223: Elementary Statistical Methods", 
+    subject7: "STAT 230: Data Mining",
+    subject8: "MATH 223: Calculus II",
+  },
+
+  l200PhysicsandStatisticsSecondSem:{
+    subject1: "UGRC 220: Introduction to African Studies",
+    subject2: "STAT 224 Introductory Probability II", 
+    subject3: "STAT 226: Official Statistics", 
+    subject4: "STAT 222: Introduction to Regression and Time Series",
+    subject5: "PHYS 206: Practical Physics IV",
+    subject6: "PHYS 242: Oscillations and Waves",
+    subject7: "PHYS 244: Mathematical Methods I",
+  },
+
+  l200ComputerScienceandStatisticsFirstSem:{
+    subject1: "UGRC 210: Academic Writing II",
+    subject2: "DCIT 201: Programming I",
+    subject3: "DCIT 203: Digital and Logic Systems Design",
+    subject4: "MATH 223: Calculus II",
+    subject5: "STAT 221 Introductory Probability I", 
+    subject6: "STAT 223: Elementary Statistical Methods", 
+    subject7: "STAT 230: Data Mining",
+  },
+
+  l200ComputerScienceandStatisticsSecondSem:{
+    subject1: "UGRC 220: Introduction to African Studies",
+    subject2: "DCIT 202: Mobile Application Development",
+    subject3: "DCIT 204: Data Structures and Algorithms",
+    subject4: "DCIT 208 Software Engineering",
+    subject5: "STAT 224 Introductory Probability II", 
+    subject6: "STAT 226: Official Statistics", 
+    subject7: "STAT 222: Introduction to Regression and Time Series",
+  },
+
+  l200ChemistryandBiologicalScienceFirstSem:{
+    subject1: "UGRC 210: Academic Writing II",
+    subject2: "CHEM 233: Organic Chemistry I",
+    subject3: "CHEM 271: Foundation Chemistry III",
+    subject4: "CHEM 215: Structure and Bonding",
+    subject5: "CHEM 203: Analytical Chemistry Laboratory I",
+    subject6: "CHEM 217: Physical Chemistry I",
+
+
+
+
+  },
+
+l200ChemistryaandBiologicalScienceSecondSem:{
+    subject1: "UGRC220/238: Introduction to African Studies",
+    subject2: "CHEM 234: Organic Chemistry II",
+    subject3: "CHEM 252: Inorganic Chemistry I",
+    subject4: "CHEM 272: Analytical Chemistry I",
+    subject5: "CHEM 204: Organic Chemistry Laboratory I",
+    subject6: "CHEM 216: Chemistry of Materials",
+
+
+
+},
 
   l300ActurialScienceSingleMajorFirstSem: {
     subject1: "STAT 331: Probability Distributions",
     subject2: "MATH 351/STAT 339 :Linear Algebra/Methods of Linear Algebra",
     subject3: "ACTU 301: Life Contingencies I ",
-    subject4: " FINC 301 : Introduction to Business Finance",
+    subject4: "FINC 301 : Introduction to Business Finance",
     subject5: "MATH 355 : Calculus of Several Variables",
     subject6: "STAT 333: Statistical Inference I",
-    subject7: " MATH 359: Discrete Mathematics ",
+    subject7: "MATH 359: Discrete Mathematics ",
     subject8: "STAT 335 : Sample Survey Methods ",
     subject9: "MATH 353 : Analysis I",
     subject10: "MATH 358 : Computational Mathematics I ",
@@ -465,7 +568,7 @@ const options = {
     subject1: "STAT 332 : Multivariate Distributions",
     subject2: "ACTU 304 : Life Contingencies II  ",
     subject3: "MATH 350 : Differential Equations I*",
-    subject4: " ACTU 302 : Introduction to Actuarial Computing",
+    subject4: "ACTU 302 : Introduction to Actuarial Computing",
     subject5: "MATH 356 : Analysis II",
     subject6: "CSCD 314 : Operations Research ",
     subject7: "MATH 354 :Abstract Algebra I** ",
