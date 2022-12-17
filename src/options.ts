@@ -522,6 +522,31 @@ const options = {
     subject7: "STAT 222: Introduction to Regression and Time Series",
   },
 
+  l200ChemistryandBiologicalScienceFirstSem:{
+    subject1: "UGRC 210: Academic Writing II",
+    subject2: "CHEM 233: Organic Chemistry I",
+    subject3: "CHEM 271: Foundation Chemistry III",
+    subject4: "CHEM 215: Structure and Bonding",
+    subject5: "CHEM 203: Analytical Chemistry Laboratory I",
+    subject6: "CHEM 217: Physical Chemistry I",
+
+
+
+
+  },
+
+l200ChemistryaandBiologicalScienceSecondSem:{
+    subject1: "UGRC220/238: Introduction to African Studies",
+    subject2: "CHEM 234: Organic Chemistry II",
+    subject3: "CHEM 252: Inorganic Chemistry I",
+    subject4: "CHEM 272: Analytical Chemistry I",
+    subject5: "CHEM 204: Organic Chemistry Laboratory I",
+    subject6: "CHEM 216: Chemistry of Materials",
+
+
+
+},
+
   l300ActurialScienceSingleMajorFirstSem: {
     subject1: "STAT 331: Probability Distributions",
     subject2: "MATH 351/STAT 339 :Linear Algebra/Methods of Linear Algebra",
