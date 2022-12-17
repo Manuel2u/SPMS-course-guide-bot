@@ -502,6 +502,26 @@ const options = {
     subject7: "PHYS 244: Mathematical Methods I",
   },
 
+  l200ComputerScienceandStatisticsFirstSem:{
+    subject1: "UGRC 210: Academic Writing II",
+    subject2: "DCIT 201: Programming I",
+    subject3: "DCIT 203: Digital and Logic Systems Design",
+    subject4: "MATH 223: Calculus II",
+    subject5: "STAT 221 Introductory Probability I", 
+    subject6: "STAT 223: Elementary Statistical Methods", 
+    subject7: "STAT 230: Data Mining",
+  },
+
+  l200ComputerScienceandStatisticsSecondSem:{
+    subject1: "UGRC 220: Introduction to African Studies",
+    subject2: "DCIT 202: Mobile Application Development",
+    subject3: "DCIT 204: Data Structures and Algorithms",
+    subject4: "DCIT 208 Software Engineering",
+    subject5: "STAT 224 Introductory Probability II", 
+    subject6: "STAT 226: Official Statistics", 
+    subject7: "STAT 222: Introduction to Regression and Time Series",
+  },
+
   l300ActurialScienceSingleMajorFirstSem: {
     subject1: "STAT 331: Probability Distributions",
     subject2: "MATH 351/STAT 339 :Linear Algebra/Methods of Linear Algebra",
