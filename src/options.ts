@@ -478,7 +478,28 @@ const options = {
     subject4: "MATH 220: Introductory Computational Mathematics",
     subject5: "STAT 224 Introductory Probability II", 
     subject6: "STAT 226: Official Statistics", 
-    subject7: "STAT 222: Introduction to Regression and ime Series",
+    subject7: "STAT 222: Introduction to Regression and Time Series",
+  },
+
+  l200PhysicsandStatisticsFirstSem:{
+    subject1: "UGRC 210: Academic Writing II",
+    subject2: "PHYS 205: Practical Physics III",
+    subject3: "PHYS 241: Atomic Physics and Quantum Phenomena",
+    subject4: "PHYS 245: Electromagnetism I",
+    subject5: "STAT 221 Introductory Probability I", 
+    subject6: "STAT 223: Elementary Statistical Methods", 
+    subject7: "STAT 230: Data Mining",
+    subject8: "MATH 223: Calculus II",
+  },
+
+  l200PhysicsandStatisticsSecondSem:{
+    subject1: "UGRC 220: Introduction to African Studies",
+    subject2: "STAT 224 Introductory Probability II", 
+    subject3: "STAT 226: Official Statistics", 
+    subject4: "STAT 222: Introduction to Regression and Time Series",
+    subject5: "PHYS 206: Practical Physics IV",
+    subject6: "PHYS 242: Oscillations and Waves",
+    subject7: "PHYS 244: Mathematical Methods I",
   },
 
   l300ActurialScienceSingleMajorFirstSem: {
