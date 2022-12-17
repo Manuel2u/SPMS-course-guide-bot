@@ -453,7 +453,7 @@ const options = {
 
   
   l200MathematicsandPhysicsSecondSem:{
-    subject1: "UGRC 210: Academic Writing II",
+    subject1: "UGRC 220: Introduction to African Studies",
     subject2: "MATH 224: Introductory Abstract Algebra",
     subject3: "MATH 222: Vector Mechanics",
     subject4: "MATH 220: Introductory Computational Mathematics",
@@ -466,18 +466,29 @@ const options = {
     subject1: "UGRC 210: Academic Writing II",
     subject2: "MATH 225: Vectors and Mechanics",
     subject3: "MATH 223: Calculus II",
-    
+    subject4: "STAT 221 Introductory Probability I", 
+    subject5: "STAT 223: Elementary Statistical Methods", 
+    subject6: "STAT 230: Data Mining",
   },
 
+  l200MathemaicsandStatisticsSecondSem:{
+    subject1: "UGRC 220: Introduction to African Studies",
+    subject2: "MATH 224: Introductory Abstract Algebra",
+    subject3: "MATH 222: Vector Mechanics",
+    subject4: "MATH 220: Introductory Computational Mathematics",
+    subject5: "STAT 224 Introductory Probability II", 
+    subject6: "STAT 226: Official Statistics", 
+    subject7: "STAT 222: Introduction to Regression and ime Series",
+  },
 
   l300ActurialScienceSingleMajorFirstSem: {
     subject1: "STAT 331: Probability Distributions",
     subject2: "MATH 351/STAT 339 :Linear Algebra/Methods of Linear Algebra",
     subject3: "ACTU 301: Life Contingencies I ",
-    subject4: " FINC 301 : Introduction to Business Finance",
+    subject4: "FINC 301 : Introduction to Business Finance",
     subject5: "MATH 355 : Calculus of Several Variables",
     subject6: "STAT 333: Statistical Inference I",
-    subject7: " MATH 359: Discrete Mathematics ",
+    subject7: "MATH 359: Discrete Mathematics ",
     subject8: "STAT 335 : Sample Survey Methods ",
     subject9: "MATH 353 : Analysis I",
     subject10: "MATH 358 : Computational Mathematics I ",
@@ -491,7 +502,7 @@ const options = {
     subject1: "STAT 332 : Multivariate Distributions",
     subject2: "ACTU 304 : Life Contingencies II  ",
     subject3: "MATH 350 : Differential Equations I*",
-    subject4: " ACTU 302 : Introduction to Actuarial Computing",
+    subject4: "ACTU 302 : Introduction to Actuarial Computing",
     subject5: "MATH 356 : Analysis II",
     subject6: "CSCD 314 : Operations Research ",
     subject7: "MATH 354 :Abstract Algebra I** ",
