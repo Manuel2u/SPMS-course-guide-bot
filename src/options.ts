@@ -462,6 +462,13 @@ const options = {
     subject7: "PHYS 244: Mathematical Methods I",
   },
 
+  l200MathemaicsandStatisticsFirstSem:{
+    subject1: "UGRC 210: Academic Writing II",
+    subject2: "MATH 225: Vectors and Mechanics",
+    subject3: "MATH 223: Calculus II",
+    
+  },
+
 
   l300ActurialScienceSingleMajorFirstSem: {
     subject1: "STAT 331: Probability Distributions",
