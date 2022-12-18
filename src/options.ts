@@ -222,8 +222,8 @@ const options = {
     subject5: "EASC 101 : Physical Geology",
     subject6: "MATH 121 : Algebra and Trigonometry",
     subject7: "MATH 123 : Vectors and Geometry",
-    subject8: "DCIT 101 : Introduction to Computer Science" ,
-    subject9: "STAT 111 : Introduction to Statistics and Probability I"
+    subject8: "DCIT 101 : Introduction to Computer Science",
+    subject9: "STAT 111 : Introduction to Statistics and Probability I",
   },
 
   earthScienceSecondSem: {
@@ -234,8 +234,8 @@ const options = {
     subject5: "EASC 106 Geological Field Excursions",
     subject6: "MATH 122 : Calculus I",
     subject7: "MATH 126 : Algebra and Geometry",
-    subject8: "DCIT 104 : Programming Fundamentals" ,
-    subject9: "STAT 112 : Introduction to Statistics and Probability II"
+    subject8: "DCIT 104 : Programming Fundamentals",
+    subject9: "STAT 112 : Introduction to Statistics and Probability II",
   },
 
   l200ActurialSciFirstSem: {
@@ -275,14 +275,14 @@ const options = {
     subject6: "DCIT 212 : Numerical and Computational Methods",
     subject7: "UGRC 234 : Intro to African Stud: Philosophy of African",
   },
-  
+
   l200MathematicsFirstSem: {
     subject2: "Math 223 : Calculus II",
     subject1: "CBAS 210 : Academic Writing II",
     subject3: "MATH 225 : Vector and Mechanics",
     subject4: "MATH 224 : Introductory Probability I",
   },
-  
+
   l200MathematicsSecondSem: {
     subject1: "STAT 224 : Introductory Probability II",
     subject2: "MATH 220 : Introduction to Computational Mathematics",
@@ -290,18 +290,18 @@ const options = {
     subject4: "MATH 222: Vector Mechanics",
     subject5: "UGRC 234 : Intro to African Stud: Philosophy of African",
   },
-  
+
   l200StatisticsFirstSem: {
     subject1: "STAT 240 : Introduction Statistical Computing",
     subject2: "UGRC 210 / UGRC 220 : Academic Writing II/ Introduction to African Studies",
-    subject3: "STAT 221 : Introductory Probability I", 
+    subject3: "STAT 221 : Introductory Probability I",
     subject4: "STAT 223 : Elementary Statistical Methods",
     subject5: "MATH 223 : Calculus II",
-    subject6: "ACTU 203 Introduction to Financial Mathematics I", 
-    subject7: "STAT 220 Introduction to Actuarial Science", 
+    subject6: "ACTU 203 Introduction to Financial Mathematics I",
+    subject7: "STAT 220 Introduction to Actuarial Science",
     subject8: "STAT 230 Data Mining",
   },
-  
+
   l200StatisticsSecondSem: {
     subject1: "UGRC 210/UGRC 220 : Academic Writing II/ Introduction to African Studies",
     subject2: "STAT 222 : Introduction to Regression and Time Series Analysis",
@@ -313,7 +313,7 @@ const options = {
     subject8: "STAT 228 Introduction to Non-Parametric Statistics 3 STAT 223",
     subject9: "STAT 230 Data Mining",
   },
-  
+
   l200PhysicsFirstSem: {
     subject1: "CBAS 210 : Academic Writing II",
     subject2: "MATH 223 : Calculus II",
@@ -340,61 +340,61 @@ const options = {
     subject3: "CHEM 271 : Foundation Chemistry III",
     subject4: "CHEM 215 : Structure and Bonding",
     subject5: "CHEM 203 : Analytical Chemistry Laboratory",
-    subject6: "UGRC"
+    subject6: "UGRC",
   },
 
   l200ChemistrySecondSem: {
     subject1: "CHEM 234 : Organic Chemistry II",
-    subject2: "CHEM 252 : Inorganic Chemistry I", 
+    subject2: "CHEM 252 : Inorganic Chemistry I",
     subject3: "CHEM 272 : Analytical Chemistry I",
     subject4: "CHEM 216 : Chemistry of Materials",
     subject5: "CHEM 204 : Organic Chemistry Laboratory I",
-    subject6: "UGRC"
+    subject6: "UGRC",
   },
 
   l200GeophysicsFirstSem: {
     subject1: "UGRC 210 : Writing Academic II",
-    subject2: "PHYS 205 : Practical Physics III", 
+    subject2: "PHYS 205 : Practical Physics III",
     subject3: "PHYS 245 : Electromagnetism I",
     subject4: "MATH 223 : Calculus II",
-    subject5: "PHYS 241 : Atomic Physics and Quantum Phenomena", 
-    subject6: "EASC 227 : Geological Structures and Maps", 
-    subject7: "EASC 220 : Geological Field Exercises I", 
+    subject5: "PHYS 241 : Atomic Physics and Quantum Phenomena",
+    subject6: "EASC 227 : Geological Structures and Maps",
+    subject7: "EASC 220 : Geological Field Exercises I",
     subject8: "EASC 225 : Quantitative Geology",
     subject9: "MATH 225 : Vectors and Mechanics",
-    subject10: "STAT 223 : Elementary Statistical Methods"
+    subject10: "STAT 223 : Elementary Statistical Methods",
   },
 
   l200GeophysicsSecondSem: {
     subject1: "UGRC 220/238 : Introduction to African Studies",
     subject2: "PHYS 206 : Practical Physics IV",
     subject3: "PHYS 242 : Oscillations and Waves",
-    subject4: "MATH 223 : Calculus II", 
-    subject5: "PHYS 244 : Mathematical Methods I", 
+    subject4: "MATH 223 : Calculus II",
+    subject5: "PHYS 244 : Mathematical Methods I",
     subject6: "PHYS 246 : Nuclear Physics I",
-    subject7: "PHYS 248 : Introduction to Physics of Materials", 
+    subject7: "PHYS 248 : Introduction to Physics of Materials",
     subject8: "PHYS 256 : Computational Methods in Physics I",
     subject9: "EASC 216 : Fundamentals of Geophysics",
   },
 
   l200ITFirstSem: {
     subject1: "UGRC 210 : Academic Writing II",
-    subject2: "DCIT 201 : Programming I" ,
+    subject2: "DCIT 201 : Programming I",
     subject3: "DCIT 203 : Digital and Logic Systems Design",
-    subject4: "DCIT 205 : Multi Media and Web Design" ,
-    subject5: "DCIT 207 : Computer Organization and Architecture", 
-    subject6: "DCIT 209 : E-Business Architectures" ,
+    subject4: "DCIT 205 : Multi Media and Web Design",
+    subject5: "DCIT 207 : Computer Organization and Architecture",
+    subject6: "DCIT 209 : E-Business Architectures",
   },
 
   l200ITSecondSem: {
     subject1: "UGRC 220/238 : Introduction to African Studies",
-    subject2: "DCIT 202 : Mobile Application Development" ,
+    subject2: "DCIT 202 : Mobile Application Development",
     subject3: "DCIT 204 : Data Structures & Algorithm I",
-    subject4: "DCIT 206 : Systems Administration" ,
-    subject5: "DCIT 208 : Software Engineering" ,
-    subject6: "DCIT 200 : Internships" ,
-    subject7: "DCIT 212 : Numerical and Computational Methods", 
-    subject8: "DCIT 214 : Information Modeling and Specification" ,
+    subject4: "DCIT 206 : Systems Administration",
+    subject5: "DCIT 208 : Software Engineering",
+    subject6: "DCIT 200 : Internships",
+    subject7: "DCIT 212 : Numerical and Computational Methods",
+    subject8: "DCIT 214 : Information Modeling and Specification",
   },
 
   l200ChemistryAndPhysicsFirstSem: {
@@ -431,7 +431,7 @@ const options = {
     subject6: "PHYS 245: Electromagnetism I",
     subject7: "MATH 223: Calculus II",
   },
-  
+
   l200ComputerScienceandPhysicsSecondSem: {
     subject1: "UGRC 220: Introduction to African Studies",
     subject2: "DCIT 202: Mobile Application Development",
@@ -442,6 +442,8 @@ const options = {
     subject7: "PHYS 244: Mathematical Methods I",
   },
 
+<<<<<<< HEAD
+=======
   l200MathematicsandPhysicsFirstSem:{
     subject1: "UGRC 210: Academic Writing II",
     subject2: "MATH 225: Vectors and Mechanics",
@@ -572,6 +574,7 @@ l200GeologywithChemistrySecondSem:{
 },
 
 
+>>>>>>> 87348da8b815bd08e0fd1a91d3478c342d41ad67
   l300ActurialScienceSingleMajorFirstSem: {
     subject1: "STAT 331: Probability Distributions",
     subject2: "MATH 351/STAT 339 :Linear Algebra/Methods of Linear Algebra",
@@ -586,7 +589,6 @@ l200GeologywithChemistrySecondSem:{
     subject11: "ACTU 320: Internship in Actuarial Science (either 1st or 2nd Semester) *",
     subject12: "ACTU 335 : Microeconomic Theory for Actuaries I ",
     subject13: "ACTU 359 : Risk Management and Insurance  ",
-
   },
 
   l300ActurialScienceSingleMajorSecondSem: {
@@ -613,7 +615,6 @@ l200GeologywithChemistrySecondSem:{
     subject6: "DCIT 307 : Mini-Project  ",
     subject7: "DCIT 309 : Embedded Systems and IoT ",
     subject8: "DCIT 311 : Machine Learning ",
-
   },
   l300ComputerScienceSingleMajorSecondSem: {
     subject1: "DCIT 302 : Human Computer Interaction",
@@ -623,18 +624,17 @@ l200GeologywithChemistrySecondSem:{
     subject5: "DCIT 318 : Programming II ",
     subject6: "DCIT 306 : Cloud Computing",
     subject7: "DCIT 316 : Computational models for Social Media Mining",
-
   },
 
- l300MathematicsSingleMajorFirstSem: {
-   subject1: "MATH 351 : Linear Algebra  ",
-   subject2: "MATH 353 : Analysis I  ",
-   subject3: "MATH 355 : Calculus of Several Variables ",
-   subject4: "iMATH 350: Differential Equations I ",
-   subject5: "MATH 359 : Discrete Mathematics  ",
-   subject6: "MATH 361 : Classical Mechanics  ",
-   subject7: "MATH 363 : Introductory concepts of financial mathematics ",
-   subject8: "STAT 331 : Probability distributions  ",
+  l300MathematicsSingleMajorFirstSem: {
+    subject1: "MATH 351 : Linear Algebra  ",
+    subject2: "MATH 353 : Analysis I  ",
+    subject3: "MATH 355 : Calculus of Several Variables ",
+    subject4: "iMATH 350: Differential Equations I ",
+    subject5: "MATH 359 : Discrete Mathematics  ",
+    subject6: "MATH 361 : Classical Mechanics  ",
+    subject7: "MATH 363 : Introductory concepts of financial mathematics ",
+    subject8: "STAT 331 : Probability distributions  ",
   },
 
   l300MathematicsSingleMajorSecondSem: {
@@ -649,7 +649,6 @@ l200GeologywithChemistrySecondSem:{
     subject9: " STAT 332 : Multivariate distributions  ",
   },
 
-
   l300StatisticsSingleMajorFirstSem: {
     subject1: "STAT 331 : Probability Distributions",
     subject2: "STAT 333 : Statistical Inference I ",
@@ -660,7 +659,6 @@ l200GeologywithChemistrySecondSem:{
     subject7: " MATH 353 : Analysis I ",
     subject8: "MATH 355  : Calculus of Several Variables",
     subject9: "MATH 359 : Discrete Mathematics ",
-
   },
   l300StatisticsSingleMajorSecondSem: {
     subject1: "STAT 332 : Multivariate Distributions ",
@@ -671,9 +669,7 @@ l200GeologywithChemistrySecondSem:{
     subject6: "ACTU 332 : Life Contingency II  ",
     subject7: "STAT 338 Decision Theory  ",
     subject8: "MATH 356 Analysis II",
-
-  }, 
-
+  },
 
   l300PhysicsSingleMajorFirstSem: {
     subject1: "PHYS 305 : Practical Physics V  ",
@@ -685,19 +681,16 @@ l200GeologywithChemistrySecondSem:{
     subject8: "PHYS 347 : Electronics I  ",
     subject9: "PHYS 365 : Physics of the Ocean  ",
     subject10: "EASC 339 : Principles of Applied Geophysics ",
-
-
   },
   l300PhysicsSingleMajorSecondSem: {
     subject1: "PHYS 306 : Practical Physics VI ",
     subject2: "PHYS 342 : Classical Mechanics  ",
     subject3: "PHYS 344 : Mathematical Methods II  ",
     subject4: "PHYS 352 : Quantum Mechanics I ",
-    subject5: "PHYS 354 Special Relativity  ",
+    subject5: "PHYS 354 : Special Relativity  ",
     subject6: "PHYS 356 : Computational Methods in Physics II ",
     subject8: "PHYS 364 : Principles and Applications of Neutron Activation Analysis ",
     subject9: "STAT 336 : Design of Experiments ",
-
   },
 
   l300ChemistrySingleMajorFirstSem: {
@@ -707,7 +700,6 @@ l200GeologywithChemistrySecondSem:{
     subject4: " CHEM 355 : Inorganic Chemistry II  ",
     subject5: " CHEM 311 : Physical Chemistry Laboratory  ",
     subject6: " CHEM 351 : Inorganic Chemistry Laboratory  ",
-
   },
   l300ChemistrySingleMajorSecondSem: {
     subject1: " CHEM 312 : Thermodynamics I  ",
@@ -727,8 +719,6 @@ l200GeologywithChemistrySecondSem:{
     subject1: " ",
   },
 
-
-
   l300GeophysicsSingleMajorFirstSem: {
     subject1: " ",
   },
@@ -736,9 +726,6 @@ l200GeologywithChemistrySecondSem:{
   l300GeophysicsSingleMajorSecondSem: {
     subject1: " ",
   },
-
-
-
 
   l300AppliedGeophysicsSingleMajorFirstSem: {
     subject1: " ",
@@ -748,8 +735,6 @@ l200GeologywithChemistrySecondSem:{
     subject1: " ",
   },
 
-
-
   l300BiomathematicsSingleMajorFirstSem: {
     subject1: " ",
   },
@@ -757,8 +742,6 @@ l200GeologywithChemistrySecondSem:{
   l300BiomathematicsSingleMajorSecondSem: {
     subject1: " ",
   },
-
-
 
   l300InformationTechnologySingleMajorFirstSem: {
     subject1: "DCIT 301 : Operating Systems  ",
@@ -769,7 +752,6 @@ l200GeologywithChemistrySecondSem:{
     subject6: "DCIT 307 : Mini-Project  ",
     subject7: "DCIT 315 : Principles of 3D Environment   ",
     subject8: "DCIT 321 Software Evolution   ",
-
   },
   l300InformationTechnologySingleMajorSecondSem: {
     subject1: "DCIT 302 : Human Computer Interaction  ",
@@ -779,13 +761,7 @@ l200GeologywithChemistrySecondSem:{
     subject5: "DCIT 318 : Programming II  ",
     subject6: "DCIT 314 Game Engine Architecture ",
     subject7: "DCIT 322 Database Management Administration ",
-
   },
-
-
-
-
-
 
   l300AppliedGeologySingleMajorFirstSem: {
     subject1: " ",
@@ -795,14 +771,516 @@ l200GeologywithChemistrySecondSem:{
     subject1: " ",
   },
 
+  // LEVEL 400 (AUTHOR: KHEVLAR)
 
+  l400ChemistrySingleMajorFirstSem: {
+    subject1: "CHEM 400 : Project",
+    subject2: "CHEM 473 : X-ray Crystallography",
+    subject3: "CHEM 401 : Thermodynamics II",
+    subject4: "CHEM 403 : Symmetry, Group Theory and Applications",
+    subject5: "CHEM 405 : Reaction Kinetics",
+    subject6: "CHEM 441 : Chemistry of Natural Products ",
+    subject7: "CHEM 439 : Organometallic Chemistry",
+    subject8: "CHEM 437 : Medicinal Chemistry",
+    subject9: "CHEM 423 : Polymer Chemistry and Tech",
+    subject10: "CHEM 471 : Nuclear Chemistry",
+    subject11: "CHEM 491 : Petroleum Chemistry and Tech",
+    subject12: "CHEM 493 : Mineral Processing",
+    subject13: "CHEM 495 : Pulp and Paper Chemistry and Technology",
+  },
 
+  l400ChemistrySingleMajorSecondSem: {
+    subject1: "CHEM 400 : Project",
+    subject2: "CHEM 402 : Quantum Chemistry ",
+    subject3: "CHEM 412 : Surface Chemistry Colloids ",
+    subject4: "CHEM 454 : Transition Metal Chemistry",
+    subject5: "CHEM 472 : Instrumental Methods of Chemical Analysis",
+    subject6: "CHEM 414 : Molecular Structure ",
+    subject7: "CHEM 452 : Solid State Chemistry",
+    subject8: "CHEM 494 : Textile Chemistry and Technology",
+    subject9: "CHEM 492 : Industrial Chemistry",
+    subject10: "CHEM 474 : Elements of Forensic Chemistry",
+    subject11: "CHEM 496 : Environmental Chemistry",
+  },
 
+  l400ChemistryCombinedMajorFirstSem: {
+    subject1: "CHEM 401 : Thermodynamics II",
+    subject2: "CHEM 423 : Polymer Chemistry and Technology",
+    subject3: "CHEM 405 : Reaction Kinetics",
+    subject4: "CHEM 441 : Chemistry of Natural Products",
+    subject5: "CHEM 403 : Symmetry, Group Theory and Application",
+    subject6: "CHEM 437 : Medicinal Chemistry",
+    subject7: "CHEM 439 : Organometallic Chemistry",
+    subject8: "CHEM 471 : Nuclear Chemistry",
+    subject9: "CHEM 473 : X-ray Crystallography",
+    subject10: "CHEM 491 : Petroleum Chemistry and Technology",
+    subject11: "CHEM 493 : Mineral Processing",
+    subject12: "CHEM 495 : Pulp and Paper Chemistry and Technology",
+  },
 
+  l400ChemistryCombinedMajorSecondSem: {
+    subject1: "CHEM 402 : Quantum Chemistry",
+    subject2: "CHEM 412 : Surface Chemistry and Colloids",
+    subject3: "CHEM 454 : Transition Metal Chemistry",
+    subject4: "CHEM 472 : Instrumental Methods of Chemical Analysis",
+    subject5: "CHEM 414 : Molecular Structure",
+    subject6: "CHEM 492 : Industrial Chemistry",
+    subject7: "CHEM 494 : Textile Chemistry and Technology",
+    subject8: "CHEM 452 : Solid State Chemistry",
+    subject9: "CHEM 474 : Elements of Forensic Chemistry ",
+    subject10: "CHEM 496 : Environmental Chemistry",
+  },
 
+  l400ComputerScienceSingleMajorFirstSem: {
+    subject1: "DCIT 400 : Project",
+    subject2: "DCIT 401 : Social, Legal, Ethical and Professional Issues",
+    subject3: "DCIT 407 : Image Processing",
+    subject4: "DCIT 403 : Designing Intelligent Agents",
+    subject5: "DCIT 405 : Statistical Models  and Methods for Data Science",
+    subject6: "DCIT 411 : Bioinformatics",
+    subject7: "DCIT 417 : Network Performance Analysis and Modeling",
+    subject8: "DCIT 423 : Network Servers and Infrastructure",
+  },
 
+  l400ComputerScienceSingleMajorSecondSem: {
+    subject1: "DCIT 400 : Project",
+    subject2: "DCIT 402 : Management Principles in Computing",
+    subject3: "DCIT 418 : Systems and Network Security",
+    subject4: "DCIT 428 : Wireless Systems and Networks",
+    subject5: "DCIT 404 : Advanced Databases",
+    subject6: "DCIT 406 : Advanced Computer Networks",
+    subject7: "DCIT 408 : Compilers",
+    subject8: "DCIT 426 : Telecommunication Systems",
+    subject9: "DCIT 412 : Computer Vision",
+    subject10: "DCIT 414 : Data Mining and Warehousing",
+    subject11: "DCIT 416 : Digital Signal Processing",
+    subject12: "DCIT 422 : Information Visualization",
+  },
 
+  l400ComputerScienceCombinedFirstSem: {
+    subject1: "DCIT 400 : Project",
+    subject2: "DCIT 401 : Social, Legal, Ethical and Professional Issues",
+    subject3: "DCIT 407 : Image Processing",
+    subject4: "DCIT 403 : Designing Intelligent Agents",
+    subject5: "DCIT 405 : Statistical Models  and Methods for Data Science",
+    subject6: "DCIT 411 : Bioinformatics",
+    subject7: "DCIT 417 : Network Performance Analysis and Modeling",
+    subject8: "DCIT 423 : Network Servers and Infrastructure",
+  },
 
+  l400ComputerScienceCombinedSecondSem: {
+    subject1: "DCIT 400 : Project",
+    subject2: "DCIT 402 : Management Principles in Computing",
+    subject3: "DCIT 418 : Systems and Network Security",
+    subject4: "DCIT 428 : Wireless Systems and Networks",
+    subject5: "DCIT 404 : Advanced Databases",
+    subject6: "DCIT 406 : Advanced Computer Networks",
+    subject7: "DCIT 408 : Compilers",
+    subject8: "DCIT 426 : Telecommunication Systems",
+    subject9: "DCIT 412 : Computer Vision",
+    subject10: "DCIT 414 : Data Mining and Warehousing",
+    subject11: "DCIT 416 : Digital Signal Processing",
+    subject12: "DCIT 422 : Information Visualization",
+  },
+
+  l400InformationTechnologyFirstSem: {
+    subject1: "DCIT 400 : Project",
+    subject2: "DCIT 401 : Social, Legal, Ethical and Professional Issues",
+    subject3: "DCIT 409 : Digital Forensics",
+    subject4: "DCIT 413 : Play and Games",
+    subject5: "DCIT 415 : Advanced Software Engineering",
+    subject6: "DCIT 419 : Agile Methods",
+    subject7: "DCIT 421 : Persuasive Systems Development",
+  },
+
+  l400InformationTechnologySecondSem: {
+    subject1: "DCIT 400 : Project 3",
+    subject2: "DCIT 402 : Management Principles in Computing",
+    subject3: "DCIT 418 : Systems and Network Security ",
+    subject4: "DCIT 428 : Wireless Systems and Networks",
+    subject5: "DCIT 404 : Advanced Databases",
+    subject6: "DCIT 406 : Advanced Computer Networks",
+    subject7: "DCIT 408 : Compilers",
+    subject8: "DCIT 426 : Telecommunication Systems",
+    subject9: "DCIT 412 : Computer Vision",
+    subject10: "DCIT 414 : Data Mining and Warehousing",
+    subject11: "DCIT 416 : Digital Signal Processing",
+    subject12: "DCIT 422 : Information Visualization",
+  },
+
+  l400EarthScienceSingleMajorFirstSem: {
+    subject1: "EASC 420 : Project",
+    subject2: "EASC 471 : Remote Sensing and Geographic Information Systems",
+    subject3: "EASC 450 : Geological Field Mapping",
+    subject4: "EASC 419 : Igneous and Metamorphic Petrology",
+    subject5: "EASC 417 : Mineralogy",
+    subject6: "EASC 437 : Geochemistry and Cosmochemistry",
+    subject7: "EASC 465 : Micropaleontology",
+    subject8: "EASC 461 : Basin Analysis",
+    subject9: "EASC 449 : Mineral Exploration Methods, Planning and Management",
+  },
+
+  l400EarthScienceSingleMajorSecondSem: {
+    subject1: "EASC 420 : Project",
+    subject2: "EASC 404 : Statistical Methods in Earth Science ",
+    subject3: "EASC 480 : Field Studies in Earth Science",
+    subject4: "EASC 470 : Communication and  Entrepreneurship in the Earth Sciences",
+    subject5: "EASC 446 : Sedimentary Petrology",
+    subject6: "EASC 448 : Geology of Africa",
+    subject7: "EASC 454 : Geochronology",
+    subject8: "EASC 476 : Geotectonics",
+    subject9: "EASC 478 : Stratigraphy",
+    subject10: "EASC 482 : Geology of Mineral Deposits",
+  },
+
+  l400GeologyMajorMinorFirstSem: {
+    subject1: "EASC 420 : Project",
+    subject2: "EASC 471 : Remote Sensing and Geographic Information Systems",
+    subject3: "EASC 450 : Geological Field Mapping",
+    subject4: "EASC 419 : Igneous and Metamorphic Petrology",
+    subject5: "EASC 417 : Mineralogy",
+    subject6: "EASC 437 : Geochemistry and Cosmochemistry",
+    subject7: "EASC 465 : Micropaleontology",
+    subject8: "EASC 461 : Basin Analysis",
+  },
+
+  l400GeologyMajorMinorSecondSem: {
+    subject1: "EASC 420 : Project",
+    subject2: "EASC 404 : Statistical Methods in Earth Science ",
+    subject3: "EASC 480 : Field Studies in Earth Science",
+    subject4: "EASC 470 : Communication and  Entrepreneurship in the Earth Sciences",
+    subject5: "EASC 446 : Sedimentary Petrology",
+    subject6: "EASC 448 : Geology of Africa ",
+    subject7: "EASC 454 : Geochronology",
+    subject8: "EASC 476 : Geotectonics",
+    subject9: "EASC 478 : Stratigraphy",
+    subject10: "EASC 482 : Geology of Mineral Deposits",
+  },
+
+  l400MathSingleMajorFirstSem: {
+    subject1: "MATH 400 : Project",
+    subject2: "MATH 441 : Advanced Calculus",
+    subject3: "MATH 440 : Abstract Algebra II",
+    subject4: "MATH 447 : Complex Analysis",
+    subject5: "MATH 443 : Differential Geometry",
+    subject6: "MATH 445 : Introductory Functional Analysis",
+    subject7: "MATH 449 : Electromagnetic Theory II",
+    subject8: "MATH 451 : Introduction to Algebraic Field Theory",
+    subject9: "MATH 453 : Introduction to Quantum Mechanics",
+    subject10: "MATH 455 : Computational Mathematics II",
+    subject11: "MATH 457 : Mathematical Biology I",
+  },
+
+  l400MathSingleMajorSecondSem: {
+    subject1: "MATH 400 : Project 3",
+    subject2: "MATH 442 : Integration Theory and Measure",
+    subject3: "MATH 440 : Abstract Algebra II",
+    subject4: "MATH 444 : Calculus on Manifolds ",
+    subject5: "MATH 446 : Module Theory",
+    subject6: "MATH 448 : Special Relativity",
+    subject7: "MATH 452 : Introduction to Lie Groups and Lie Algebra",
+    subject8: "MATH 450 : Differential Equations II",
+    subject9: "MATH 458 : Mathematical Biology II",
+    subject10: "MATH 460 :  Fourier series and Fourier transforms",
+  },
+
+  l400MathMajorMinorFirstSem: {
+    subject1: "MATH 400 : Project",
+    subject2: "MATH 441 : Advanced Calculus",
+    subject3: "MATH 440 : Abstract Algebra II",
+    subject4: "MATH 447 : Complex Analysis",
+    subject5: "MATH 443 : Differential Geometry",
+    subject6: "MATH 445 : Introductory Functional Analysis",
+    subject7: "MATH 449 : Electromagnetic Theory II",
+    subject8: "MATH 451 : Introduction to Algebraic Field Theory",
+    subject9: "MATH 453 : Introduction to Quantum Mechanics",
+    subject10: "MATH 455 : Computational Mathematics II",
+    subject11: "MATH 457 : Mathematical Biology I",
+  },
+
+  l400MathMajorMinorSecondSem: {
+    subject1: "MATH 400 : Project 3",
+    subject2: "MATH 442 : Integration Theory and Measure",
+    subject3: "MATH 444 : Calculus on Manifolds ",
+    subject4: "MATH 446 : Module Theory",
+    subject5: "MATH 448 : Special Relativity",
+    subject6: "MATH 452 : Introduction to Lie Groups and Lie Algebra",
+    subject7: "MATH 450 : Differential Equations II",
+    subject8: "MATH 458 : Mathematical Biology II",
+    subject9: "MATH 460 : Fourier series and Fourier transforms",
+  },
+
+  l400MathCombinedMajorFirstSem: {
+    subject1: "MATH 441 : Advanced Calculus",
+    subject2: "MATH 447 : Complex Analysis",
+    subject3: "MATH 440 : Abstract Algebra II",
+    subject4: "MATH 443 : Differential Geometry",
+    subject5: "MATH 445 : Introductory Functional Analysis",
+    subject6: "MATH 449 : Electromagnetic theory II",
+    subject7: "MATH 451 : Introduction to Algebraic Field Theory",
+    subject8: "MATH 453 : Introduction to Quantum Mechanics",
+    subject9: "MATH 455 : Computational Mathematics II",
+    subject10: "MATH 457 : Mathematical Biology I",
+  },
+
+  l400MathCombinedMajorSecondSem: {
+    subject1: "MATH 442 : Integration Theory and Measure",
+    subject2: "MATH 372 : Topology",
+    subject3: "MATH 444 : Calculus on Manifolds ",
+    subject4: "MATH 446 : Module Theory",
+    subject5: "MATH 448 : Special Relativity",
+    subject6: "MATH 452 : Introduction to Lie Groups and Lie Algebra",
+    subject7: "MATH 450 : Differential Equations II",
+    subject8: "MATH 458 : Mathematical Biology II",
+    subject9: "MATH 460 : Fourier series and Fourier transforms",
+  },
+
+  l400PhysicsMajorFirstSem: {
+    subject1: "PHYS 410 : Project",
+    subject2: "PHYS 401 : Seminar I",
+    subject3: "PHYS 443 : Statistical Mechanics",
+    subject4: "PHYS 459 : Solid State Physics II",
+    subject5: "PHYS 447 : Electronics II",
+    subject6: "PHYS 455 : Energy Systems",
+    subject7: "PHYS 461 : Principles of Radioactive Dating",
+    subject8: "PHYS 465 : Physics of Telecommunications",
+  },
+
+  l400PhysicsMajorSecondSem: {
+    subject1: "PHYS 410 : Project",
+    subject2: "PHYS 402 : Seminar II",
+    subject3: "PHYS 446 : Nuclear Physics II",
+    subject4: "PHYS 448 : Particle Physics",
+    subject5: "PHYS 452 : Quantum Mechanics II",
+    subject6: "PHYS 454 : Contemporary Physics",
+    subject7: "PHYS 468 : Introduction to Cosmology and Astrophysics",
+    subject8: "PHYS 462 : Basic Meteorology",
+    subject9: "PHYS 466 : Physics at Nanoscale",
+  },
+
+  l400PhysicsMajorMinorFirstSem: {
+    subject1: "PHYS 410 : Project",
+    subject2: "PHYS 401 : Seminar I",
+    subject3: "PHYS 443 : Statistical Mechanics",
+    subject4: "PHYS 449 : Physics of Solids",
+    subject5: "PHYS 447 : Electronics II",
+    subject6: "PHYS 455 : Energy Systems",
+    subject7: "PHYS 461 : Principles of Radioactive Dating",
+    subject8: "PHYS 465 : Physics of Telecommunications",
+  },
+
+  l400PhysicsMajorMinorSecondSem: {
+    subject1: "PHYS 410 : Project",
+    subject2: "PHYS 402 : Seminar II",
+    subject3: "PHYS 446 : Nuclear Physics II",
+    subject4: "PHYS 448 : Particle Physics",
+    subject5: "PHYS 452 : Quantum Mechanics II",
+    subject6: "PHYS 454 : Contemporary Physics",
+    subject7: "PHYS 468 : Introduction to Cosmology and Astrophysics",
+    subject8: "PHYS 462 : Basic Meteorology",
+    subject9: "PHYS 466 : Physics at Nanoscale",
+  },
+
+  l400PhysicsCombinedMajorFirstSem: {
+    subject1: "PHYS 443 : Statistical Mechanics",
+    subject2: "PHYS 449 : Physics of Solids",
+    subject3: "PHYS 410 : Project",
+    subject4: "PHYS 401 : Seminar I",
+    subject5: "PHYS 447 : Electronics II",
+    subject6: "PHYS 455 : Energy Systems",
+    subject7: "PHYS 461 : Principles of Radioactive Dating",
+    subject8: "PHYS 465 : Physics of Telecommunications",
+  },
+
+  l400PhysicsCombinedMajorSecondSem: {
+    subject1: "PHYS 410 : Project",
+    subject2: "PHYS 402 : Seminar II",
+    subject3: "PHYS 446 : Nuclear Physics II",
+    subject4: "PHYS 448 : Particle Physics",
+    subject5: "PHYS 452 : Quantum Mechanics II",
+    subject6: "PHYS 454 : Contemporary Physics",
+    subject7: "PHYS 468 : Introduction to Cosmology and Astrophysics",
+    subject8: "PHYS 462 : Basic Meteorology",
+    subject9: "PHYS 466 : Physics at Nanoscale",
+  },
+
+  l400GeophysicsFirstSem: {
+    subject1: "PHYS 401 : Seminar I",
+    subject2: "PHYS 447 : Electronics II",
+    subject3: "PHYS 443 : Statistical Mechanics",
+    subject4: "PHYS 449 : Physics of Solids",
+    subject5: "PHYS 455 : Energy systems",
+    subject6: "PHYS 461 : Principles of Radioactive Dating",
+    subject7: "EASC 401 : Remote Sensing and Geographic Information Systems",
+    subject8: "EASC 451 : Rock Mechanics",
+    subject9: "EASC 423 : Hydrogeology",
+    subject10: "GPHY 400 : Project",
+    subject11: "GPHY 403 : Geophysical Instrumentation and Techniques",
+  },
+
+  l400GeophysicsSecondSem: {
+    subject1: "EASC 428 : Exploration Geophysics",
+    subject2: "EASC 442 : Petroleum Reservoir Geophysics",
+    subject3: "EASC 452 : Site Investigations",
+    subject4: "PHYS 402 : Seminar II",
+    subject5: "EASC 404 : Statistical Methods in Earth Science",
+    subject6: "PHYS 446 : Nuclear Physics II",
+    subject7: "PHYS 448 : Particle Physics",
+    subject8: "PHYS 462 : Basic Meteorology",
+    subject9: "PHYS 468 : Introduction to Cosmology and Astrophysics",
+  },
+
+  l400StatisticsSingleMajorFirstSem: {
+    subject1: "STAT 443 : Theory of Sampling",
+    subject2: "STAT 445 : Advanced Regression",
+    subject3: "STAT 450 : Project",
+    subject4: "STAT 461 : Bayesian Statistics",
+    subject5: "STAT 440 : Business Statistics",
+    subject6: "STAT 447 : Non-Parametric Statistics",
+    subject7: "STAT 451 : Random Processes",
+    subject8: "STAT 453 : Population Statistics",
+    subject9: "STAT 459 : Statistical Quality Control",
+    subject10: "STAT 455 : Actuarial Statistics I",
+    subject11: "STAT 457 : Economic and Social Statistics I",
+    subject12: "MATH 441 : Advanced Calculus",
+    subject13: "MATH 445 : Introductory Functional Analysis",
+  },
+
+  l400StatisticsSingleMajorSecondSem: {
+    subject1: "STAT 444 : Survey Organisation and Management",
+    subject2: "STAT 466 : Discrete Data Analysis",
+    subject3: "STAT 450 : Project",
+    subject4: "STAT 442 : Applied Times Series Analysis",
+    subject5: "STAT 446 : Multivariate Methods",
+    subject6: "STAT 448 : Analysis of Experimental Design",
+    subject7: "STAT 464 : Statistical Computing with R",
+    subject8: "STAT 454 : Biometrics",
+    subject9: "STAT 456 : Actuarial Statistics II",
+    subject10: "STAT 458 : Economic and Social Statistics II ",
+    subject11: "STAT 462 : Biostatistics",
+    subject12: "MATH 422 : Integration Theory and Measure",
+    subject13: "MATH 450 : Differential Equation II",
+  },
+
+  l400StatisticsMajorMinorFirstSem: {
+    subject1: "STAT 443 : Theory of Sampling",
+    subject2: "STAT 445 : Advanced Regression",
+    subject3: "STAT 450 : Project",
+    subject4: "STAT 461 : Bayesian Statistics",
+    subject5: "STAT 440 : Business Statistics",
+    subject6: "STAT 447 : Non-Parametric Statistics",
+    subject7: "STAT 451 : Random Processes",
+    subject8: "STAT 453 : Population Statistics",
+    subject9: "STAT 459 : Statistical Quality Control",
+    subject10: "STAT 455 : Actuarial Statistics I",
+    subject11: "STAT 457 : Economic and Social Statistics I",
+  },
+
+  l400StatisticsMajorMinorSecondSem: {
+    subject1: "STAT 444 : Survey Organisation and Management",
+    subject2: "STAT 466 : Discrete Data Analysis",
+    subject3: "STAT 450 : Project",
+    subject4: "STAT 442 : Applied Times Series Analysis",
+    subject5: "STAT 446 : Multivariate Methods",
+    subject6: "STAT 464 : Statistical Computing with R",
+    subject7: "STAT 454 : Biometrics",
+    subject8: "STAT 456 : Actuarial Statistics II",
+    subject9: "STAT 458 : Economic and Social Statistics II ",
+    subject10: "STAT 462 : Biostatistics",
+    subject11: "MATH 422 : Integration Theory and Measure",
+    subject12: "MATH 450 : Differential Equation II",
+  },
+
+  l400StatisticsCombinedMajorFirstSem: {
+    subject1: "STAT 443 : Theory of Sampling",
+    subject2: "STAT 445 : Advanced Regression Analysis",
+    subject3: "STAT 440 : Business Statistics",
+    subject4: "STAT 447 : Non-Parametric Statistics",
+    subject5: "STAT 450 : Project",
+    subject6: "STAT 451 : Random Processes",
+    subject7: "STAT 453 : Population Statistics",
+    subject8: "STAT 455 : Actuarial Statistics I",
+    subject9: "STAT 457 : Economic and Social Statistics I",
+    subject10: "STAT 459 : Statistical Quality Control",
+    subject11: "STAT 461 : Bayesian Statistics Methods",
+  },
+
+  l400StatisticsCombinedMajorSecondSem: {
+    subject1: "STAT 444 : Survey Organisation and Management",
+    subject2: "STAT 448 : Analysis of Experimental design",
+    subject3: "STAT 450 : Project",
+    subject4: "STAT 446 : Multivariate Methods",
+    subject5: "STAT 464 : Statistical Computing with R",
+    subject6: "STAT 454 : Biometrics",
+    subject7: "STAT 456 : Actuarial Statistics II",
+    subject8: "STAT 458 : Economic and Social Statistics II ",
+    subject9: "STAT 466 : Discrete Data Analysis",
+  },
+
+  l400ActurialScienceSingleMajorFirstSem: {
+    subject1: "ACTU 410 : Project",
+    subject2: "ACTU 405 : Fundamentals of Financial Accounting I",
+    subject3: "ACTU 409 : Loss Distributions & Actuarial Risk Measures",
+    subject4: "ACTU 453 : Introduction to Non-Life Insurance Mathematics I",
+    subject5: "ACTU 407 : Financial Economics I",
+    subject6: "STAT 457 : Economic and Social Statistics II",
+    subject7: "STAT 445 : Advanced Regression Analysis",
+    subject8: "ACTU 445 : Macroeconomic Theory for Actuaries I",
+    subject9: "STAT 443 : Population Statistics",
+    subject10: "STAT 451 : Random Processes",
+    subject11: "MATH 441 : Advanced Calculus",
+    subject12: "MATH 445 : Introductory Functional Analysis",
+    subject13: "ACTU 441 : Econometrics for Actuaries I",
+    subject14: "MATH 447 : Complex Analysis",
+    subject15: "STAT 459 : Statistical Quality Control",
+    subject16: "STAT 440 : Business Statistics",
+  },
+
+  l400ActurialScienceSingleMajorSecondSem: {
+    subject1: "ACTU 410 : Project",
+    subject2: "ACTU 412 : Fundamental Financial Accounting II",
+    subject3: "ACTU 454 : Introduction to Non-life Insurance Mathematics II",
+    subject4: "ACTU 408 : Financial Economics II",
+    subject5: "ACTU 404 : Pensions and Social Security",
+    subject6: "MATH 442 : Differential Equation II",
+    subject7: "ACTU 448 : Macroeconomic Theory for Actuaries II",
+    subject8: "FINC 458 : Health Insurance",
+    subject9: "STAT 458 : Economic and Social Statistics II",
+    subject10: "ACTU 442 : Econometrics for Actuaries II",
+    subject11: "FINC 452 : Property and Pecuniary Insurance",
+  },
+
+  l400ActurialScienceAndMathCombinedMajorFirstSem: {
+    subject1: "ACTU 403 : Introduction to Non-Life Insurance Mathematics I",
+    subject2: "ACTU 405 : Fundamentals of Financial Accounting I",
+    subject3: "ACTU 407 : Financial Economics I",
+    subject4: "ACTU 409 : Loss Distributions & Actuarial Risk Measures",
+    subject5: "MATH 441 : Advanced Calculus",
+    subject6: "MATH 445 : Introductory Functional Analysis",
+    subject7: "STAT 440 : Business Statistics",
+    subject8: "STAT 451 : Random Processes",
+    subject9: "ACTU 443 : Econometrics for Actuaries I",
+    subject10: "STAT 443 : Population Statistics",
+    subject11: "STAT 445 : Advanced Regression Analysis",
+    subject12: "ACTU 445 : Macroeconomic Theory for Actuaries I",
+    subject13: "MATH 447 : Complex Analysis",
+    subject14: "STAT 457 : Economic and Social Statistics I",
+    subject15: "STAT 459 : Statistical Quality Control",
+  },
+
+  l400ActurialScienceAndMathCombinedMajorSecondSem: {
+    subject1: "ACTU 404 : Pensions and Social Security",
+    subject2: "ACTU 412 : Fundamental Financial Accounting II",
+    subject3: "MATH 442 : Integration and Measure Theory",
+    subject4: "ACTU 444 : Introduction Non-life Insurance Mathematics II",
+    subject5: "ACTU 408 : Financial Economics II",
+    subject6: "ACTU 442 : Econometrics for for Actuaries II",
+    subject7: "ACTU 448 : Macroeconomic Theory for Actuaries II",
+    subject8: "MATH 450 : Differential Equation II",
+    subject9: "FINC 452 : Property and Pecuniary Insurance",
+    subject10: "FINC 458 : Health Insurance",
+    subject11: "STAT 458 : Economic and Social Statistics II",
+  },
 };
 
 export default options;
