@@ -51,12 +51,12 @@ const options = {
     option5: "Mathematics with Computer Science",
     option6: "Mathematics with Statistics",
     option7: "Mathematics with Geology",
+    option13: "Physics with Statistics",
     option8: "Physics with Computer Science",
     option9: "Physics with Geology",
     option10: "Physics with Mathematics",
     option11: "Statistics with Computer Science",
     option12: "Statistics with Mathematics",
-    option13: "Physics with Statistics",
   },
 
   semesterOptions: {
