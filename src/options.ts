@@ -571,6 +571,10 @@ l200GeologywithChemistrySecondSem:{
 
 },
 
+l200MathematicswithPhysics:{
+  
+},
+
   l300ActurialScienceSingleMajorFirstSem: {
     subject1: "STAT 331: Probability Distributions",
     subject2: "MATH 351/STAT 339 :Linear Algebra/Methods of Linear Algebra",
