@@ -442,8 +442,6 @@ const options = {
     subject7: "PHYS 244: Mathematical Methods I",
   },
 
-<<<<<<< HEAD
-=======
   l200MathematicsandPhysicsFirstSem:{
     subject1: "UGRC 210: Academic Writing II",
     subject2: "MATH 225: Vectors and Mechanics",
@@ -573,8 +571,6 @@ l200GeologywithChemistrySecondSem:{
 
 },
 
-
->>>>>>> 87348da8b815bd08e0fd1a91d3478c342d41ad67
   l300ActurialScienceSingleMajorFirstSem: {
     subject1: "STAT 331: Probability Distributions",
     subject2: "MATH 351/STAT 339 :Linear Algebra/Methods of Linear Algebra",
