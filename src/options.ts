@@ -51,12 +51,12 @@ const options = {
     option5: "Mathematics with Computer Science",
     option6: "Mathematics with Statistics",
     option7: "Mathematics with Geology",
+    option13: "Physics with Statistics",
     option8: "Physics with Computer Science",
     option9: "Physics with Geology",
     option10: "Physics with Mathematics",
     option11: "Statistics with Computer Science",
     option12: "Statistics with Mathematics",
-    option13: "Physics with Statistics",
   },
 
   semesterOptions: {
@@ -442,8 +442,6 @@ const options = {
     subject7: "PHYS 244: Mathematical Methods I",
   },
 
-<<<<<<< HEAD
-=======
   l200MathematicsandPhysicsFirstSem:{
     subject1: "UGRC 210: Academic Writing II",
     subject2: "MATH 225: Vectors and Mechanics",
@@ -549,7 +547,34 @@ l200ChemistryaandBiologicalScienceSecondSem:{
 
 },
 
->>>>>>> 87348da8b815bd08e0fd1a91d3478c342d41ad67
+l200GeologywithPhysicsFirstSem:{
+
+},
+
+l200GeologywithPhysicsAecondSem:{
+
+},
+
+l200GeologywithMathematicsFirstSem:{
+
+},
+
+l200GeologywithMathematicsSecondSem:{
+
+},
+
+l200GeologywithChemistryFirstSem:{
+
+},
+
+l200GeologywithChemistrySecondSem:{
+
+},
+
+l200MathematicswithPhysics:{
+  
+},
+
   l300ActurialScienceSingleMajorFirstSem: {
     subject1: "STAT 331: Probability Distributions",
     subject2: "MATH 351/STAT 339 :Linear Algebra/Methods of Linear Algebra",
