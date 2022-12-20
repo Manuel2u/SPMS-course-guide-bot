@@ -42,6 +42,7 @@ const options = {
     option6: "Mathematics and Physics",
     option7: "Mathematics and Statistics",
     option8: "Physics and Statistics",
+    option9: "Physics and Mathematics"
   },
   continuingStudentsMajorMinorOptions: {
     option1: "Geology with Physics",
