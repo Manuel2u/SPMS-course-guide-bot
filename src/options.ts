@@ -42,7 +42,7 @@ const options = {
     option6: "Mathematics and Physics",
     option7: "Mathematics and Statistics",
     option8: "Physics and Statistics",
-    option9: "Physics and Mathematics"
+    option9: "Physics and Mathematics",
   },
   continuingStudentsMajorMinorOptions: {
     option1: "Geology with Physics",
@@ -239,6 +239,28 @@ const options = {
     subject9: "STAT 112 : Introduction to Statistics and Probability II",
   },
 
+  informationTechnologyFirstSem: {
+    subject1: "DCIT 101 : Introduction to Computer Science",
+    subject2: "DCIT 103 : Office Productivity Tools",
+    subject3: "DCIT 105 : Mathematics for IT professionals",
+    subject4: "MATH 121 : Algebra and Trigonometry",
+    subject5: "MATH 123 : Vectors and Geometry",
+    subject6: "STAT 111: Introduction to Statistics and Probability I",
+    subject7: "ECON 101: Introduction to Economics I",
+    subject8: "UGRC 150 : Critical Thinking and Practical Reasoning",
+  },
+
+  informationTechnologySecondSem: {
+    subject1: "DCIT 102 : Computer Hardware Fundamentals and Circuits",
+    subject2: "DCIT 104 : Programming Fundamentals",
+    subject3: "UGBS 104 : Principles of Management",
+    subject4: "MATH 122 : Calculus I",
+    subject5: "MATH 126 : Algebra and Geometry",
+    subject6: "STAT 112: Introduction to Statistics and Probability II",
+    subject7: "ECON 102: Introduction to Economics II",
+    subject8: "UGRC 110 : Academic Writing I",
+  },
+
   l200ActurialSciFirstSem: {
     subject1: "ECON 201 : Element of Economics I",
     subject2: "STAT 240 : Introduction Statistical Computing",
@@ -294,7 +316,8 @@ const options = {
 
   l200StatisticsFirstSem: {
     subject1: "STAT 240 : Introduction Statistical Computing",
-    subject2: "UGRC 210 / UGRC 220 : Academic Writing II/ Introduction to African Studies",
+    subject2:
+      "UGRC 210 / UGRC 220 : Academic Writing II/ Introduction to African Studies",
     subject3: "STAT 221 : Introductory Probability I",
     subject4: "STAT 223 : Elementary Statistical Methods",
     subject5: "MATH 223 : Calculus II",
@@ -304,7 +327,8 @@ const options = {
   },
 
   l200StatisticsSecondSem: {
-    subject1: "UGRC 210/UGRC 220 : Academic Writing II/ Introduction to African Studies",
+    subject1:
+      "UGRC 210/UGRC 220 : Academic Writing II/ Introduction to African Studies",
     subject2: "STAT 222 : Introduction to Regression and Time Series Analysis",
     subject3: "STAT 224 : Introductory Probability II",
     subject4: "STAT 226 : Official Statistics",
@@ -443,7 +467,7 @@ const options = {
     subject7: "PHYS 244: Mathematical Methods I",
   },
 
-  l200MathematicsandPhysicsFirstSem:{
+  l200MathematicsandPhysicsFirstSem: {
     subject1: "UGRC 210: Academic Writing II",
     subject2: "MATH 225: Vectors and Mechanics",
     subject3: "MATH 223: Calculus II",
@@ -452,8 +476,7 @@ const options = {
     subject6: "PHYS 245: Electromagnetism I",
   },
 
-  
-  l200MathematicsandPhysicsSecondSem:{
+  l200MathematicsandPhysicsSecondSem: {
     subject1: "UGRC 220: Introduction to African Studies",
     subject2: "MATH 224: Introductory Abstract Algebra",
     subject3: "MATH 222: Vector Mechanics",
@@ -463,118 +486,97 @@ const options = {
     subject7: "PHYS 244: Mathematical Methods I",
   },
 
-  l200MathematicsandStatisticsFirstSem:{
+  l200MathematicsandStatisticsFirstSem: {
     subject1: "UGRC 210: Academic Writing II",
     subject2: "MATH 225: Vectors and Mechanics",
     subject3: "MATH 223: Calculus II",
-    subject4: "STAT 221 Introductory Probability I", 
-    subject5: "STAT 223: Elementary Statistical Methods", 
+    subject4: "STAT 221 Introductory Probability I",
+    subject5: "STAT 223: Elementary Statistical Methods",
     subject6: "STAT 230: Data Mining",
   },
 
-  l200MathematicsandStatisticsSecondSem:{
+  l200MathematicsandStatisticsSecondSem: {
     subject1: "UGRC 220: Introduction to African Studies",
     subject2: "MATH 224: Introductory Abstract Algebra",
     subject3: "MATH 222: Vector Mechanics",
     subject4: "MATH 220: Introductory Computational Mathematics",
-    subject5: "STAT 224 Introductory Probability II", 
-    subject6: "STAT 226: Official Statistics", 
+    subject5: "STAT 224 Introductory Probability II",
+    subject6: "STAT 226: Official Statistics",
     subject7: "STAT 222: Introduction to Regression and Time Series",
   },
 
-  l200PhysicsandStatisticsFirstSem:{
+  l200PhysicsandStatisticsFirstSem: {
     subject1: "UGRC 210: Academic Writing II",
     subject2: "PHYS 205: Practical Physics III",
     subject3: "PHYS 241: Atomic Physics and Quantum Phenomena",
     subject4: "PHYS 245: Electromagnetism I",
-    subject5: "STAT 221 Introductory Probability I", 
-    subject6: "STAT 223: Elementary Statistical Methods", 
+    subject5: "STAT 221 Introductory Probability I",
+    subject6: "STAT 223: Elementary Statistical Methods",
     subject7: "STAT 230: Data Mining",
     subject8: "MATH 223: Calculus II",
   },
 
-  l200PhysicsandStatisticsSecondSem:{
+  l200PhysicsandStatisticsSecondSem: {
     subject1: "UGRC 220: Introduction to African Studies",
-    subject2: "STAT 224 Introductory Probability II", 
-    subject3: "STAT 226: Official Statistics", 
+    subject2: "STAT 224 Introductory Probability II",
+    subject3: "STAT 226: Official Statistics",
     subject4: "STAT 222: Introduction to Regression and Time Series",
     subject5: "PHYS 206: Practical Physics IV",
     subject6: "PHYS 242: Oscillations and Waves",
     subject7: "PHYS 244: Mathematical Methods I",
   },
 
-  l200ComputerScienceandStatisticsFirstSem:{
+  l200ComputerScienceandStatisticsFirstSem: {
     subject1: "UGRC 210: Academic Writing II",
     subject2: "DCIT 201: Programming I",
     subject3: "DCIT 203: Digital and Logic Systems Design",
     subject4: "MATH 223: Calculus II",
-    subject5: "STAT 221 Introductory Probability I", 
-    subject6: "STAT 223: Elementary Statistical Methods", 
+    subject5: "STAT 221 Introductory Probability I",
+    subject6: "STAT 223: Elementary Statistical Methods",
     subject7: "STAT 230: Data Mining",
   },
 
-  l200ComputerScienceandStatisticsSecondSem:{
+  l200ComputerScienceandStatisticsSecondSem: {
     subject1: "UGRC 220: Introduction to African Studies",
     subject2: "DCIT 202: Mobile Application Development",
     subject3: "DCIT 204: Data Structures and Algorithms",
     subject4: "DCIT 208 Software Engineering",
-    subject5: "STAT 224 Introductory Probability II", 
-    subject6: "STAT 226: Official Statistics", 
+    subject5: "STAT 224 Introductory Probability II",
+    subject6: "STAT 226: Official Statistics",
     subject7: "STAT 222: Introduction to Regression and Time Series",
   },
 
-  l200ChemistryandBiologicalScienceFirstSem:{
+  l200ChemistryandBiologicalScienceFirstSem: {
     subject1: "UGRC 210: Academic Writing II",
     subject2: "CHEM 233: Organic Chemistry I",
     subject3: "CHEM 271: Foundation Chemistry III",
     subject4: "CHEM 215: Structure and Bonding",
     subject5: "CHEM 203: Analytical Chemistry Laboratory I",
     subject6: "CHEM 217: Physical Chemistry I",
-
-
-
-
   },
 
-l200ChemistryaandBiologicalScienceSecondSem:{
+  l200ChemistryaandBiologicalScienceSecondSem: {
     subject1: "UGRC220/238: Introduction to African Studies",
     subject2: "CHEM 234: Organic Chemistry II",
     subject3: "CHEM 252: Inorganic Chemistry I",
     subject4: "CHEM 272: Analytical Chemistry I",
     subject5: "CHEM 204: Organic Chemistry Laboratory I",
     subject6: "CHEM 216: Chemistry of Materials",
+  },
 
+  l200GeologywithPhysicsFirstSem: {},
 
+  l200GeologywithPhysicsAecondSem: {},
 
-},
+  l200GeologywithMathematicsFirstSem: {},
 
-l200GeologywithPhysicsFirstSem:{
+  l200GeologywithMathematicsSecondSem: {},
 
-},
+  l200GeologywithChemistryFirstSem: {},
 
-l200GeologywithPhysicsAecondSem:{
+  l200GeologywithChemistrySecondSem: {},
 
-},
-
-l200GeologywithMathematicsFirstSem:{
-
-},
-
-l200GeologywithMathematicsSecondSem:{
-
-},
-
-l200GeologywithChemistryFirstSem:{
-
-},
-
-l200GeologywithChemistrySecondSem:{
-
-},
-
-l200MathematicswithPhysics:{
-  
-},
+  l200MathematicswithPhysics: {},
 
   l300ActurialScienceSingleMajorFirstSem: {
     subject1: "STAT 331: Probability Distributions",
@@ -587,7 +589,8 @@ l200MathematicswithPhysics:{
     subject8: "STAT 335 : Sample Survey Methods ",
     subject9: "MATH 353 : Analysis I",
     subject10: "MATH 358 : Computational Mathematics I ",
-    subject11: "ACTU 320: Internship in Actuarial Science (either 1st or 2nd Semester) *",
+    subject11:
+      "ACTU 320: Internship in Actuarial Science (either 1st or 2nd Semester) *",
     subject12: "ACTU 335 : Microeconomic Theory for Actuaries I ",
     subject13: "ACTU 359 : Risk Management and Insurance  ",
   },
@@ -690,7 +693,8 @@ l200MathematicswithPhysics:{
     subject4: "PHYS 352 : Quantum Mechanics I ",
     subject5: "PHYS 354 : Special Relativity  ",
     subject6: "PHYS 356 : Computational Methods in Physics II ",
-    subject8: "PHYS 364 : Principles and Applications of Neutron Activation Analysis ",
+    subject8:
+      "PHYS 364 : Principles and Applications of Neutron Activation Analysis ",
     subject9: "STAT 336 : Design of Experiments ",
   },
 
@@ -925,7 +929,8 @@ l200MathematicswithPhysics:{
     subject1: "EASC 420 : Project",
     subject2: "EASC 404 : Statistical Methods in Earth Science ",
     subject3: "EASC 480 : Field Studies in Earth Science",
-    subject4: "EASC 470 : Communication and  Entrepreneurship in the Earth Sciences",
+    subject4:
+      "EASC 470 : Communication and  Entrepreneurship in the Earth Sciences",
     subject5: "EASC 446 : Sedimentary Petrology",
     subject6: "EASC 448 : Geology of Africa",
     subject7: "EASC 454 : Geochronology",
@@ -949,7 +954,8 @@ l200MathematicswithPhysics:{
     subject1: "EASC 420 : Project",
     subject2: "EASC 404 : Statistical Methods in Earth Science ",
     subject3: "EASC 480 : Field Studies in Earth Science",
-    subject4: "EASC 470 : Communication and  Entrepreneurship in the Earth Sciences",
+    subject4:
+      "EASC 470 : Communication and  Entrepreneurship in the Earth Sciences",
     subject5: "EASC 446 : Sedimentary Petrology",
     subject6: "EASC 448 : Geology of Africa ",
     subject7: "EASC 454 : Geochronology",
@@ -1241,6 +1247,7 @@ l200MathematicswithPhysics:{
     subject1: "ACTU 410 : Project",
     subject2: "ACTU 412 : Fundamental Financial Accounting II",
     subject3: "ACTU 454 : Introduction to Non-life Insurance Mathematics II",
+    subject12: "ACTU 409 : Loss Distributions & Actuarial Risk Measures",
     subject4: "ACTU 408 : Financial Economics II",
     subject5: "ACTU 404 : Pensions and Social Security",
     subject6: "MATH 442 : Differential Equation II",
