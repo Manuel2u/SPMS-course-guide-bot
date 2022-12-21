@@ -2,9 +2,13 @@ FROM node:18.12.1-alpine3.16
 
 WORKDIR /app
 
-COPY package*.json ./
+COPY package.json /app/
 
-RUN npm install
+COPY yarn.lock /app/
+
+RUN yarn global add nodemon
+
+RUN yarn install
 
 COPY . .
 
