@@ -12200,6 +12200,6 @@ bot.hears("Second Semester", (ctx) => {
 bot.launch({
   webhook: {
     domain: process.env.HEROKU_URL,
-    port: Number(process.env.PORT),
+    port: Number(process.env.PORT) || 3000,
   },
 });
