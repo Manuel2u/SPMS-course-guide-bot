@@ -12197,4 +12197,9 @@ bot.hears("Second Semester", (ctx) => {
 //   }
 // });
 
-bot.launch();
+bot.launch({
+  webhook: {
+    domain: process.env.HEROKU_URL,
+    port: Number(process.env.PORT),
+  },
+});
