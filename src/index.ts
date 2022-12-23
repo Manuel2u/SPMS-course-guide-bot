@@ -1901,26 +1901,26 @@ bot.hears(continuingStudentsMajorMinorOptions.option13, (ctx) => {
 bot.hears(levelOptions.secondYear, (ctx) => {
   bot.telegram.sendMessage(
     ctx.chat?.id || "",
-    "Please select your program option,.................................\n UNFORTUNATELY L200 IS NOT AVAILABLE AT THE MOMENT ITS STILL UNDER DEVELOPMENT",
-    {
-      reply_markup: {
-        keyboard: [
-          [
-            {
-              text: programOption.option1,
-            },
-            {
-              text: programOption.option2,
-            },
-          ],
-          [
-            {
-              text: programOption.option3,
-            },
-          ],
-        ],
-      },
-    }
+    "UNFORTUNATELY L200 IS NOT AVAILABLE AT THE MOMENT ITS STILL UNDER DEVELOPMENT"
+    // {
+    //   reply_markup: {
+    //     keyboard: [
+    //       [
+    //         {
+    //           text: programOption.option1,
+    //         },
+    //         {
+    //           text: programOption.option2,
+    //         },
+    //       ],
+    //       [
+    //         {
+    //           text: programOption.option3,
+    //         },
+    //       ],
+    //     ],
+    //   },
+    // }
   );
   ctx.session.userOptions.push(ctx.message?.text as string);
   console.log(ctx.session.userOptions);
@@ -1929,26 +1929,26 @@ bot.hears(levelOptions.secondYear, (ctx) => {
 bot.hears(levelOptions.thirdYear, (ctx) => {
   bot.telegram.sendMessage(
     ctx.chat?.id || "",
-    "Please select your program option,.................................\n UNFORTUNATELY L300 IS NOT AVAILABLE AT THE MOMENT ITS STILL UNDER DEVELOPMENT",
-    {
-      reply_markup: {
-        keyboard: [
-          [
-            {
-              text: programOption.option1,
-            },
-            {
-              text: programOption.option2,
-            },
-          ],
-          [
-            {
-              text: programOption.option3,
-            },
-          ],
-        ],
-      },
-    }
+    "UNFORTUNATELY L300 IS NOT AVAILABLE AT THE MOMENT ITS STILL UNDER DEVELOPMENT"
+    // {
+    //   reply_markup: {
+    //     keyboard: [
+    //       [
+    //         {
+    //           text: programOption.option1,
+    //         },
+    //         {
+    //           text: programOption.option2,
+    //         },
+    //       ],
+    //       [
+    //         {
+    //           text: programOption.option3,
+    //         },
+    //       ],
+    //     ],
+    //   },
+    // }
   );
   ctx.session.userOptions.push(ctx.message?.text as string);
   console.log(ctx.session.userOptions);
@@ -1957,26 +1957,26 @@ bot.hears(levelOptions.thirdYear, (ctx) => {
 bot.hears(levelOptions.fourthYear, (ctx) => {
   bot.telegram.sendMessage(
     ctx.chat?.id || "",
-    "Please select your program option,.................................\n UNFORTUNATELY L400 IS NOT AVAILABLE AT THE MOMENT ITS STILL UNDER DEVELOPMENT",
-    {
-      reply_markup: {
-        keyboard: [
-          [
-            {
-              text: programOption.option1,
-            },
-            {
-              text: programOption.option2,
-            },
-          ],
-          [
-            {
-              text: programOption.option3,
-            },
-          ],
-        ],
-      },
-    }
+    "UNFORTUNATELY L400 IS NOT AVAILABLE AT THE MOMENT ITS STILL UNDER DEVELOPMENT",
+    // {
+    //   reply_markup: {
+    //     keyboard: [
+    //       [
+    //         {
+    //           text: programOption.option1,
+    //         },
+    //         {
+    //           text: programOption.option2,
+    //         },
+    //       ],
+    //       [
+    //         {
+    //           text: programOption.option3,
+    //         },
+    //       ],
+    //     ],
+    //   },
+    // }
   );
   ctx.session.userOptions.push(ctx.message?.text as string);
   console.log(ctx.session.userOptions);
@@ -7239,6 +7239,7 @@ bot.hears("Second Semester", (ctx) => {
       ctx.chat?.id || "",
       "The subjects for second semester are: \n" +
         "\n" +
+        "\n" +
         physicalScienceForPhysicsAndCompSciSecondSemester.subject1 +
         "\n" +
         "\n" +
@@ -7286,6 +7287,7 @@ bot.hears("Second Semester", (ctx) => {
       ctx.chat?.id || "",
       "The subjects for second semester are: \n" +
         "\n" +
+        "\n" +
         physicalScienceForPhysicsAndCompSciSecondSemester.subject1 +
         "\n" +
         "\n" +
@@ -7332,6 +7334,8 @@ bot.hears("Second Semester", (ctx) => {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "The subjects for second semester are: \n" +
+        "\n" +
+        "\n" +
         physicalScienceforGeophysicsSecondSem.subject1 +
         "\n" +
         "\n" +
@@ -7375,6 +7379,8 @@ bot.hears("Second Semester", (ctx) => {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "The subjects for second semester are: \n" +
+        "\n" +
+        "\n" +
         physicalScienceforChemsitryAndBioScienceSecondSemester.subject1 +
         "\n" +
         "\n" +
@@ -7415,6 +7421,7 @@ bot.hears("Second Semester", (ctx) => {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "The subjects for second semester are: \n" +
+        "\n" +
         "\n" +
         physicalScienceForPhysicsAndCompSciSecondSemester.subject1 +
         "\n" +
@@ -7462,6 +7469,8 @@ bot.hears("Second Semester", (ctx) => {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "The subjects for second semester are: \n" +
+        "\n" +
+        "\n" +
         physicalScienceforMathsAndPhysicsSecondSemester.subject1 +
         "\n" +
         "\n" +
@@ -7502,6 +7511,8 @@ bot.hears("Second Semester", (ctx) => {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "The subjects for second semester are: \n" +
+        "\n" +
+        "\n" +
         physicalScienceforPhysicsAndStatisticsSecondSemester.subject1 +
         "\n" +
         "\n" +
@@ -7542,6 +7553,8 @@ bot.hears("Second Semester", (ctx) => {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "The subjects for second semester are: \n" +
+        "\n" +
+        "\n" +
         physicalScienceForPhysicsAndCompSciSecondSemester.subject1 +
         "\n" +
         "\n" +
@@ -7582,6 +7595,8 @@ bot.hears("Second Semester", (ctx) => {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "The subjects for second semester are: \n" +
+        "\n" +
+        "\n" +
         physicalScienceforGeophysicsSecondSem.subject1 +
         "\n" +
         "\n" +
@@ -7625,6 +7640,8 @@ bot.hears("Second Semester", (ctx) => {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "The subjects for second semester are: \n" +
+        "\n" +
+        "\n" +
         physicalScienceforMathsAndPhysicsSecondSemester.subject1 +
         "\n" +
         "\n" +
@@ -7665,6 +7682,8 @@ bot.hears("Second Semester", (ctx) => {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "The subjects for second semester are: \n" +
+        "\n" +
+        "\n" +
         physicalScienceforPhysicsAndStatisticsSecondSemester.subject1 +
         "\n" +
         "\n" +
@@ -7705,6 +7724,8 @@ bot.hears("Second Semester", (ctx) => {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "The subjects for second semester are: \n" +
+        "\n" +
+        "\n" +
         mathematicalScienceforActurialScienceSecondSem.subject1 +
         "\n" +
         "\n" +
@@ -7745,6 +7766,8 @@ bot.hears("Second Semester", (ctx) => {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "The subjects for second semester are: \n" +
+        "\n" +
+        "\n" +
         mathematicalScienceforComputerScienceSecondSem.subject1 +
         "\n" +
         "\n" +
@@ -7785,6 +7808,8 @@ bot.hears("Second Semester", (ctx) => {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "The subjects for second semester are: \n" +
+        "\n" +
+        "\n" +
         physicalScienceforGeophysicsFirstSem.subject1 +
         "\n" +
         "\n" +
@@ -7828,6 +7853,8 @@ bot.hears("Second Semester", (ctx) => {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "The subjects for second semester are: \n" +
+        "\n" +
+        "\n" +
         mathematicalScienceforComputerScienceSecondSem.subject1 +
         "\n" +
         "\n" +
@@ -7874,6 +7901,8 @@ bot.hears("Second Semester", (ctx) => {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "The subjects for second semester are: \n" +
+        "\n" +
+        "\n" +
         mathematicalScienceforBioMathSecondSem.subject1 +
         "\n" +
         "\n" +
@@ -7914,6 +7943,8 @@ bot.hears("Second Semester", (ctx) => {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "The subjects for second semester are: \n" +
+        "\n" +
+        "\n" +
         mathematicalScienceforComputerScienceSecondSem.subject1 +
         "\n" +
         "\n" +
@@ -7954,6 +7985,8 @@ bot.hears("Second Semester", (ctx) => {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "The subjects for second semester are: \n" +
+        "\n" +
+        "\n" +
         mathematicalScienceforComputerScienceFirstSem.subject1 +
         "\n" +
         "\n" +
@@ -7997,6 +8030,8 @@ bot.hears("Second Semester", (ctx) => {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "The subjects for second semester are: \n" +
+        "\n" +
+        "\n" +
         mathematicalScienceforComputerScienceSecondSem.subject1 +
         "\n" +
         "\n" +
@@ -8037,6 +8072,8 @@ bot.hears("Second Semester", (ctx) => {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "The subjects for second semester are: \n" +
+        "\n" +
+        "\n" +
         mathematicalScienceforComputerScienceSecondSem.subject1 +
         "\n" +
         "\n" +
@@ -8080,6 +8117,8 @@ bot.hears("Second Semester", (ctx) => {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "The subjects for second semester are: \n" +
+        "\n" +
+        "\n" +
         mathematicalScienceforComputerScienceSecondSem.subject1 +
         "\n" +
         "\n" +
@@ -8120,6 +8159,8 @@ bot.hears("Second Semester", (ctx) => {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "The subjects for second semester are: \n" +
+        "\n" +
+        "\n" +
         mathematicalScienceforComputerScienceSecondSem.subject1 +
         "\n" +
         "\n" +
@@ -8163,6 +8204,8 @@ bot.hears("Second Semester", (ctx) => {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "The subjects for second semester are: \n" +
+        "\n" +
+        "\n" +
         mathematicalScienceforComputerScienceSecondSem.subject1 +
         "\n" +
         "\n" +
@@ -8203,6 +8246,8 @@ bot.hears("Second Semester", (ctx) => {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "The subjects for second semester are: \n" +
+        "\n" +
+        "\n" +
         mathematicalScienceforComputerScienceSecondSem.subject1 +
         "\n" +
         "\n" +
@@ -8243,6 +8288,8 @@ bot.hears("Second Semester", (ctx) => {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "The subjects for second semester are: \n" +
+        "\n" +
+        "\n" +
         mathematicalScienceforComputerScienceSecondSem.subject1 +
         "\n" +
         "\n" +
@@ -8286,6 +8333,8 @@ bot.hears("Second Semester", (ctx) => {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "The subjects for second semester are: \n" +
+        "\n" +
+        "\n" +
         mathematicalScienceforComputerScienceSecondSem.subject1 +
         "\n" +
         "\n" +
@@ -8326,6 +8375,8 @@ bot.hears("Second Semester", (ctx) => {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "The subjects for second semester are: \n" +
+        "\n" +
+        "\n" +
         mathematicalScienceforComputerScienceSecondSem.subject1 +
         "\n" +
         "\n" +
@@ -8366,6 +8417,8 @@ bot.hears("Second Semester", (ctx) => {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "The subjects for second semester are: \n" +
+        "\n" +
+        "\n" +
         physicalScienceforGeophysicsSecondSem.subject1 +
         "\n" +
         "\n" +
@@ -8409,6 +8462,8 @@ bot.hears("Second Semester", (ctx) => {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "The subjects for second semester are: \n" +
+        "\n" +
+        "\n" +
         physicalScienceforGeophysicsSecondSem.subject1 +
         "\n" +
         "\n" +
@@ -8455,6 +8510,8 @@ bot.hears("Second Semester", (ctx) => {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "The subjects for second semester are: \n" +
+        "\n" +
+        "\n" +
         physicalScienceforGeophysicsSecondSem.subject1 +
         "\n" +
         "\n" +
@@ -8498,6 +8555,8 @@ bot.hears("Second Semester", (ctx) => {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "The subjects for second semester are: \n" +
+        "\n" +
+        "\n" +
         physicalScienceforGeophysicsSecondSem.subject1 +
         "\n" +
         "\n" +
@@ -8541,6 +8600,8 @@ bot.hears("Second Semester", (ctx) => {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "The subjects for second semester are: \n" +
+        "\n" +
+        "\n" +
         physicalScienceforGeophysicsSecondSem.subject1 +
         "\n" +
         "\n" +
@@ -8584,6 +8645,8 @@ bot.hears("Second Semester", (ctx) => {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "The subjects for second semester are: \n" +
+        "\n" +
+        "\n" +
         physicalScienceforGeophysicsSecondSem.subject1 +
         "\n" +
         "\n" +
@@ -8623,6 +8686,8 @@ bot.hears("Second Semester", (ctx) => {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "The subjects for second  semester are: \n" +
+        "\n" +
+        "\n" +
         informationTechnologySecondSem.subject1 +
         "\n" +
         "\n" +
