@@ -275,8 +275,8 @@ bot.hears(courseOptionsL100.informationTechnology, (ctx) => {
             },
           ],
         ],
+      },
     }
-  }
   );
   ctx.session.userOptions.push(ctx.message?.text as string);
   console.log(ctx.session.userOptions);
@@ -381,189 +381,189 @@ bot.hears(programOption.option1, (ctx) => {
     );
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
-  // } else if (ctx.session.userOptions.includes(levelOptions.secondYear)) {
-  //   bot.telegram.sendMessage(
-  //     ctx.chat?.id || "",
-  //     "which course are you offering",
-  //     {
-  //       reply_markup: {
-  //         keyboard: [
-  //           [
-  //             {
-  //               text: continuingStudentsSingleMajorOptions.option1,
-  //             },
-  //             {
-  //               text: continuingStudentsSingleMajorOptions.option2,
-  //             },
-  //           ],
-  //           [
-  //             {
-  //               text: continuingStudentsSingleMajorOptions.option3,
-  //             },
-  //             {
-  //               text: continuingStudentsSingleMajorOptions.option4,
-  //             },
-  //           ],
-  //           [
-  //             {
-  //               text: continuingStudentsSingleMajorOptions.option5,
-  //             },
-  //             {
-  //               text: continuingStudentsSingleMajorOptions.option6,
-  //             },
-  //           ],
-  //           [
-  //             {
-  //               text: continuingStudentsSingleMajorOptions.option7,
-  //             },
-  //             {
-  //               text: continuingStudentsSingleMajorOptions.option8,
-  //             },
-  //           ],
-  //           [
-  //             {
-  //               text: continuingStudentsSingleMajorOptions.option9,
-  //             },
-  //             {
-  //               text: continuingStudentsSingleMajorOptions.option10,
-  //             },
-  //           ],
-  //           [
-  //             {
-  //               text: continuingStudentsSingleMajorOptions.option11,
-  //             },
-  //             {
-  //               text: continuingStudentsSingleMajorOptions.option12,
-  //             },
-  //           ],
-  //         ],
-  //       },
-  //     }
-  //   );
-  //   ctx.session.userOptions.push(ctx.message?.text as string);
-  //   console.log(ctx.session.userOptions);
-  // } else if (ctx.session.userOptions.includes(levelOptions.thirdYear)) {
-  //   bot.telegram.sendMessage(
-  //     ctx.chat?.id || "",
-  //     "which course are you offering",
-  //     {
-  //       reply_markup: {
-  //         keyboard: [
-  //           [
-  //             {
-  //               text: continuingStudentsSingleMajorOptions.option1,
-  //             },
-  //             {
-  //               text: continuingStudentsSingleMajorOptions.option2,
-  //             },
-  //           ],
-  //           [
-  //             {
-  //               text: continuingStudentsSingleMajorOptions.option3,
-  //             },
-  //             {
-  //               text: continuingStudentsSingleMajorOptions.option4,
-  //             },
-  //           ],
-  //           [
-  //             {
-  //               text: continuingStudentsSingleMajorOptions.option5,
-  //             },
-  //             {
-  //               text: continuingStudentsSingleMajorOptions.option6,
-  //             },
-  //           ],
-  //           [
-  //             {
-  //               text: continuingStudentsSingleMajorOptions.option7,
-  //             },
-  //             {
-  //               text: continuingStudentsSingleMajorOptions.option8,
-  //             },
-  //           ],
-  //           [
-  //             {
-  //               text: continuingStudentsSingleMajorOptions.option9,
-  //             },
-  //             {
-  //               text: continuingStudentsSingleMajorOptions.option10,
-  //             },
-  //           ],
-  //           [
-  //             {
-  //               text: continuingStudentsSingleMajorOptions.option11,
-  //             },
-  //             {
-  //               text: continuingStudentsSingleMajorOptions.option12,
-  //             },
-  //           ],
-  //         ],
-  //       },
-  //     }
-  //   );
-  //   ctx.session.userOptions.push(ctx.message?.text as string);
-  //   console.log(ctx.session.userOptions);
-  // } else if (ctx.session.userOptions.includes(levelOptions.fourthYear)) {
-  //   bot.telegram.sendMessage(
-  //     ctx.chat?.id || "",
-  //     "which course are you offering",
-  //     {
-  //       reply_markup: {
-  //         keyboard: [
-  //           [
-  //             {
-  //               text: continuingStudentsSingleMajorOptions.option1,
-  //             },
-  //             {
-  //               text: continuingStudentsSingleMajorOptions.option2,
-  //             },
-  //           ],
-  //           [
-  //             {
-  //               text: continuingStudentsSingleMajorOptions.option3,
-  //             },
-  //             {
-  //               text: continuingStudentsSingleMajorOptions.option4,
-  //             },
-  //           ],
-  //           [
-  //             {
-  //               text: continuingStudentsSingleMajorOptions.option5,
-  //             },
-  //             {
-  //               text: continuingStudentsSingleMajorOptions.option6,
-  //             },
-  //           ],
-  //           [
-  //             {
-  //               text: continuingStudentsSingleMajorOptions.option7,
-  //             },
-  //             {
-  //               text: continuingStudentsSingleMajorOptions.option8,
-  //             },
-  //           ],
-  //           [
-  //             {
-  //               text: continuingStudentsSingleMajorOptions.option9,
-  //             },
-  //             {
-  //               text: continuingStudentsSingleMajorOptions.option10,
-  //             },
-  //           ],
-  //           [
-  //             {
-  //               text: continuingStudentsSingleMajorOptions.option11,
-  //             },
-  //             {
-  //               text: continuingStudentsSingleMajorOptions.option12,
-  //             },
-  //           ],
-  //         ],
-  //       },
-  //     }
-  //   );
-  //   ctx.session.userOptions.push(ctx.message?.text as string);
-  //   console.log(ctx.session.userOptions);
+    // } else if (ctx.session.userOptions.includes(levelOptions.secondYear)) {
+    //   bot.telegram.sendMessage(
+    //     ctx.chat?.id || "",
+    //     "which course are you offering",
+    //     {
+    //       reply_markup: {
+    //         keyboard: [
+    //           [
+    //             {
+    //               text: continuingStudentsSingleMajorOptions.option1,
+    //             },
+    //             {
+    //               text: continuingStudentsSingleMajorOptions.option2,
+    //             },
+    //           ],
+    //           [
+    //             {
+    //               text: continuingStudentsSingleMajorOptions.option3,
+    //             },
+    //             {
+    //               text: continuingStudentsSingleMajorOptions.option4,
+    //             },
+    //           ],
+    //           [
+    //             {
+    //               text: continuingStudentsSingleMajorOptions.option5,
+    //             },
+    //             {
+    //               text: continuingStudentsSingleMajorOptions.option6,
+    //             },
+    //           ],
+    //           [
+    //             {
+    //               text: continuingStudentsSingleMajorOptions.option7,
+    //             },
+    //             {
+    //               text: continuingStudentsSingleMajorOptions.option8,
+    //             },
+    //           ],
+    //           [
+    //             {
+    //               text: continuingStudentsSingleMajorOptions.option9,
+    //             },
+    //             {
+    //               text: continuingStudentsSingleMajorOptions.option10,
+    //             },
+    //           ],
+    //           [
+    //             {
+    //               text: continuingStudentsSingleMajorOptions.option11,
+    //             },
+    //             {
+    //               text: continuingStudentsSingleMajorOptions.option12,
+    //             },
+    //           ],
+    //         ],
+    //       },
+    //     }
+    //   );
+    //   ctx.session.userOptions.push(ctx.message?.text as string);
+    //   console.log(ctx.session.userOptions);
+    // } else if (ctx.session.userOptions.includes(levelOptions.thirdYear)) {
+    //   bot.telegram.sendMessage(
+    //     ctx.chat?.id || "",
+    //     "which course are you offering",
+    //     {
+    //       reply_markup: {
+    //         keyboard: [
+    //           [
+    //             {
+    //               text: continuingStudentsSingleMajorOptions.option1,
+    //             },
+    //             {
+    //               text: continuingStudentsSingleMajorOptions.option2,
+    //             },
+    //           ],
+    //           [
+    //             {
+    //               text: continuingStudentsSingleMajorOptions.option3,
+    //             },
+    //             {
+    //               text: continuingStudentsSingleMajorOptions.option4,
+    //             },
+    //           ],
+    //           [
+    //             {
+    //               text: continuingStudentsSingleMajorOptions.option5,
+    //             },
+    //             {
+    //               text: continuingStudentsSingleMajorOptions.option6,
+    //             },
+    //           ],
+    //           [
+    //             {
+    //               text: continuingStudentsSingleMajorOptions.option7,
+    //             },
+    //             {
+    //               text: continuingStudentsSingleMajorOptions.option8,
+    //             },
+    //           ],
+    //           [
+    //             {
+    //               text: continuingStudentsSingleMajorOptions.option9,
+    //             },
+    //             {
+    //               text: continuingStudentsSingleMajorOptions.option10,
+    //             },
+    //           ],
+    //           [
+    //             {
+    //               text: continuingStudentsSingleMajorOptions.option11,
+    //             },
+    //             {
+    //               text: continuingStudentsSingleMajorOptions.option12,
+    //             },
+    //           ],
+    //         ],
+    //       },
+    //     }
+    //   );
+    //   ctx.session.userOptions.push(ctx.message?.text as string);
+    //   console.log(ctx.session.userOptions);
+    // } else if (ctx.session.userOptions.includes(levelOptions.fourthYear)) {
+    //   bot.telegram.sendMessage(
+    //     ctx.chat?.id || "",
+    //     "which course are you offering",
+    //     {
+    //       reply_markup: {
+    //         keyboard: [
+    //           [
+    //             {
+    //               text: continuingStudentsSingleMajorOptions.option1,
+    //             },
+    //             {
+    //               text: continuingStudentsSingleMajorOptions.option2,
+    //             },
+    //           ],
+    //           [
+    //             {
+    //               text: continuingStudentsSingleMajorOptions.option3,
+    //             },
+    //             {
+    //               text: continuingStudentsSingleMajorOptions.option4,
+    //             },
+    //           ],
+    //           [
+    //             {
+    //               text: continuingStudentsSingleMajorOptions.option5,
+    //             },
+    //             {
+    //               text: continuingStudentsSingleMajorOptions.option6,
+    //             },
+    //           ],
+    //           [
+    //             {
+    //               text: continuingStudentsSingleMajorOptions.option7,
+    //             },
+    //             {
+    //               text: continuingStudentsSingleMajorOptions.option8,
+    //             },
+    //           ],
+    //           [
+    //             {
+    //               text: continuingStudentsSingleMajorOptions.option9,
+    //             },
+    //             {
+    //               text: continuingStudentsSingleMajorOptions.option10,
+    //             },
+    //           ],
+    //           [
+    //             {
+    //               text: continuingStudentsSingleMajorOptions.option11,
+    //             },
+    //             {
+    //               text: continuingStudentsSingleMajorOptions.option12,
+    //             },
+    //           ],
+    //         ],
+    //       },
+    //     }
+    //   );
+    //   ctx.session.userOptions.push(ctx.message?.text as string);
+    //   console.log(ctx.session.userOptions);
   }
 });
 
@@ -657,156 +657,156 @@ bot.hears(programOption.option2, (ctx) => {
     );
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
-  // } else if (ctx.session.userOptions.includes(levelOptions.secondYear)) {
-  //   bot.telegram.sendMessage(
-  //     ctx.chat?.id || "",
-  //     "which course are you offering",
-  //     {
-  //       reply_markup: {
-  //         keyboard: [
-  //           [
-  //             {
-  //               text: continuingStudentsCombinedMajorOptions.option1,
-  //             },
-  //             {
-  //               text: continuingStudentsCombinedMajorOptions.option2,
-  //             },
-  //           ],
-  //           [
-  //             {
-  //               text: continuingStudentsCombinedMajorOptions.option3,
-  //             },
-  //             {
-  //               text: continuingStudentsCombinedMajorOptions.option4,
-  //             },
-  //           ],
-  //           [
-  //             {
-  //               text: continuingStudentsCombinedMajorOptions.option5,
-  //             },
-  //             {
-  //               text: continuingStudentsCombinedMajorOptions.option6,
-  //             },
-  //           ],
-  //           [
-  //             {
-  //               text: continuingStudentsCombinedMajorOptions.option7,
-  //             },
-  //             {
-  //               text: continuingStudentsCombinedMajorOptions.option8,
-  //             },
-  //           ],
-  //           [
-  //             {
-  //               text: continuingStudentsCombinedMajorOptions.option9,
-  //             },
-  //           ],
-  //         ],
-  //       },
-  //     }
-  //   );
-  //   ctx.session.userOptions.push(ctx.message?.text as string);
-  //   console.log(ctx.session.userOptions);
-  // } else if (ctx.session.userOptions.includes(levelOptions.thirdYear)) {
-  //   bot.telegram.sendMessage(
-  //     ctx.chat?.id || "",
-  //     "which course are you offering",
-  //     {
-  //       reply_markup: {
-  //         keyboard: [
-  //           [
-  //             {
-  //               text: continuingStudentsCombinedMajorOptions.option1,
-  //             },
-  //             {
-  //               text: continuingStudentsCombinedMajorOptions.option2,
-  //             },
-  //           ],
-  //           [
-  //             {
-  //               text: continuingStudentsCombinedMajorOptions.option3,
-  //             },
-  //             {
-  //               text: continuingStudentsCombinedMajorOptions.option4,
-  //             },
-  //           ],
-  //           [
-  //             {
-  //               text: continuingStudentsCombinedMajorOptions.option5,
-  //             },
-  //             {
-  //               text: continuingStudentsCombinedMajorOptions.option6,
-  //             },
-  //           ],
-  //           [
-  //             {
-  //               text: continuingStudentsCombinedMajorOptions.option7,
-  //             },
-  //             {
-  //               text: continuingStudentsCombinedMajorOptions.option8,
-  //             },
-  //           ],
-  //           [
-  //             {
-  //               text: continuingStudentsCombinedMajorOptions.option9,
-  //             },
-  //           ],
-  //         ],
-  //       },
-  //     }
-  //   );
-  //   ctx.session.userOptions.push(ctx.message?.text as string);
-  //   console.log(ctx.session.userOptions);
-  // } else if (ctx.session.userOptions.includes(levelOptions.fourthYear)) {
-  //   bot.telegram.sendMessage(
-  //     ctx.chat?.id || "",
-  //     "which course are you offering",
-  //     {
-  //       reply_markup: {
-  //         keyboard: [
-  //           [
-  //             {
-  //               text: continuingStudentsCombinedMajorOptions.option1,
-  //             },
-  //             {
-  //               text: continuingStudentsCombinedMajorOptions.option2,
-  //             },
-  //           ],
-  //           [
-  //             {
-  //               text: continuingStudentsCombinedMajorOptions.option3,
-  //             },
-  //             {
-  //               text: continuingStudentsCombinedMajorOptions.option4,
-  //             },
-  //           ],
-  //           [
-  //             {
-  //               text: continuingStudentsCombinedMajorOptions.option5,
-  //             },
-  //             {
-  //               text: continuingStudentsCombinedMajorOptions.option6,
-  //             },
-  //           ],
-  //           [
-  //             {
-  //               text: continuingStudentsCombinedMajorOptions.option7,
-  //             },
-  //             {
-  //               text: continuingStudentsCombinedMajorOptions.option8,
-  //             },
-  //           ],
-  //           [
-  //             {
-  //               text: continuingStudentsCombinedMajorOptions.option9,
-  //             },
-  //           ],
-  //         ],
-  //       },
-  //     }
-  //   );
-  //   ctx.session.userOptions.push(ctx.message?.text as string);
-  //   console.log(ctx.session.userOptions);
+    // } else if (ctx.session.userOptions.includes(levelOptions.secondYear)) {
+    //   bot.telegram.sendMessage(
+    //     ctx.chat?.id || "",
+    //     "which course are you offering",
+    //     {
+    //       reply_markup: {
+    //         keyboard: [
+    //           [
+    //             {
+    //               text: continuingStudentsCombinedMajorOptions.option1,
+    //             },
+    //             {
+    //               text: continuingStudentsCombinedMajorOptions.option2,
+    //             },
+    //           ],
+    //           [
+    //             {
+    //               text: continuingStudentsCombinedMajorOptions.option3,
+    //             },
+    //             {
+    //               text: continuingStudentsCombinedMajorOptions.option4,
+    //             },
+    //           ],
+    //           [
+    //             {
+    //               text: continuingStudentsCombinedMajorOptions.option5,
+    //             },
+    //             {
+    //               text: continuingStudentsCombinedMajorOptions.option6,
+    //             },
+    //           ],
+    //           [
+    //             {
+    //               text: continuingStudentsCombinedMajorOptions.option7,
+    //             },
+    //             {
+    //               text: continuingStudentsCombinedMajorOptions.option8,
+    //             },
+    //           ],
+    //           [
+    //             {
+    //               text: continuingStudentsCombinedMajorOptions.option9,
+    //             },
+    //           ],
+    //         ],
+    //       },
+    //     }
+    //   );
+    //   ctx.session.userOptions.push(ctx.message?.text as string);
+    //   console.log(ctx.session.userOptions);
+    // } else if (ctx.session.userOptions.includes(levelOptions.thirdYear)) {
+    //   bot.telegram.sendMessage(
+    //     ctx.chat?.id || "",
+    //     "which course are you offering",
+    //     {
+    //       reply_markup: {
+    //         keyboard: [
+    //           [
+    //             {
+    //               text: continuingStudentsCombinedMajorOptions.option1,
+    //             },
+    //             {
+    //               text: continuingStudentsCombinedMajorOptions.option2,
+    //             },
+    //           ],
+    //           [
+    //             {
+    //               text: continuingStudentsCombinedMajorOptions.option3,
+    //             },
+    //             {
+    //               text: continuingStudentsCombinedMajorOptions.option4,
+    //             },
+    //           ],
+    //           [
+    //             {
+    //               text: continuingStudentsCombinedMajorOptions.option5,
+    //             },
+    //             {
+    //               text: continuingStudentsCombinedMajorOptions.option6,
+    //             },
+    //           ],
+    //           [
+    //             {
+    //               text: continuingStudentsCombinedMajorOptions.option7,
+    //             },
+    //             {
+    //               text: continuingStudentsCombinedMajorOptions.option8,
+    //             },
+    //           ],
+    //           [
+    //             {
+    //               text: continuingStudentsCombinedMajorOptions.option9,
+    //             },
+    //           ],
+    //         ],
+    //       },
+    //     }
+    //   );
+    //   ctx.session.userOptions.push(ctx.message?.text as string);
+    //   console.log(ctx.session.userOptions);
+    // } else if (ctx.session.userOptions.includes(levelOptions.fourthYear)) {
+    //   bot.telegram.sendMessage(
+    //     ctx.chat?.id || "",
+    //     "which course are you offering",
+    //     {
+    //       reply_markup: {
+    //         keyboard: [
+    //           [
+    //             {
+    //               text: continuingStudentsCombinedMajorOptions.option1,
+    //             },
+    //             {
+    //               text: continuingStudentsCombinedMajorOptions.option2,
+    //             },
+    //           ],
+    //           [
+    //             {
+    //               text: continuingStudentsCombinedMajorOptions.option3,
+    //             },
+    //             {
+    //               text: continuingStudentsCombinedMajorOptions.option4,
+    //             },
+    //           ],
+    //           [
+    //             {
+    //               text: continuingStudentsCombinedMajorOptions.option5,
+    //             },
+    //             {
+    //               text: continuingStudentsCombinedMajorOptions.option6,
+    //             },
+    //           ],
+    //           [
+    //             {
+    //               text: continuingStudentsCombinedMajorOptions.option7,
+    //             },
+    //             {
+    //               text: continuingStudentsCombinedMajorOptions.option8,
+    //             },
+    //           ],
+    //           [
+    //             {
+    //               text: continuingStudentsCombinedMajorOptions.option9,
+    //             },
+    //           ],
+    //         ],
+    //       },
+    //     }
+    //   );
+    //   ctx.session.userOptions.push(ctx.message?.text as string);
+    //   console.log(ctx.session.userOptions);
   }
 });
 
@@ -911,204 +911,204 @@ bot.hears(programOption.option3, (ctx) => {
     );
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
-  // } else if (ctx.session.userOptions.includes(levelOptions.secondYear)) {
-  //   bot.telegram.sendMessage(
-  //     ctx.chat?.id || "",
-  //     "which course are you offering",
-  //     {
-  //       reply_markup: {
-  //         keyboard: [
-  //           [
-  //             {
-  //               text: continuingStudentsMajorMinorOptions.option1,
-  //             },
-  //             {
-  //               text: continuingStudentsMajorMinorOptions.option2,
-  //             },
-  //           ],
-  //           [
-  //             {
-  //               text: continuingStudentsMajorMinorOptions.option3,
-  //             },
-  //             {
-  //               text: continuingStudentsMajorMinorOptions.option4,
-  //             },
-  //           ],
-  //           [
-  //             {
-  //               text: continuingStudentsMajorMinorOptions.option5,
-  //             },
-  //             {
-  //               text: continuingStudentsMajorMinorOptions.option6,
-  //             },
-  //           ],
-  //           [
-  //             {
-  //               text: continuingStudentsMajorMinorOptions.option7,
-  //             },
-  //             {
-  //               text: continuingStudentsMajorMinorOptions.option8,
-  //             },
-  //           ],
-  //           [
-  //             {
-  //               text: continuingStudentsMajorMinorOptions.option9,
-  //             },
-  //             {
-  //               text: continuingStudentsMajorMinorOptions.option10,
-  //             },
-  //           ],
-  //           [
-  //             {
-  //               text: continuingStudentsMajorMinorOptions.option11,
-  //             },
-  //             {
-  //               text: continuingStudentsMajorMinorOptions.option12,
-  //             },
-  //           ],
-  //           [
-  //             {
-  //               text: continuingStudentsMajorMinorOptions.option13,
-  //             },
-  //           ],
-  //         ],
-  //       },
-  //     }
-  //   );
-  //   ctx.session.userOptions.push(ctx.message?.text as string);
-  //   console.log(ctx.session.userOptions);
-  // } else if (ctx.session.userOptions.includes(levelOptions.thirdYear)) {
-  //   bot.telegram.sendMessage(
-  //     ctx.chat?.id || "",
-  //     "which course are you offering",
-  //     {
-  //       reply_markup: {
-  //         keyboard: [
-  //           [
-  //             {
-  //               text: continuingStudentsMajorMinorOptions.option1,
-  //             },
-  //             {
-  //               text: continuingStudentsMajorMinorOptions.option2,
-  //             },
-  //           ],
-  //           [
-  //             {
-  //               text: continuingStudentsMajorMinorOptions.option3,
-  //             },
-  //             {
-  //               text: continuingStudentsMajorMinorOptions.option4,
-  //             },
-  //           ],
-  //           [
-  //             {
-  //               text: continuingStudentsMajorMinorOptions.option5,
-  //             },
-  //             {
-  //               text: continuingStudentsMajorMinorOptions.option6,
-  //             },
-  //           ],
-  //           [
-  //             {
-  //               text: continuingStudentsMajorMinorOptions.option7,
-  //             },
-  //             {
-  //               text: continuingStudentsMajorMinorOptions.option8,
-  //             },
-  //           ],
-  //           [
-  //             {
-  //               text: continuingStudentsMajorMinorOptions.option9,
-  //             },
-  //             {
-  //               text: continuingStudentsMajorMinorOptions.option10,
-  //             },
-  //           ],
-  //           [
-  //             {
-  //               text: continuingStudentsMajorMinorOptions.option11,
-  //             },
-  //             {
-  //               text: continuingStudentsMajorMinorOptions.option12,
-  //             },
-  //           ],
-  //           [
-  //             {
-  //               text: continuingStudentsMajorMinorOptions.option13,
-  //             },
-  //           ],
-  //         ],
-  //       },
-  //     }
-  //   );
-  //   ctx.session.userOptions.push(ctx.message?.text as string);
-  //   console.log(ctx.session.userOptions);
-  // } else if (ctx.session.userOptions.includes(levelOptions.fourthYear)) {
-  //   bot.telegram.sendMessage(
-  //     ctx.chat?.id || "",
-  //     "which course are you offering",
-  //     {
-  //       reply_markup: {
-  //         keyboard: [
-  //           [
-  //             {
-  //               text: continuingStudentsMajorMinorOptions.option1,
-  //             },
-  //             {
-  //               text: continuingStudentsMajorMinorOptions.option2,
-  //             },
-  //           ],
-  //           [
-  //             {
-  //               text: continuingStudentsMajorMinorOptions.option3,
-  //             },
-  //             {
-  //               text: continuingStudentsMajorMinorOptions.option4,
-  //             },
-  //           ],
-  //           [
-  //             {
-  //               text: continuingStudentsMajorMinorOptions.option5,
-  //             },
-  //             {
-  //               text: continuingStudentsMajorMinorOptions.option6,
-  //             },
-  //           ],
-  //           [
-  //             {
-  //               text: continuingStudentsMajorMinorOptions.option7,
-  //             },
-  //             {
-  //               text: continuingStudentsMajorMinorOptions.option8,
-  //             },
-  //           ],
-  //           [
-  //             {
-  //               text: continuingStudentsMajorMinorOptions.option9,
-  //             },
-  //             {
-  //               text: continuingStudentsMajorMinorOptions.option10,
-  //             },
-  //           ],
-  //           [
-  //             {
-  //               text: continuingStudentsMajorMinorOptions.option11,
-  //             },
-  //             {
-  //               text: continuingStudentsMajorMinorOptions.option12,
-  //             },
-  //           ],
-  //           [
-  //             {
-  //               text: continuingStudentsMajorMinorOptions.option13,
-  //             },
-  //           ],
-  //         ],
-  //       },
-  //     }
-  //   );
-  //   ctx.session.userOptions.push(ctx.message?.text as string);
-  //   console.log(ctx.session.userOptions);
+    // } else if (ctx.session.userOptions.includes(levelOptions.secondYear)) {
+    //   bot.telegram.sendMessage(
+    //     ctx.chat?.id || "",
+    //     "which course are you offering",
+    //     {
+    //       reply_markup: {
+    //         keyboard: [
+    //           [
+    //             {
+    //               text: continuingStudentsMajorMinorOptions.option1,
+    //             },
+    //             {
+    //               text: continuingStudentsMajorMinorOptions.option2,
+    //             },
+    //           ],
+    //           [
+    //             {
+    //               text: continuingStudentsMajorMinorOptions.option3,
+    //             },
+    //             {
+    //               text: continuingStudentsMajorMinorOptions.option4,
+    //             },
+    //           ],
+    //           [
+    //             {
+    //               text: continuingStudentsMajorMinorOptions.option5,
+    //             },
+    //             {
+    //               text: continuingStudentsMajorMinorOptions.option6,
+    //             },
+    //           ],
+    //           [
+    //             {
+    //               text: continuingStudentsMajorMinorOptions.option7,
+    //             },
+    //             {
+    //               text: continuingStudentsMajorMinorOptions.option8,
+    //             },
+    //           ],
+    //           [
+    //             {
+    //               text: continuingStudentsMajorMinorOptions.option9,
+    //             },
+    //             {
+    //               text: continuingStudentsMajorMinorOptions.option10,
+    //             },
+    //           ],
+    //           [
+    //             {
+    //               text: continuingStudentsMajorMinorOptions.option11,
+    //             },
+    //             {
+    //               text: continuingStudentsMajorMinorOptions.option12,
+    //             },
+    //           ],
+    //           [
+    //             {
+    //               text: continuingStudentsMajorMinorOptions.option13,
+    //             },
+    //           ],
+    //         ],
+    //       },
+    //     }
+    //   );
+    //   ctx.session.userOptions.push(ctx.message?.text as string);
+    //   console.log(ctx.session.userOptions);
+    // } else if (ctx.session.userOptions.includes(levelOptions.thirdYear)) {
+    //   bot.telegram.sendMessage(
+    //     ctx.chat?.id || "",
+    //     "which course are you offering",
+    //     {
+    //       reply_markup: {
+    //         keyboard: [
+    //           [
+    //             {
+    //               text: continuingStudentsMajorMinorOptions.option1,
+    //             },
+    //             {
+    //               text: continuingStudentsMajorMinorOptions.option2,
+    //             },
+    //           ],
+    //           [
+    //             {
+    //               text: continuingStudentsMajorMinorOptions.option3,
+    //             },
+    //             {
+    //               text: continuingStudentsMajorMinorOptions.option4,
+    //             },
+    //           ],
+    //           [
+    //             {
+    //               text: continuingStudentsMajorMinorOptions.option5,
+    //             },
+    //             {
+    //               text: continuingStudentsMajorMinorOptions.option6,
+    //             },
+    //           ],
+    //           [
+    //             {
+    //               text: continuingStudentsMajorMinorOptions.option7,
+    //             },
+    //             {
+    //               text: continuingStudentsMajorMinorOptions.option8,
+    //             },
+    //           ],
+    //           [
+    //             {
+    //               text: continuingStudentsMajorMinorOptions.option9,
+    //             },
+    //             {
+    //               text: continuingStudentsMajorMinorOptions.option10,
+    //             },
+    //           ],
+    //           [
+    //             {
+    //               text: continuingStudentsMajorMinorOptions.option11,
+    //             },
+    //             {
+    //               text: continuingStudentsMajorMinorOptions.option12,
+    //             },
+    //           ],
+    //           [
+    //             {
+    //               text: continuingStudentsMajorMinorOptions.option13,
+    //             },
+    //           ],
+    //         ],
+    //       },
+    //     }
+    //   );
+    //   ctx.session.userOptions.push(ctx.message?.text as string);
+    //   console.log(ctx.session.userOptions);
+    // } else if (ctx.session.userOptions.includes(levelOptions.fourthYear)) {
+    //   bot.telegram.sendMessage(
+    //     ctx.chat?.id || "",
+    //     "which course are you offering",
+    //     {
+    //       reply_markup: {
+    //         keyboard: [
+    //           [
+    //             {
+    //               text: continuingStudentsMajorMinorOptions.option1,
+    //             },
+    //             {
+    //               text: continuingStudentsMajorMinorOptions.option2,
+    //             },
+    //           ],
+    //           [
+    //             {
+    //               text: continuingStudentsMajorMinorOptions.option3,
+    //             },
+    //             {
+    //               text: continuingStudentsMajorMinorOptions.option4,
+    //             },
+    //           ],
+    //           [
+    //             {
+    //               text: continuingStudentsMajorMinorOptions.option5,
+    //             },
+    //             {
+    //               text: continuingStudentsMajorMinorOptions.option6,
+    //             },
+    //           ],
+    //           [
+    //             {
+    //               text: continuingStudentsMajorMinorOptions.option7,
+    //             },
+    //             {
+    //               text: continuingStudentsMajorMinorOptions.option8,
+    //             },
+    //           ],
+    //           [
+    //             {
+    //               text: continuingStudentsMajorMinorOptions.option9,
+    //             },
+    //             {
+    //               text: continuingStudentsMajorMinorOptions.option10,
+    //             },
+    //           ],
+    //           [
+    //             {
+    //               text: continuingStudentsMajorMinorOptions.option11,
+    //             },
+    //             {
+    //               text: continuingStudentsMajorMinorOptions.option12,
+    //             },
+    //           ],
+    //           [
+    //             {
+    //               text: continuingStudentsMajorMinorOptions.option13,
+    //             },
+    //           ],
+    //         ],
+    //       },
+    //     }
+    //   );
+    //   ctx.session.userOptions.push(ctx.message?.text as string);
+    //   console.log(ctx.session.userOptions);
   }
 });
 
@@ -2313,6 +2313,49 @@ bot.hears("First Semester", (ctx) => {
     console.log(ctx.session.userOptions);
   } else if (
     ctx.session.userOptions.includes(courseOptionsL100.physicalScience) &&
+    ctx.session.userOptions.includes(programOption.option2) &&
+    ctx.session.userOptions.includes(
+      continuingStudentsCombinedMajorOptions.option8
+    )
+  ) {
+    bot.telegram.sendMessage(
+      ctx.chat?.id || "",
+      "The subjects for first semester are: \n" +
+        physicalScienceforPhysicsAndStatisticsFirstSemester.subject1 +
+        "\n" +
+        "\n" +
+        physicalScienceforPhysicsAndStatisticsFirstSemester.subject2 +
+        "\n" +
+        "\n" +
+        physicalScienceforPhysicsAndStatisticsFirstSemester.subject3 +
+        "\n" +
+        "\n" +
+        physicalScienceforPhysicsAndStatisticsFirstSemester.subject4 +
+        "\n" +
+        "\n" +
+        physicalScienceforPhysicsAndStatisticsFirstSemester.subject5 +
+        "\n" +
+        "\n" +
+        physicalScienceforPhysicsAndStatisticsFirstSemester.subject6 +
+        "\n" +
+        "\n" +
+        physicalScienceforPhysicsAndStatisticsFirstSemester.subject7,
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
+            ],
+          ],
+        },
+      }
+    );
+    ctx.session.userOptions.push(ctx.message?.text as string);
+    console.log(ctx.session.userOptions);
+  } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.physicalScience) &&
     ctx.session.userOptions.includes(programOption.option3) &&
     ctx.session.userOptions.includes(
       continuingStudentsMajorMinorOptions.option8
@@ -3349,8 +3392,9 @@ bot.hears("First Semester", (ctx) => {
     );
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
-  }else if (
-    ctx.session.userOptions.includes(courseOptionsL100.informationTechnology)) {
+  } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.informationTechnology)
+  ) {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "The subjects for first semester are: \n" +
@@ -3393,7 +3437,7 @@ bot.hears("First Semester", (ctx) => {
     );
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
-    }
+  }
 });
 //L200 L200 L200 L200 L200 L200
 //   } else if (
@@ -7185,10 +7229,10 @@ bot.hears("First Semester", (ctx) => {
 
 bot.hears("Second Semester", (ctx) => {
   if (
+    ctx.session.userOptions.includes(courseOptionsL100.physicalScience) &&
+    ctx.session.userOptions.includes(programOption.option1) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.physicalScience &&
-        programOption.option1 &&
-        continuingStudentsSingleMajorOptions.option5
+      continuingStudentsSingleMajorOptions.option5
     )
   ) {
     bot.telegram.sendMessage(
@@ -7222,10 +7266,10 @@ bot.hears("Second Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.physicalScience) &&
+    ctx.session.userOptions.includes(programOption.option1) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.physicalScience &&
-        programOption.option1 &&
-        continuingStudentsSingleMajorOptions.option6
+      continuingStudentsSingleMajorOptions.option6
     )
   ) {
     bot.telegram.sendMessage(
@@ -7259,10 +7303,10 @@ bot.hears("Second Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.physicalScience) &&
+    ctx.session.userOptions.includes(programOption.option1) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.physicalScience &&
-        programOption.option1 &&
-        continuingStudentsSingleMajorOptions.option8
+      continuingStudentsSingleMajorOptions.option8
     )
   ) {
     bot.telegram.sendMessage(
@@ -7296,10 +7340,10 @@ bot.hears("Second Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.physicalScience) &&
+    ctx.session.userOptions.includes(programOption.option2) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.physicalScience &&
-        programOption.option2 &&
-        continuingStudentsCombinedMajorOptions.option1
+      continuingStudentsCombinedMajorOptions.option1
     )
   ) {
     bot.telegram.sendMessage(
@@ -7333,10 +7377,10 @@ bot.hears("Second Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.physicalScience) &&
+    ctx.session.userOptions.includes(programOption.option2) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.physicalScience &&
-        programOption.option2 &&
-        continuingStudentsCombinedMajorOptions.option2
+      continuingStudentsCombinedMajorOptions.option2
     )
   ) {
     bot.telegram.sendMessage(
@@ -7370,10 +7414,10 @@ bot.hears("Second Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.physicalScience) &&
+    ctx.session.userOptions.includes(programOption.option2) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.physicalScience &&
-        programOption.option2 &&
-        continuingStudentsCombinedMajorOptions.option9
+      continuingStudentsCombinedMajorOptions.option9
     )
   ) {
     bot.telegram.sendMessage(
@@ -7407,10 +7451,10 @@ bot.hears("Second Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.physicalScience) &&
+    ctx.session.userOptions.includes(programOption.option3) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.physicalScience &&
-        programOption.option3 &&
-        continuingStudentsCombinedMajorOptions.option8
+      continuingStudentsCombinedMajorOptions.option8
     )
   ) {
     bot.telegram.sendMessage(
@@ -7444,10 +7488,10 @@ bot.hears("Second Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.physicalScience) &&
+    ctx.session.userOptions.includes(programOption.option3) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.physicalScience &&
-        programOption.option3 &&
-        continuingStudentsMajorMinorOptions.option8
+      continuingStudentsMajorMinorOptions.option8
     )
   ) {
     bot.telegram.sendMessage(
@@ -7481,10 +7525,10 @@ bot.hears("Second Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.physicalScience) &&
+    ctx.session.userOptions.includes(programOption.option3) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.physicalScience &&
-        programOption.option3 &&
-        continuingStudentsMajorMinorOptions.option9
+      continuingStudentsMajorMinorOptions.option9
     )
   ) {
     bot.telegram.sendMessage(
@@ -7518,10 +7562,10 @@ bot.hears("Second Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.physicalScience) &&
+    ctx.session.userOptions.includes(programOption.option3) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.physicalScience &&
-        programOption.option3 &&
-        continuingStudentsMajorMinorOptions.option10
+      continuingStudentsMajorMinorOptions.option10
     )
   ) {
     bot.telegram.sendMessage(
@@ -7555,10 +7599,10 @@ bot.hears("Second Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.physicalScience) &&
+    ctx.session.userOptions.includes(programOption.option3) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.physicalScience &&
-        programOption.option3 &&
-        continuingStudentsMajorMinorOptions.option13
+      continuingStudentsMajorMinorOptions.option13
     )
   ) {
     bot.telegram.sendMessage(
@@ -7592,10 +7636,10 @@ bot.hears("Second Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.mathematicalScience) &&
+    ctx.session.userOptions.includes(programOption.option1) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.mathematicalScience &&
-        programOption.option1 &&
-        continuingStudentsSingleMajorOptions.option1
+      continuingStudentsSingleMajorOptions.option1
     )
   ) {
     bot.telegram.sendMessage(
@@ -7629,10 +7673,10 @@ bot.hears("Second Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.mathematicalScience) &&
+    ctx.session.userOptions.includes(programOption.option1) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.mathematicalScience &&
-        programOption.option1 &&
-        continuingStudentsSingleMajorOptions.option2
+      continuingStudentsSingleMajorOptions.option2
     )
   ) {
     bot.telegram.sendMessage(
@@ -7666,10 +7710,10 @@ bot.hears("Second Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.mathematicalScience) &&
+    ctx.session.userOptions.includes(programOption.option1) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.mathematicalScience &&
-        programOption.option1 &&
-        continuingStudentsSingleMajorOptions.option3
+      continuingStudentsSingleMajorOptions.option3
     )
   ) {
     bot.telegram.sendMessage(
@@ -7703,10 +7747,10 @@ bot.hears("Second Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.mathematicalScience) &&
+    ctx.session.userOptions.includes(programOption.option1) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.mathematicalScience &&
-        programOption.option1 &&
-        continuingStudentsSingleMajorOptions.option4
+      continuingStudentsSingleMajorOptions.option4
     )
   ) {
     bot.telegram.sendMessage(
@@ -7740,10 +7784,10 @@ bot.hears("Second Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.mathematicalScience) &&
+    ctx.session.userOptions.includes(programOption.option1) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.mathematicalScience &&
-        programOption.option1 &&
-        continuingStudentsSingleMajorOptions.option10
+      continuingStudentsSingleMajorOptions.option10
     )
   ) {
     bot.telegram.sendMessage(
@@ -7777,10 +7821,10 @@ bot.hears("Second Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.mathematicalScience) &&
+    ctx.session.userOptions.includes(programOption.option2) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.mathematicalScience &&
-        programOption.option2 &&
-        continuingStudentsCombinedMajorOptions.option3
+      continuingStudentsCombinedMajorOptions.option3
     )
   ) {
     bot.telegram.sendMessage(
@@ -7814,10 +7858,10 @@ bot.hears("Second Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.mathematicalScience) &&
+    ctx.session.userOptions.includes(programOption.option2) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.mathematicalScience &&
-        programOption.option2 &&
-        continuingStudentsCombinedMajorOptions.option4
+      continuingStudentsCombinedMajorOptions.option4
     )
   ) {
     bot.telegram.sendMessage(
@@ -7851,10 +7895,10 @@ bot.hears("Second Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.mathematicalScience) &&
+    ctx.session.userOptions.includes(programOption.option2) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.mathematicalScience &&
-        programOption.option2 &&
-        continuingStudentsCombinedMajorOptions.option5
+      continuingStudentsCombinedMajorOptions.option5
     )
   ) {
     bot.telegram.sendMessage(
@@ -7888,10 +7932,10 @@ bot.hears("Second Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.mathematicalScience) &&
+    ctx.session.userOptions.includes(programOption.option2) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.mathematicalScience &&
-        programOption.option2 &&
-        continuingStudentsCombinedMajorOptions.option7
+      continuingStudentsCombinedMajorOptions.option7
     )
   ) {
     bot.telegram.sendMessage(
@@ -7925,10 +7969,10 @@ bot.hears("Second Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.mathematicalScience) &&
+    ctx.session.userOptions.includes(programOption.option3) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.mathematicalScience &&
-        programOption.option3 &&
-        continuingStudentsMajorMinorOptions.option4
+      continuingStudentsMajorMinorOptions.option4
     )
   ) {
     bot.telegram.sendMessage(
@@ -7962,10 +8006,10 @@ bot.hears("Second Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.mathematicalScience) &&
+    ctx.session.userOptions.includes(programOption.option3) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.mathematicalScience &&
-        programOption.option3 &&
-        continuingStudentsMajorMinorOptions.option5
+      continuingStudentsMajorMinorOptions.option5
     )
   ) {
     bot.telegram.sendMessage(
@@ -7999,10 +8043,10 @@ bot.hears("Second Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.mathematicalScience) &&
+    ctx.session.userOptions.includes(programOption.option3) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.mathematicalScience &&
-        programOption.option3 &&
-        continuingStudentsMajorMinorOptions.option6
+      continuingStudentsMajorMinorOptions.option6
     )
   ) {
     bot.telegram.sendMessage(
@@ -8036,10 +8080,10 @@ bot.hears("Second Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.mathematicalScience) &&
+    ctx.session.userOptions.includes(programOption.option1) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.mathematicalScience &&
-        programOption.option1 &&
-        continuingStudentsMajorMinorOptions.option7
+      continuingStudentsMajorMinorOptions.option7
     )
   ) {
     bot.telegram.sendMessage(
@@ -8073,10 +8117,10 @@ bot.hears("Second Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.mathematicalScience) &&
+    ctx.session.userOptions.includes(programOption.option3) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.mathematicalScience &&
-        programOption.option3 &&
-        continuingStudentsMajorMinorOptions.option11
+      continuingStudentsMajorMinorOptions.option11
     )
   ) {
     bot.telegram.sendMessage(
@@ -8110,10 +8154,10 @@ bot.hears("Second Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.mathematicalScience) &&
+    ctx.session.userOptions.includes(programOption.option3) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.mathematicalScience &&
-        programOption.option3 &&
-        continuingStudentsMajorMinorOptions.option12
+      continuingStudentsMajorMinorOptions.option12
     )
   ) {
     bot.telegram.sendMessage(
@@ -8147,10 +8191,10 @@ bot.hears("Second Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.earthScience) &&
+    ctx.session.userOptions.includes(programOption.option3) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.earthScience &&
-        programOption.option3 &&
-        continuingStudentsMajorMinorOptions.option1
+      continuingStudentsMajorMinorOptions.option1
     )
   ) {
     bot.telegram.sendMessage(
@@ -8184,10 +8228,10 @@ bot.hears("Second Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.earthScience) &&
+    ctx.session.userOptions.includes(programOption.option3) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.earthScience &&
-        programOption.option3 &&
-        continuingStudentsMajorMinorOptions.option2
+      continuingStudentsMajorMinorOptions.option2
     )
   ) {
     bot.telegram.sendMessage(
@@ -8221,10 +8265,10 @@ bot.hears("Second Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.earthScience) &&
+    ctx.session.userOptions.includes(programOption.option3) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.earthScience &&
-        programOption.option3 &&
-        continuingStudentsMajorMinorOptions.option3
+      continuingStudentsMajorMinorOptions.option3
     )
   ) {
     bot.telegram.sendMessage(
@@ -8258,10 +8302,10 @@ bot.hears("Second Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.earthScience) &&
+    ctx.session.userOptions.includes(programOption.option1) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.earthScience &&
-        programOption.option1 &&
-        continuingStudentsSingleMajorOptions.option7
+      continuingStudentsSingleMajorOptions.option7
     )
   ) {
     bot.telegram.sendMessage(
@@ -8295,10 +8339,10 @@ bot.hears("Second Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.earthScience) &&
+    ctx.session.userOptions.includes(programOption.option1) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.earthScience &&
-        programOption.option1 &&
-        continuingStudentsSingleMajorOptions.option9
+      continuingStudentsSingleMajorOptions.option9
     )
   ) {
     bot.telegram.sendMessage(
@@ -8332,10 +8376,10 @@ bot.hears("Second Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
+    ctx.session.userOptions.includes(courseOptionsL100.earthScience) &&
+    ctx.session.userOptions.includes(programOption.option1) &&
     ctx.session.userOptions.includes(
-      courseOptionsL100.earthScience &&
-        programOption.option1 &&
-        continuingStudentsSingleMajorOptions.option12
+      continuingStudentsSingleMajorOptions.option12
     )
   ) {
     bot.telegram.sendMessage(
@@ -8369,37 +8413,36 @@ bot.hears("Second Semester", (ctx) => {
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
   } else if (
-    ctx.session.userOptions.includes(
-      courseOptionsL100.informationTechnology)
+    ctx.session.userOptions.includes(courseOptionsL100.informationTechnology)
   ) {
     bot.telegram.sendMessage(
       ctx.chat?.id || "",
       "The subjects for first semester are: \n" +
-      informationTechnologySecondSem.subject1 +
-      "\n" +
-      "\n" +
-      informationTechnologySecondSem.subject2 +
-      "\n" +
-      "\n" +
-      informationTechnologySecondSem.subject4 +
-      "\n" +
-      "\n" +
-      informationTechnologySecondSem.subject6 +
-      "\n" +
-      "\n" +
-      informationTechnologySecondSem.subject8 +
-      "\n" +
-      "\n" +
-      "For your electives choose one of the following or do both\nif you can handle the pressure 💀, " +
-      "\n" +
-      "\n" +
-      informationTechnologySecondSem.subject3 +
-      "\n" +
-      "\n" +
-      informationTechnologySecondSem.subject5 +
-      "\n" +
-      "\n" +
-      informationTechnologySecondSem.subject7,
+        informationTechnologySecondSem.subject1 +
+        "\n" +
+        "\n" +
+        informationTechnologySecondSem.subject2 +
+        "\n" +
+        "\n" +
+        informationTechnologySecondSem.subject4 +
+        "\n" +
+        "\n" +
+        informationTechnologySecondSem.subject6 +
+        "\n" +
+        "\n" +
+        informationTechnologySecondSem.subject8 +
+        "\n" +
+        "\n" +
+        "For your electives choose one of the following or do both\nif you can handle the pressure 💀, " +
+        "\n" +
+        "\n" +
+        informationTechnologySecondSem.subject3 +
+        "\n" +
+        "\n" +
+        informationTechnologySecondSem.subject5 +
+        "\n" +
+        "\n" +
+        informationTechnologySecondSem.subject7,
       {
         reply_markup: {
           keyboard: [
@@ -8414,9 +8457,9 @@ bot.hears("Second Semester", (ctx) => {
     );
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
-  } 
+  }
 });
- // else if (
+// else if (
 //     ctx.session.userOptions.includes(
 //       levelOptions.secondYear &&
 //         programOption.option1 &&
