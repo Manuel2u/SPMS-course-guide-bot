@@ -232,7 +232,7 @@ const options = {
     subject2: "PHYS 144 : Electricity and Magnetism",
     subject3: "CHEM 114 : Foundation Chemistry II",
     subject4: "EASC 104 : Historical Geology",
-    subject5: "EASC 106 Geological Field Excursions",
+    subject5: "EASC 106 : Geological Field Excursions",
     subject6: "MATH 122 : Calculus I",
     subject7: "MATH 126 : Algebra and Geometry",
     subject8: "DCIT 104 : Programming Fundamentals",
@@ -246,7 +246,7 @@ const options = {
     subject4: "MATH 121 : Algebra and Trigonometry",
     subject5: "MATH 123 : Vectors and Geometry",
     subject6: "STAT 111: Introduction to Statistics and Probability I",
-    subject7: "ECON 101: Introduction to Economics I",
+    subject7: "ECON 101 : Introduction to Economics I",
     subject8: "UGRC 150 : Critical Thinking and Practical Reasoning",
   },
 
