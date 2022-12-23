@@ -1957,7 +1957,7 @@ bot.hears(levelOptions.thirdYear, (ctx) => {
 bot.hears(levelOptions.fourthYear, (ctx) => {
   bot.telegram.sendMessage(
     ctx.chat?.id || "",
-    "UNFORTUNATELY L400 IS NOT AVAILABLE AT THE MOMENT ITS STILL UNDER DEVELOPMENT",
+    "UNFORTUNATELY L400 IS NOT AVAILABLE AT THE MOMENT ITS STILL UNDER DEVELOPMENT"
     // {
     //   reply_markup: {
     //     keyboard: [
@@ -7261,7 +7261,10 @@ bot.hears("Second Semester", (ctx) => {
         mathematicalScienceforActurialScienceSecondSem.subject4 +
         "\n" +
         "\n" +
-        physicalScienceforChemsitryAndBioScienceSecondSemester.subject1,
+        physicalScienceforChemsitryAndBioScienceSecondSemester.subject1 +
+        "\n" +
+        "\n" +
+        "NB: YOU WILL STILL BE DOING CHEM 120 IN SECOND SEMESTER, BUT YOU\nWONT REGISTER FOR IT AGAIN.",
       {
         reply_markup: {
           keyboard: [
@@ -7309,7 +7312,10 @@ bot.hears("Second Semester", (ctx) => {
         mathematicalScienceforActurialScienceSecondSem.subject4 +
         "\n" +
         "\n" +
-        physicalScienceforChemsitryAndBioScienceSecondSemester.subject1,
+        physicalScienceforChemsitryAndBioScienceSecondSemester.subject1 +
+        "\n" +
+        "\n" +
+        "NB: YOU WILL STILL BE DOING CHEM 120 IN SECOND SEMESTER, BUT YOU\nWONT REGISTER FOR IT AGAIN.",
       {
         reply_markup: {
           keyboard: [
@@ -7354,7 +7360,10 @@ bot.hears("Second Semester", (ctx) => {
         physicalScienceforGeophysicsSecondSem.subject6 +
         "\n" +
         "\n" +
-        physicalScienceforGeophysicsSecondSem.subject7,
+        physicalScienceforGeophysicsSecondSem.subject7 +
+        "\n" +
+        "\n" +
+        "NB: YOU WILL STILL BE DOING CHEM 120 IN SECOND SEMESTER, BUT YOU\nWONT REGISTER FOR IT AGAIN.",
       {
         reply_markup: {
           keyboard: [
@@ -7396,7 +7405,10 @@ bot.hears("Second Semester", (ctx) => {
         physicalScienceforChemsitryAndBioScienceSecondSemester.subject5 +
         "\n" +
         "\n" +
-        physicalScienceforChemsitryAndBioScienceSecondSemester.subject6,
+        physicalScienceforChemsitryAndBioScienceSecondSemester.subject6 +
+        "\n" +
+        "\n" +
+        "NB: YOU WILL STILL BE DOING CHEM 120 IN SECOND SEMESTER, BUT YOU\nWONT REGISTER FOR IT AGAIN.",
       {
         reply_markup: {
           keyboard: [
@@ -7444,7 +7456,10 @@ bot.hears("Second Semester", (ctx) => {
         mathematicalScienceforActurialScienceSecondSem.subject4 +
         "\n" +
         "\n" +
-        physicalScienceforChemsitryAndBioScienceFirstSemester.subject1,
+        physicalScienceforChemsitryAndBioScienceFirstSemester.subject1 +
+        "\n" +
+        "\n" +
+        "NB: YOU WILL STILL BE DOING CHEM 120 IN SECOND SEMESTER, BUT YOU\nWONT REGISTER FOR IT AGAIN.",
       {
         reply_markup: {
           keyboard: [
@@ -7487,17 +7502,20 @@ bot.hears("Second Semester", (ctx) => {
         "\n" +
         "\n" +
         physicalScienceforMathsAndPhysicsSecondSemester.subject6 +
-        {
-          reply_markup: {
-            keyboard: [
-              [
-                {
-                  text: "Start Over",
-                },
-              ],
+        "\n" +
+        "\n" +
+        "NB: YOU WILL STILL BE DOING CHEM 120 IN SECOND SEMESTER, BUT YOU\nWONT REGISTER FOR IT AGAIN.",
+      {
+        reply_markup: {
+          keyboard: [
+            [
+              {
+                text: "Start Over",
+              },
             ],
-          },
-        }
+          ],
+        },
+      }
     );
     ctx.session.userOptions.push(ctx.message?.text as string);
     console.log(ctx.session.userOptions);
@@ -7528,7 +7546,10 @@ bot.hears("Second Semester", (ctx) => {
         physicalScienceforPhysicsAndStatisticsSecondSemester.subject5 +
         "\n" +
         "\n" +
-        physicalScienceforPhysicsAndStatisticsSecondSemester.subject6,
+        physicalScienceforPhysicsAndStatisticsSecondSemester.subject6 +
+        "\n" +
+        "\n" +
+        "NB: YOU WILL STILL BE DOING CHEM 120 IN SECOND SEMESTER, BUT YOU\nWONT REGISTER FOR IT AGAIN.",
       {
         reply_markup: {
           keyboard: [
@@ -7570,7 +7591,10 @@ bot.hears("Second Semester", (ctx) => {
         physicalScienceForPhysicsAndCompSciSecondSemester.subject5 +
         "\n" +
         "\n" +
-        physicalScienceForPhysicsAndCompSciSecondSemester.subject6,
+        physicalScienceForPhysicsAndCompSciSecondSemester.subject6 +
+        "\n" +
+        "\n" +
+        "NB: YOU WILL STILL BE DOING CHEM 120 IN SECOND SEMESTER, BUT YOU\nWONT REGISTER FOR IT AGAIN.",
       {
         reply_markup: {
           keyboard: [
@@ -7615,7 +7639,10 @@ bot.hears("Second Semester", (ctx) => {
         physicalScienceforGeophysicsSecondSem.subject6 +
         "\n" +
         "\n" +
-        physicalScienceforGeophysicsSecondSem.subject7,
+        physicalScienceforGeophysicsSecondSem.subject7 +
+        "\n" +
+        "\n" +
+        "NB: YOU WILL STILL BE DOING CHEM 120 IN SECOND SEMESTER, BUT YOU\nWONT REGISTER FOR IT AGAIN.",
       {
         reply_markup: {
           keyboard: [
@@ -7657,7 +7684,10 @@ bot.hears("Second Semester", (ctx) => {
         physicalScienceforMathsAndPhysicsSecondSemester.subject5 +
         "\n" +
         "\n" +
-        physicalScienceforMathsAndPhysicsSecondSemester.subject6,
+        physicalScienceforMathsAndPhysicsSecondSemester.subject6 +
+        "\n" +
+        "\n" +
+        "NB: YOU WILL STILL BE DOING CHEM 120 IN SECOND SEMESTER, BUT YOU\nWONT REGISTER FOR IT AGAIN.",
       {
         reply_markup: {
           keyboard: [
@@ -7699,7 +7729,10 @@ bot.hears("Second Semester", (ctx) => {
         physicalScienceforPhysicsAndStatisticsSecondSemester.subject5 +
         "\n" +
         "\n" +
-        physicalScienceforPhysicsAndStatisticsSecondSemester.subject6,
+        physicalScienceforPhysicsAndStatisticsSecondSemester.subject6 +
+        "\n" +
+        "\n" +
+        "NB: YOU WILL STILL BE DOING CHEM 120 IN SECOND SEMESTER, BUT YOU\nWONT REGISTER FOR IT AGAIN.",
       {
         reply_markup: {
           keyboard: [
@@ -7828,7 +7861,10 @@ bot.hears("Second Semester", (ctx) => {
         physicalScienceforGeophysicsFirstSem.subject6 +
         "\n" +
         "\n" +
-        physicalScienceforGeophysicsFirstSem.subject7,
+        physicalScienceforGeophysicsFirstSem.subject7 +
+        "\n" +
+        "\n" +
+        "NB: YOU WILL STILL BE DOING CHEM 120 IN SECOND SEMESTER, BUT YOU\nWONT REGISTER FOR IT AGAIN.",
       {
         reply_markup: {
           keyboard: [
@@ -8437,7 +8473,10 @@ bot.hears("Second Semester", (ctx) => {
         physicalScienceforGeophysicsSecondSem.subject6 +
         "\n" +
         "\n" +
-        physicalScienceforGeophysicsSecondSem.subject7,
+        physicalScienceforGeophysicsSecondSem.subject7 +
+        "\n" +
+        "\n" +
+        "NB: YOU WILL STILL BE DOING CHEM 120 IN SECOND SEMESTER, BUT YOU\nWONT REGISTER FOR IT AGAIN.",
       {
         reply_markup: {
           keyboard: [
@@ -8485,7 +8524,10 @@ bot.hears("Second Semester", (ctx) => {
         physicalScienceforGeophysicsSecondSem.subject7 +
         "\n" +
         "\n" +
-        physicalScienceforMathsAndPhysicsSecondSemester.subject3,
+        physicalScienceforMathsAndPhysicsSecondSemester.subject3 +
+        "\n" +
+        "\n" +
+        "NB: YOU WILL STILL BE DOING CHEM 120 IN SECOND SEMESTER, BUT YOU\nWONT REGISTER FOR IT AGAIN.",
       {
         reply_markup: {
           keyboard: [
@@ -8530,7 +8572,10 @@ bot.hears("Second Semester", (ctx) => {
         physicalScienceforGeophysicsSecondSem.subject6 +
         "\n" +
         "\n" +
-        physicalScienceforGeophysicsSecondSem.subject7,
+        physicalScienceforGeophysicsSecondSem.subject7 +
+        "\n" +
+        "\n" +
+        "NB: YOU WILL STILL BE DOING CHEM 120 IN SECOND SEMESTER, BUT YOU\nWONT REGISTER FOR IT AGAIN.",
       {
         reply_markup: {
           keyboard: [
@@ -8575,7 +8620,10 @@ bot.hears("Second Semester", (ctx) => {
         physicalScienceforGeophysicsSecondSem.subject6 +
         "\n" +
         "\n" +
-        physicalScienceforGeophysicsSecondSem.subject7,
+        physicalScienceforGeophysicsSecondSem.subject7 +
+        "\n" +
+        "\n" +
+        "NB: YOU WILL STILL BE DOING CHEM 120 IN SECOND SEMESTER, BUT YOU\nWONT REGISTER FOR IT AGAIN.",
       {
         reply_markup: {
           keyboard: [
@@ -8620,7 +8668,10 @@ bot.hears("Second Semester", (ctx) => {
         physicalScienceforGeophysicsSecondSem.subject6 +
         "\n" +
         "\n" +
-        physicalScienceforGeophysicsSecondSem.subject7,
+        physicalScienceforGeophysicsSecondSem.subject7 +
+        "\n" +
+        "\n" +
+        "NB: YOU WILL STILL BE DOING CHEM 120 IN SECOND SEMESTER, BUT YOU\nWONT REGISTER FOR IT AGAIN.",
       {
         reply_markup: {
           keyboard: [
@@ -8665,7 +8716,10 @@ bot.hears("Second Semester", (ctx) => {
         physicalScienceforGeophysicsSecondSem.subject6 +
         "\n" +
         "\n" +
-        physicalScienceforGeophysicsSecondSem.subject7,
+        physicalScienceforGeophysicsSecondSem.subject7 +
+        "\n" +
+        "\n" +
+        "NB: YOU WILL STILL BE DOING CHEM 120 IN SECOND SEMESTER, BUT YOU\nWONT REGISTER FOR IT AGAIN.",
       {
         reply_markup: {
           keyboard: [
